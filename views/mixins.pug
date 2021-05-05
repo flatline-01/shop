@@ -1,0 +1,23 @@
+mixin list 
+    list(class='available-colors  d-flex align-items-center')
+        li(class='available-colors__elem rounded-circle')
+        li(class='available-colors__elem rounded-circle')
+        li(class='available-colors__elem rounded-circle')
+mixin footerCategoriesList
+    div(class='col-sm-6 col-md-2')
+        ul
+            li Категории #[br]
+            li
+                a(href='#road-series') ROAD SERIES #[br]
+            li
+                a(href='#street-series') STREET SERIES #[br]
+            li
+                a(href='#mountain-series') MOUNTAIN SERIES
+mixin footerInfo
+    div(class='col-sm-6 col-md-2')
+        ul
+            li #[strong Информация] #[br]
+            li
+                a(href='#about') О нас #[br]
+            li
+                a(href='#') Контакты

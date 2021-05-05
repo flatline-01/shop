@@ -1,0 +1,22 @@
+.btn(@bg, @color, @changed-bg, @changed-color){
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid @main-color;
+    background-color: @bg;
+    color: @color;
+    transition: background-color 2s ease;
+    @media screen and( max-width: 770px){
+      width: 80%;
+    }
+    &:hover, &:focus{
+      box-shadow: none;
+      outline: none;
+      background-color: @changed-bg;
+      color: @changed-color;
+    }
+}
+  
+  .bg-vector(@link){
+    background: url("@{link}"), center, center, no-repeat;
+  }

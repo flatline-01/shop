@@ -1,0 +1,16 @@
+include mixins.pug
+footer(class='footer bg-black text text-white')
+    div(class='container')
+        div(class='row')
+            div(class='col-sm-12 col-md-3')
+                img(src='/public/images/logos/logo%201.png')
+            +footerCategoriesList
+            +footerInfo
+            +footerCategoriesList
+            +footerInfo
+            div(class='col-sm-12 col-md-1')
+                a(href='https://www.instagram.com')
+                    img(src='/public/images/icons/insta-w.png' alt='instagram' class='pb-4 social-i')
+                a(href='https://www.facebook.com')
+                    img(src='/public/images/icons/f-w.png' alt='facebook' class='pb-4 social-i ps-1')
+            p(class='text text-center text-white-50 mt-4') #[sup ©] STREETSTER — Все права защищены

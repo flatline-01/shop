@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Pug File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rFy8x3YmIoyBF5pTikpQyPo3PI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Streetster/order/index.html" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="" />
+      <created>1618585978740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618585978740</updated>
+      <workItem from="1618585980003" duration="18000" />
+      <workItem from="1618588233372" duration="117000" />
+      <workItem from="1618588597674" duration="128000" />
+      <workItem from="1618588805716" duration="7000" />
+      <workItem from="1618639778779" duration="1706000" />
+      <workItem from="1618641522187" duration="1621000" />
+      <workItem from="1618656975981" duration="1770000" />
+      <workItem from="1618658785252" duration="1007000" />
+      <workItem from="1618660746421" duration="840000" />
+      <workItem from="1618663553600" duration="13000" />
+      <workItem from="1618741908151" duration="1347000" />
+      <workItem from="1618743782067" duration="1691000" />
+      <workItem from="1618745866009" duration="2285000" />
+      <workItem from="1618748199854" duration="1822000" />
+      <workItem from="1618750285077" duration="1279000" />
+      <workItem from="1618751636706" duration="884000" />
+      <workItem from="1618761991392" duration="1828000" />
+      <workItem from="1618763897096" duration="816000" />
+      <workItem from="1619712841276" duration="323000" />
+      <workItem from="1619768451093" duration="114000" />
+      <workItem from="1619768829993" duration="196000" />
+      <workItem from="1619871578569" duration="394000" />
+      <workItem from="1619873867318" duration="1560000" />
+      <workItem from="1619875675196" duration="1770000" />
+      <workItem from="1619877484022" duration="1105000" />
+      <workItem from="1619884947433" duration="1887000" />
+      <workItem from="1619887578028" duration="1699000" />
+      <workItem from="1619889732916" duration="1244000" />
+      <workItem from="1620010268096" duration="779000" />
+      <workItem from="1620012067695" duration="1773000" />
+      <workItem from="1620013876120" duration="1062000" />
+      <workItem from="1620020918444" duration="1817000" />
+      <workItem from="1620182942626" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618588632622">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588632622" />
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618639822042">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1618639822042" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620010775017">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1620010775017" />
+    <state x="352" y="142" key="EditFileWatcherDialog" timestamp="1618588242473">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588242473" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1620021076054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1620021076054" />
+    <state width="1345" height="429" key="GridCell.Tab.0.bottom" timestamp="1618749372835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="429" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1618749372835" />
+    <state width="1345" height="429" key="GridCell.Tab.0.center" timestamp="1618749372835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="429" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1618749372835" />
+    <state width="1345" height="429" key="GridCell.Tab.0.left" timestamp="1618749372835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="429" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1618749372835" />
+    <state width="1345" height="429" key="GridCell.Tab.0.right" timestamp="1618749372835">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="429" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1618749372835" />
+    <state x="184" y="9" key="SettingsEditor" timestamp="1619713127171">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1619713127171" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1620012448083">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1620012448083" />
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618747019550">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1618747019550" />
+  </component>
+</project>

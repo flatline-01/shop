@@ -1,0 +1,14 @@
+include head.pug
+include header-light.pug
+main 
+    img(class='bg-img', src=`public/images/category-images/category-img${category[0]["id"]}.png`)
+    div(class="container mt-5")
+        div(class="row center-block text-white py-5")
+            img(src=`public/images/category-images/category-img${category[0]["id"]}.png` alt="a bike" class="col-sm-12 col-md-4 col-lg-4 center-block__img d-flex  justify-content-center mb-2")
+            img(src=`public/images/bikes/bike${goods[0]["id"]}.png` alt="a bike" id="center-block__img-bike")
+            div(class="col-sm-12 col-md-6 col-lg-6 offset-lg-2 d-flex flex-column justify-content-center")
+                h1(class="title") #{category[0]["name"]}
+                p(class="text") #{category[0]["description"]}
+include card.pug
+include footer.pug
+include scripts.pug

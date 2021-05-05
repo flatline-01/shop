@@ -1,0 +1,76 @@
+include head.pug
+include header-dark.pug
+main0
+    div(class="container")
+        div( class="row")
+            h1( class="title my-5 d-flex justify-content-center") Оформление заказа
+            div( class="col-md-6 p-4")
+                h3(class="subtitle mb-3") В корзине 2 товара
+                div( class="row d-flex justify-content-center align-items-center")
+                    div( class="col-3")
+                        img(src="public/images/bikes/bike1.png" alt="" class="w-100")
+                    div( class="col-3")
+                        p( class="text") #[b STREETSTER NATHAN] #[br] Цвет: черный, Рама: 54”
+                    div( class="col-3")
+                        p( class="text")
+                            |-
+                            span(class="bg-black py-1 px-2 text-white") 1
+                            |+
+                    div( class="col-3")
+                        p( class="text") 12000 ₴
+                hr
+                div(class="row d-flex justify-content-center align-items-center")
+                    div( class="col-3")
+                        img( src="public/images/accessories/product2.png" alt="" class="w-50")
+                    div( class="col-3")
+                        p( class="text") #[b ШЛЕМ OCTANE] #[br] Цвет: черный
+                    div( class="col-3")
+                        p( class="text")
+                            | -
+                            span(class="bg-black py-1 px-2 text-white") 1
+                            | +
+                    div( class="col-3")
+                        p( class="text") 12000 ₴
+                    div( class="d-flex flex-column align-items-end")
+                        p( class="text") Доставка: бесплатно #[br] #[b Итого:] 12000 ₴
+                div( class="row")
+                    div( class="col-sm-12 col-md-6")
+                        button( class="btn rounded-0") ПРОДОЛЖИТЬ ПОКУПКИ
+                    div( class="col-sm-12 col-md-6")
+                        button( class="btn rounded-0") ОФОРМИТЬ ЗАКАЗ
+            div(class="col-md-6")
+                div( class="row p-4")
+                    h3(class="subtitle") Контактная информация
+                    form( class="row mb-4")
+                        div( class="col-md-6 mt-3")
+                            label( for="firstname") Name
+                                input( id="firstname" type="text" class="border border-2 border-dark w-100")
+                            label( for="phone-number") Phone
+                                input( id="phone-number" type="tel" class="border border-2 border-dark w-100")
+                        div(class="col-md-6 mt-3")
+                            label( for="lastname") Lastname
+                                input( id="lastname" type="text" class="border border-2 border-dark w-100")
+                            label( for="email") Email
+                                input( id="email" type="email" class="border border-2 border-dark w-100")
+                div( class="row p-4")
+                    h3( class="subtitle") Оплата и доставка
+                    form( class="row")
+                        div( class="col-md-6 mt-3")
+                            label( for="pay" class="w-100") Способ оплаты
+                                select( id="pay" class="border border-2 border-dark w-100")
+                                    option(selected)
+                                    option(value="1") One
+                                    option(value="2") Two
+                                    option(value="3") Three
+                            label(for="city") Город
+                                input( id="city" type="text" class="border border-2 border-dark  w-100")
+                        div( class="col-md-6 mt-3")
+                            label(for="get" class="w-100") Способ получения
+                                select(id="get" class="border border-2 border-dark w-100")
+                                    option(selected)
+                                    option(value="1") One
+                                    option(value="2") Two
+                                    option(value="3") Three
+                            label( for="adress") Адрес доставки
+                                input( id="adress" type="text" class="border border-2 border-dark  w-100")
+include scripts.pug

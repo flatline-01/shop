@@ -1,0 +1,17 @@
+header
+    div(class='container')
+        div(class='row')
+            div(class='col-sm-2 col-md-2')
+                img(src='/public/images/logos/logo%202.png' alt='streetster logo')
+            div(class='col-sm-4 offset-md-1 col-md-6 d-flex justify-content-center align-items-center')
+                form(class='search-form')
+                    img(src='/public/images/icons/search.png' alt='magnifying glass' class='search-form__icon')
+                    input(type='text' class='search-form__input')
+            div(class='col-sm-2 offset-sm-1 col-md-2 d-flex justify-content-center align-items-center' id='wrapper')
+                img(src='/public/images/icons/cart2.png' alt='cart' id='cart')
+                div(class='menu-icon')
+                    hr(class='menu-icon__line bg-dark')
+                    hr(class='menu-icon__line bg-dark')
+                    hr(class='menu-icon__line bg-dark')
+include cart.pug
+include menu.pug

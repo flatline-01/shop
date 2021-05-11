@@ -4,23 +4,22 @@ main(class="mt-5 mb-5")
     div(class="container")
         section(class="row")
             div( class="col-md-9 product-img")
-                img( src=`public/images/bikes/bike${product["id"]}.png` class="d-block product-img__bike " alt="bike")
+                img( src=`/public/images/bikes/bike${product.id}.png` class="d-block product-img__bike " alt="bike")
             div(class="col-md-3 product-info")
-                h2(class="subtitle product-info__elem") #{product["name"]}
-                p(class="p text price product-info__elem") #{product["cost"]}
+                h2(class="subtitle product-info__elem") #{product.name}
+                p(class="p text price product-info__elem") #{product.cost}
                 h4(class="text product-info__elem") Цвет:
                 p(class="text product-info__elem") #[b Рама:] 54” (Рост 175-185 см) #[br] #[b Доп. аксессуары]
                 div( class="row product-info__elem centering")
                     div( class="col-6")
-                        img( src="public/images/accessories/product2.png" alt="" class="w-100")
+                        img( src="/public/images/accessories/product2.png" alt="" class="w-100")
                         p(class="text") Шлем Octane #[br] 500 ₴
                         button( class="btn btn-second w-25 p-0 rounded-0") -
                     div( class="col-6")
-                        img( src="public/images/accessories/product1.png" alt="" style="width: 80%;")
+                        img( src="/public/images/accessories/product1.png" alt="" style="width: 80%;")
                         p(class="text") Защита Canyon #[br] 500 ₴
                         button( class="btn w-25 p-0 rounded-0") +
                 p(class="text product-info__elem") #[b Итого:] 12500₴
                 a(class="btn product-info__btn product-info__elem text" href="/cartCheckout") ЗАКАЗАТЬ
 include footer.pug
 include scripts.pug
-

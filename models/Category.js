@@ -8,6 +8,7 @@ module.exports = class Category {
         /** @type {String} */ this.name = props['name']
         /** @type {String} */ this.description = props['description']
         /** @type {Array<Good>} */ this.goods = []
+        /** @type {String}*/   this.image = props["image"]
     }
 }
 

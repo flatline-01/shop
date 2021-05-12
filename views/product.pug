@@ -4,22 +4,21 @@ main(class="mt-5 mb-5")
     div(class="container")
         section(class="row")
             div( class="col-md-9 product-img")
-                img( src=`/public/images/bikes/bike${product.id}.png` class="d-block product-img__bike " alt="bike")
+                img( src=`${product.image}` class="d-block product-img__bike " alt="bike")
             div(class="col-md-3 product-info")
                 h2(class="subtitle product-info__elem") #{product.name}
                 p(class="p text price product-info__elem") #{product.cost}
-                h4(class="text product-info__elem") Цвет:
-                p(class="text product-info__elem") #[b Рама:] 54” (Рост 175-185 см) #[br] #[b Доп. аксессуары]
-                div( class="row product-info__elem centering")
-                    div( class="col-6")
-                        img( src="/public/images/accessories/product2.png" alt="" class="w-100")
-                        p(class="text") Шлем Octane #[br] 500 ₴
-                        button( class="btn btn-second w-25 p-0 rounded-0") -
-                    div( class="col-6")
-                        img( src="/public/images/accessories/product1.png" alt="" style="width: 80%;")
-                        p(class="text") Защита Canyon #[br] 500 ₴
-                        button( class="btn w-25 p-0 rounded-0") +
-                p(class="text product-info__elem") #[b Итого:] 12500₴
-                a(class="btn product-info__btn product-info__elem text" href="/cartCheckout") ЗАКАЗАТЬ
+                p(class="text product-info__elem")
+                |#[b Color:]  #[span(class="available-color rounded-circle" style="background-color: #{product.color};")] #[br]
+                |#[b Frame:] #{product.frame} #[br]
+                |#[b Growth:] #{product.growth} #[br]
+                |#[b Wheel:] #{product.wheel} #[br]
+                button(class="btn product-info__elem text mt-4") Добавить в корзину
+                a(class="btn product-info__elem text mt-2" href="/cartCheckout") ЗАКАЗАТЬ
+        section(class="row")
+            div(class="col-md-6")
+                h3(class="subtitle") Описание
+                p(class="text") #{product.description}
+
 include footer.pug
 include scripts.pug

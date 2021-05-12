@@ -85,9 +85,6 @@ li {
 a {
   text-decoration: none;
 }
-a:hover {
-  background-color: #000000;
-}
 .bg-img {
   position: absolute;
   width: 100%;
@@ -157,6 +154,7 @@ a:hover {
   border: none;
   border-radius: 30px;
   width: 85%;
+  padding-left: 5%;
   box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
@@ -295,9 +293,6 @@ a:hover {
   height: 250px;
   filter: brightness(130%);
 }
-.row > * {
-  width: 0;
-}
 #center-block__img-bike {
   width: 30%;
   z-index: 2;
@@ -347,46 +342,11 @@ a:hover {
   padding: 3%;
   margin-left: 5%;
   border: 4px double #ffffff;
+  width: 10%;
 }
 .category-product {
   margin-top: 15%!important;
 }
-/*
-.bg-vector, .main{
- .bg-vector("../images/backgrounds/Vector (2).png");
-}
-#news__carousel-inner{
-  padding-left: 10%;
-  padding-right: 10%;
-}
-#article-img{
-  padding: 15%;
-  position: relative;
-  background:linear-gradient(0deg, rgba(255,255,255,0) 3%, rgba(0,0,0,0.6979166666666667) 65%), url("../images/news/news-elem1.jfif"), center, center, no-repeat;
-  background-size: cover;
-  &__text{
-    position: absolute;
-    top: 2%;
-    left: 2%;
-  }
-}
-
-//bike
-.other-models{
-  padding: 2%;
-  &__title{
-    text-align: center;
-  }
-  &__product-elem{
-    padding: 2%;
-  }
-}
-.bike, .accessory-img{
-  width: 100%;
-  &-2{
-    width: 80%;
-  }
-}*/
 .elem,
 .center-block__img {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);

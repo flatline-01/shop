@@ -18,4 +18,4 @@ app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', pagesRouter);
 
-
+//#{category.goods[`${value['id']}`]["name"]}

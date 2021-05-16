@@ -35,7 +35,7 @@ module.exports.getGoodById = async (goodId) => {
 module.exports.getGoodsByCategory = async (categoryId) => {
     try {
         const connection = database.getConnection();
-        let rows = await connection.query(`SELECT * FROM ${goodsTableName} where category = ? `,
+        let rows = await connection.query(`SELECT * FROM ${goodsTableName} where categoryId = ? `,
             [categoryId]);
 
         return !rows ? []

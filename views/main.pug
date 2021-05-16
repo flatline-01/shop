@@ -1,3 +1,167 @@
 include head.pug
-each value in goods
-    a(href=`/category/${value["id"]}`) #{value["name"]} #[br]
+include header-light.pug
+img(scr='/public/images/main-bg.jfif')
+div(class='container')
+    div(class='row left-block text-white g-0')
+        div(class='col-md-12')
+            h4 STREETSTER NATHAN #[br]
+            h1(class='title') Удобный и быстрый #[br] Твой идеал для покорения города
+            a(class='btn btn-second rounded-0 w-25 mt-4' href='#about') УЗНАТЬ БОЛЬШЕ
+main
+    img(src='/public/images/backgrounds/main-bg.png' class='bg-img')
+    div(class='container')
+        section(id='categories' class='row categories py-5')
+            h1(class='title') Категории
+            div(id='carouselExampleFade' class='carousel slide carousel-dark  carousel-fade' data-bs-ride='carousel')
+                div(class='carousel-inner')
+                    each value,index in goods
+                        if(index === 0)
+                            div(class='carousel-item active d-flex flex-column justify-content-center align-items-center p-4')
+                                img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
+                                div(class='slideContent')
+                                    img(src=`${value['image']}` class='w-50')
+                                    a(href=`/category/${value["id"]}` class='slide-elem-name  title mt-4') #{value['categoryName']} #[br]
+                        else
+                            div(class='carousel-item d-flex flex-column justify-content-center align-items-center p-4')
+                                img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
+                                div(class='slideContent')
+                                    img(src=`${value['image']}` class='w-50')
+                                    a(href=`/category/${value["id"]}` class='slide-elem-name title mt-4') #{value['categoryName']} #[br]
+                button(class='carousel-control-prev' data-bs-target='#carouselExampleFade' data-bs-slide='prev' type='button')
+                    span(class='carousel-control-prev-icon' aria-hidden='true')
+                    span(class='visually-hidden') Previous
+                button(class='carousel-control-next' data-bs-target='#carouselExampleFade' data-bs-slide='next' type='button')
+                    span(class='carousel-control-next-icon' aria-hidden='true')
+                    span(class='visually-hidden') Next
+        section(id='favorites' class='favorites py-5')
+            h1(class='title') Избранные товары
+            div(class='row  text-white mt-4')
+                div(class='col-sm-7 bg-black main-elem d-flex justify-content-between flex-column align-items-end p-4')
+                    div(class='text')
+                        h2(class='subtitle') Streetster Bakerstreet
+                        p скорость соедененная с удобством
+                    img(src='/public/images/bikes/bike2.png' alt='a bike' class='fbike')
+                    img(src='/public/images/icons/Subtract.png' alt='arrow' id='arrow-right' onclick='window.location.href = \'../first-category/index.html\';')
+                div(class='col-sm-5 px-5 d-flex justify-content-between flex-wrap')
+                    div(class='row w-100')
+                        div(class='col-sm-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center')
+                            img(src='/public/images/accessories/product2.png' alt='product' class='w-50 fproduct')
+                            p(class='text') Шлем Octane
+                        div(class='col-sm-5 offset-sm-1 bg-black p-4 d-flex flex-column justify-content-center align-items-center')
+                            img(src='/public/images/accessories/product1.png' alt='product' class='w-50 fproduct')
+                            p(class='text') Защита Canyon
+                    div(class='row w-100 my-1')
+                        div(class='col-sm-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center')
+                            img(src='/public/images/accessories/product1.png' alt='product' class='w-50 fproduct')
+                            p(class='text') Защита Canyon
+                        div(class='col-sm-5 offset-sm-1 bg-black p-4 d-flex flex-column justify-content-center align-items-center')
+                            img(src='/public/images/accessories/product2.png' alt='product' class='w-50 fproduct')
+                            p(class='text') Шлем Octane
+        section(class='row about py-5' id='about')
+            p(class='text') <b class="subtitle">STREETSTER</b> – Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                |sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                |Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. #[br]
+            p(class='text')
+                |Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                |Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollitanim id est laborum.
+        section(id='features' class='features py-5')
+            h1(class='title') Велосипеды Streetster это...
+            div(class='row pt-5')
+                div(class='col-md-4 features-card px-5')
+                    img(src='/public/images/features-img/feat3.png' alt='service icon' class='features-img')
+                    h3(class='subtitle') Простота обсуживания
+                    p(class='text') Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                div(class='col-md-4 features-card px-5')
+                    img(src='/public/images/features-img/feat1.png' alt='construction icon' class='features-img')
+                    h3(class='subtitle') Надежная конструкция
+                    p(class='text') Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                div(class='col-md-4 features-card px-5')
+                    img(src='/public/images/features-img/feat2.png' alt='details icon' class='features-img')
+                    h3(class='subtitle') Качественные детали
+                    p(class='text') Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        section(id='news' class='news text-center')
+            h1(class='title') Новости
+            div(id='carouselExampleControls2' class='carousel carousel-dark slide' data-bs-ride='carousel')
+                div(class='carousel-inner px-5')
+                    div(class='carousel-item active')
+                        div(class='row')
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    |Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    |sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                    div(class='carousel-item')
+                        div(class='row')
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                    div(class='carousel-item')
+                        div(class='row')
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                            article(class='col-md-4 news__elem')
+                                img(src='/public/images/news/news-elem1.jfif' class='news__elem-img news__elem-content' alt='img')
+                                h3(class='subtitle news__elem-content') Лучшие аксессуары для стрит байков
+                                p(class='text news__elem-content')
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    | sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+                                button(class='btn rounded-0 news__elem-content') ЧИТАТЬ
+                a(class='carousel-control-prev' href='#carouselExampleControls2' role='button' data-bs-slide='prev')
+                    span(class='carousel-control-prev-icon' aria-hidden='true')
+                    span(class='visually-hidden') Previous
+                a(class='carousel-control-next' href='#carouselExampleControls2' role='button' data-bs-slide='next')
+                    span(class='carousel-control-next-icon' aria-hidden='true')
+                    span(class='visually-hidden') Next
+        section(class='col-md-12 subscription')
+            form(class='subscription-form  d-flex flex-column justify-content-center align-items-center')
+                h2(class='subtitle') Подпишитесь на новостную рассылку
+                input(type='email' class='subscription-form__field' placeholder='Email')
+                button(class='btn btn-second rounded-0 subscription-form__btn') ПОДПИСАТЬСЯ
+include footer.pug
+include scripts.pug

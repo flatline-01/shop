@@ -6,7 +6,8 @@ module.exports = class Good {
     initialize (props) {
         /** @type {Number} */ this.id = props['id'] || null
         /** @type {String} */ this.name = props['name'] || null
-        /** @type {Number} */ this.category = props['category'] || null
+        /** @type {Number} */ this.categoryId = props['categoryId'] || null
+        /** @type {String} */ this.categoryName = props['categoryName'] || null
         /** @type {Number} */ this.cost = props['cost'] || null
         /** @type {String}*/  this.image = props['image'] || null
         /** @type {String}*/  this.description = props['description'] || null

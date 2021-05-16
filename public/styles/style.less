@@ -39,6 +39,14 @@
 .categories__carousel-item{
   clip-path: polygon(11% 0, 100% 0%, 89% 100%, 0% 100%);
 }
+
+.categorySliderElemBg{
+  width: 100%;
+  z-index: -1;
+}
+#categories{
+  margin-top: 15rem;
+}
 .product{
   width: 40%;
 }
@@ -52,10 +60,10 @@
   }
 }
 .news__elem{
-  padding: 2%;
+  padding: 6.5%;
   text-align: center;
   &-img{
-    width: 90%;
+    width: 100%;
     height: 30%;
   }
   &-content{
@@ -81,7 +89,7 @@
     &__field{
       border: 2px solid #000000;
       width: 60%;
-      margin: 3% 0;
+      margin: 5% 0;
       padding: 0.5% 1%;
       @media screen and( max-width: 770px) {
          & {
@@ -93,7 +101,7 @@
   }
 
 .center-block__img{
-  height: 250px;
+  height: 270px;
   filter: brightness(130%);
 }
 
@@ -121,12 +129,10 @@
 .product{
   border-bottom: #6d6d6d 3px solid;
   &-info{
-    padding: 2%;
-    &__btn{
-      width: 100%;
-    }
+    padding-left: 5%;
+    padding-right: 5%;
     &__elem{
-      margin-bottom: 4%;
+      margin-bottom: 6%;
     }
   }
   &-img{
@@ -146,12 +152,12 @@
   width: 10%;
 }
 .category-product{
-  margin-top: 15%!important;
+  margin-top: 25%;
 }
 
 //
-.elem,.center-block__img{
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+.categorySliderElemBg,.center-block__img{
+  clip-path: polygon(24% 0, 91% 0, 77% 100%, 8% 100%);
 }
 
 //media queries
@@ -169,9 +175,15 @@
   width: 100%;
   display: flex;
 }
-.elem{
-  background-size: contain;
-  text-transform: capitalize;
+.slideContent{
+  position: absolute;
+  padding: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-elem-name{
+  color: transparent;
   -webkit-text-stroke: 1px #ffff;
 }
 

@@ -2,6 +2,7 @@
 
 const express = require("express");
 const path    = require("path");
+const bodyParser = require('body-parser');
 
 // подключаем переменные из файла
 const dotenv = require('dotenv');
@@ -15,7 +16,8 @@ app.listen(3000);
 app.set("view engine","pug");
 
 app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/', pagesRouter);
 
-//#{category.goods[`${value['id']}`]["name"]}

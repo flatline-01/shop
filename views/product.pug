@@ -13,8 +13,8 @@ main(class="mt-5 mb-5")
                 |#[b Frame:] #{product.frame} #[br]
                 |#[b Growth:] #{product.growth} #[br]
                 |#[b Wheel:] #{product.wheel} #[br]
-                button(class="btn product-info__elem text mt-4") Добавить в корзину
-                a(class="btn product-info__elem text mt-2" href="/cartCheckout") ЗАКАЗАТЬ
+                button(class="btn product-info__elem text mt-4" id="addToCartBtn" data-product-id = product.id) Добавить в корзину
+                a(class="btn product-info__elem text mt-2" href="/order") ЗАКАЗАТЬ
         section(class="row")
             div(class="col-md-6")
                 h3(class="subtitle") Описание

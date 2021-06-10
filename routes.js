@@ -20,7 +20,10 @@ router.get('/product/:id', ProductController.singleProduct);
 router.get('/category/:id', CategoryController.singleCategory);
 
 /** Cart routes */
-router.get('/cartCheckout', CartController.checkout);
+router.post('/order', function (req, resp){
+    CartController.showCartContent(req, resp);
+});
 
+router.get('/order', CartController.orderPageRender);
 
 module.exports = router;

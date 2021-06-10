@@ -1,13 +1,13 @@
 'use strict'
 
-const cartIcon     = document.getElementById("cart");
+const cartIcon     = document.getElementById("cart-icon");
 const menuCartIcon = document.getElementById("menu-cart");
-const cartContent  = document.querySelector(".cart-content");
+const cart         = document.querySelector("#cart");
 const menuIcon     = document.querySelector(".menu-icon");
 const btnClose     = document.querySelector(".btn-close");
 const menu         = document.querySelector(".menu");
 
-cartIcon.addEventListener("mousemove",showCartContent);
+cartIcon.addEventListener("mousemove",showCart);
 menuIcon.addEventListener("click", showMenu);
 
 function hide(elem){
@@ -16,15 +16,15 @@ function hide(elem){
 function show(elem){
     elem.style.display = "block";
  }
- function showCartContent(){
-    show(cartContent);
-    cartContent.classList.add("showAnim");
-    cartContent.onmouseover = () => show(cartContent);
-    cartContent.onmouseout = () => hide(cartContent);
+ function showCart(){
+    show(cart);
+    cart.classList.add("showAnim");
+    cart.onmouseover = () => show(cart);
+    cart.onmouseout = () => hide(cart);
 }
 function showMenu(){
     show(menu);
     menu.classList.add("showAnim");
-    menuCartIcon.addEventListener("mousemove",showCartContent);
+    menuCartIcon.addEventListener("mousemove",showCart);
     btnClose.onclick = () => hide(menu);
 }

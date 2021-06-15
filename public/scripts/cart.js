@@ -31,14 +31,13 @@ async function  getProductInfo(){
         body: data
     });
     let result = await response.json();
-    if(!result.text){
+    
+    if(result.length !== 0){
         createSecondCartElem(result);
         createFirstCartElem(result);
 
     }
-    else{
-        output(result.text);
-    }
+    else output('Cart is empty');
 }
 
 function createFirstCartElem(serverAnswer){
@@ -51,7 +50,7 @@ function createFirstCartElem(serverAnswer){
         let cartElemText = `<p class='col-4 text'>${serverAnswer[i]['name']}<sup class='goods-count'>${cartData[serverAnswer[i]['id']]}</sup><br>${serverAnswer[i]['cost']}₴</p><hr>`;
         cartContent += `<div class='row d-flex justify-content-center align-items-center px-3'>${cartElemImg}${cartElemText}</div></div>`;
     }
-    checkNull(cart, `${goodsCount}${cartContent}${sum}${btn}`);
+    chengeElemText(cart, `${goodsCount}${cartContent}${sum}${btn}`);
 }
 function createSecondCartElem(serverAnswer){
 
@@ -67,9 +66,8 @@ function createSecondCartElem(serverAnswer){
         cartContent2 += `<div class='row d-flex justify-content-center align-items-center' data-product-id='${serverAnswer[i]['id']}'>${cartElemImg}${cartElemText}${btns}${cartElemPrice}<hr></div>`;
     }
 
-    checkNull(cart2, `${goodsCount}${cartContent2}${sum}${btns}`);
-    addGood();
-    removeGood();
+    chengeElemText(cart2, `${goodsCount}${cartContent2}${sum}${btns}`);
+    initializeCartListeners();
 }
 
 function updateLocalStorage(){
@@ -78,7 +76,7 @@ function updateLocalStorage(){
 function getCount(obj){
     return Object.keys(obj).reduce((sum,key) => sum+parseFloat(obj[key]),0);
 }
-function addGood(){
+function initializeOnProductAddListener(){
     const plus = document.getElementsByClassName('plus-btn');
     Array.from(plus).forEach(function(el){
         let parent = el.parentElement.parentElement;
@@ -87,7 +85,7 @@ function addGood(){
         }
     });
 }
-function removeGood() {
+function initializeOnProductDeleteListener() {
     const minus = document.getElementsByClassName('minus-btn');
     Array.from(minus).forEach(function (el) {
         let parent = el.parentElement.parentElement;
@@ -102,12 +100,16 @@ function removeGood() {
         }
     });
 }
+function initializeCartListeners(){
+    initializeOnProductAddListener();
+    initializeOnProductDeleteListener();
+}
 function output(str){
-    checkNull(cart2, str);
+    chengeElemText(cart2, str);
     cartIcon.setAttribute('title', str);
     menuCartIcon.setAttribute('title', str);
 }
-function checkNull(elem, data){
+function chengeElemText(elem, data){
     if(elem !== null) elem.innerHTML = data;
 }
 

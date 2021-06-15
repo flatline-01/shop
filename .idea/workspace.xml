@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/cart_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/cart_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/cart.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/cart.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/cart_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/cart_repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cart.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/cartCheckout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/order.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header-dark.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-dark.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header-light.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-light.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/cart_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/cart_service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +236,16 @@
       <workItem from="1623297598216" duration="472000" />
       <workItem from="1623302948383" duration="1772000" />
       <workItem from="1623304761739" duration="1502000" />
-      <workItem from="1623307403262" duration="952000" />
+      <workItem from="1623307403262" duration="1197000" />
+      <workItem from="1623573157939" duration="2758000" />
+      <workItem from="1623575990376" duration="1776000" />
+      <workItem from="1623577802592" duration="816000" />
+      <workItem from="1623601658545" duration="2168000" />
+      <workItem from="1623604054113" duration="487000" />
+      <workItem from="1623743153819" duration="54000" />
+      <workItem from="1623749822671" duration="991000" />
+      <workItem from="1623751657319" duration="743000" />
+      <workItem from="1623753885161" duration="1880000" />
     </task>
     <servers />
   </component>

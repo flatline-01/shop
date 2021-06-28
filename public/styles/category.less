@@ -1,0 +1,36 @@
+.category-page-block{
+  .centered-flex();
+  z-index: -1;
+  height: 100vh;
+  background-size: cover;
+  &__image{
+    position: relative;
+    .centered-flex();
+    @media screen and (max-width: 760px){
+      margin-top: 30%;
+    }
+    @media screen and (min-width: 760px) and (min-height: 1000px){
+      width: 100%;
+      margin-top: 10%;
+    }
+  }
+  &__text{
+    @media screen and (min-width: 760px) and (min-height: 1000px){
+      width: 100%;
+      font-size: 1.8em;
+    }
+    @media screen and (max-width: 1030px){
+      text-align: center;
+    }
+  }
+}
+.bg-image{
+  width: 100%;
+  filter: brightness(150%);
+  clip-path: polygon(45% 0, 85% 0, 70% 100%, 30% 100%);
+}
+.bike-image{
+  position: absolute;
+  width: 70%;
+  z-index: 2;
+}

@@ -43,7 +43,7 @@ async function  getProductInfo(){
 function createFirstCartElem(serverAnswer){
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
-    let btn = `<a class='btn btn-second rounded-0 w-100' id='btn-order' href='/order'>ЗАКАЗАТЬ</a>`
+    let btn = `<a class='rounded-0 menu__btn' href='/order'>ЗАКАЗАТЬ</a>`
     let cartContent = '';
     for(let i in serverAnswer){
         let cartElemImg = `<div class='col-5'><img src=${serverAnswer[i]['image']} alt='bike' class='w-100'></div>`;
@@ -57,7 +57,7 @@ function createSecondCartElem(serverAnswer){
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
     let cartContent2 = '';
-    let btns = `<div  class='row'><div class='col-sm-12 col-md-6'><button class='btn rounded-0'>ПРОДОЛЖИТЬ ПОКУПКИ</button></div><div class='col-sm-12 col-md-6'><button class='btn rounded-0'>ОФОРМИТЬ ЗАКАЗ</button></div></div>`
+    let btns = `<div  class='row p-4 text-center'><div class='col-sm-12 col-md-6'><button class='btn-black mt-3 rounded-0'>ПРОДОЛЖИТЬ ПОКУПКИ</button></div><div class='col-sm-12 col-md-6'><button class='btn-black mt-3 rounded-0'>ОФОРМИТЬ ЗАКАЗ</button></div></div>`
     for(let i in serverAnswer){
         let cartElemImg = `<div class='col-3 pb-2'><img src=${serverAnswer[i]['image']} alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-3 text pb-2'><b>${serverAnswer[i]['name']}</b><br> Рама: ${serverAnswer[i]['frame']}</p>`;
@@ -114,7 +114,7 @@ function chengeElemText(elem, data){
 }
 
 function createCartElem(serverAnswer){
-    let goodsCount = `<h3 class='subtitle mb-3 sum-goods-count'><b>В корзине ${getCount(cartData)} товаров</b></h3>`;
+    let goodsCount = `<h3 class='smaller-title mb-3 sum-goods-count'><b>В корзине ${getCount(cartData)} товаров</b></h3>`;
     let sum = `<p class='sum-goods-prices'>`;
     let prices = [];
     for(let i = 0; i < serverAnswer.length; i++){

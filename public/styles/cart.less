@@ -1,6 +1,14 @@
 #cart{
-    right: 20%;
+  margin-right: 10%;
+  width: 30%;
+  @media screen and (width: 768px){
+    width: 35%;
   }
+  @media screen and (max-width: 700px){
+    width: 95%;
+    margin-right: 0;
+  }
+}
   .showAnim {
     display: block;
     transform: scale(1);
@@ -27,3 +35,14 @@
       transform: scale(1);
     }
   }
+.goods-count{
+  background-color: @red-color;
+  color: lighten(@red-color, 60%);
+  padding: 0 5%;
+  border-radius: 100%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+}
+.sum-goods-prices{
+  margin-left: 55%;
+}

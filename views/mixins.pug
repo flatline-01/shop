@@ -16,3 +16,15 @@ mixin footerInfo
                 a(href='#about') О нас #[br]
             li
                 a(href='#') Контакты
+mixin featuresCard(link, title, text)
+    div(class='col-md-4 features-card px-5')
+        img(src=link alt='service icon' class='features-img')
+        h3(class='smaller-title')=title
+        p(class='text')=text
+mixin news(link, title, text)
+    article(class='col-md-4 news-elem')
+        img(src=link class='news-elem__content news-elem__img' alt='img')
+        h3(class='smaller-title news__elem-content')=title
+        p(class='small-text news__elem-content')=text
+        button(class='btn-white rounded-0 news-elem__content news-elem__btn') ЧИТАТЬ
+

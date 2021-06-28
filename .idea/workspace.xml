@@ -5,12 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/styles/category.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/header.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/main-page.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/product.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/cart_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/cart_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/backgrounds/main-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/backgrounds/main-bg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/cart_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/cart_repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/cart_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/cart_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/cart.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/cart.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/footer.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/footer.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/general.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/search.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/search.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/vars.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/vars.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/card.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/card.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/cart.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/cart.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/category.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/category.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/head.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/head.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-dark.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-dark.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-light.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-light.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/mixins.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/mixins.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/order.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/order.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +45,7 @@
       <list>
         <option value="Pug File" />
         <option value="JavaScript File" />
+        <option value="Less File" />
       </list>
     </option>
   </component>
@@ -41,6 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
@@ -246,11 +271,55 @@
       <workItem from="1623749822671" duration="991000" />
       <workItem from="1623751657319" duration="743000" />
       <workItem from="1623753885161" duration="1880000" />
+      <workItem from="1623755800844" duration="911000" />
+      <workItem from="1623834459078" duration="9000" />
+      <workItem from="1624364700454" duration="1479000" />
+      <workItem from="1624367325616" duration="1592000" />
+      <workItem from="1624369234237" duration="1029000" />
+      <workItem from="1624372626120" duration="1153000" />
+      <workItem from="1624375133092" duration="27000" />
+      <workItem from="1624413675587" duration="2871000" />
+      <workItem from="1624438199739" duration="1771000" />
+      <workItem from="1624440007361" duration="415000" />
+      <workItem from="1624462534966" duration="817000" />
+      <workItem from="1624464340758" duration="1776000" />
+      <workItem from="1624466149916" duration="1802000" />
+      <workItem from="1624467983586" duration="1931000" />
+      <workItem from="1624470042308" duration="1885000" />
+      <workItem from="1624471962063" duration="1775000" />
+      <workItem from="1624473767685" duration="1775000" />
+      <workItem from="1624475574532" duration="1008000" />
+      <workItem from="1624508406076" duration="9000" />
+      <workItem from="1624859142140" duration="1762000" />
+      <workItem from="1624860936915" duration="2249000" />
+      <workItem from="1624864125665" duration="1770000" />
+      <workItem from="1624865933203" duration="1622000" />
+      <workItem from="1624868145957" duration="2078000" />
+      <workItem from="1624870258504" duration="1443000" />
+      <workItem from="1624884710315" duration="1851000" />
+      <workItem from="1624886597691" duration="1032000" />
+      <workItem from="1624888667064" duration="470000" />
+      <workItem from="1624891210762" duration="1862000" />
+      <workItem from="1624893102039" duration="1587000" />
+      <workItem from="1624896717522" duration="1770000" />
+      <workItem from="1624898874967" duration="816000" />
     </task>
+    <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
+      <created>1623756574689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623756574689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618588632622">
@@ -265,14 +334,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1620010775017" />
+    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1623756571998">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1623756571998" />
     <state x="352" y="142" key="EditFileWatcherDialog" timestamp="1618588242473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588242473" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1622717620283">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1624508412297">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1622717620283" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1624508412297" />
     <state width="1345" height="429" key="GridCell.Tab.0.bottom" timestamp="1618749372835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -297,10 +370,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1620739096736" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1620743104813">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1624439442546">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1620743104813" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1624439442546" />
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1622022477205">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -317,9 +390,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="475" y="223" key="scopes/0.0.1366.728@0.0.1366.728" timestamp="1620738291016" />
-    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1623294539350">
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1624859385727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1623294539350" />
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1624859385727" />
   </component>
 </project>

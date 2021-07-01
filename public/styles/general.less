@@ -41,12 +41,21 @@
 .bg-black{
   background-color: @black-color;
 }
-input{
+input, select{
+    border-radius: 0;
+    border: 2px solid @black-color;
     padding-left: 2%;
     &:focus{
       outline: none;
       box-shadow: none;
     }
+}
+
+input:not([disabled]):not([type='submit']):not([class='search-form__input']):valid, select:valid{
+  border: 2px solid @black-color;
+}
+input:not([disabled]):not([type='submit']):not([class='search-form__input']):invalid, select:invalid{
+  border: 2px solid @red-color;
 }
 ul, ol{
   padding-left: 0;
@@ -111,4 +120,8 @@ hr{
   margin-left: 5%;
   border: 4px double @white-color;
   width: 10%;
+}
+
+#orderBtn{
+  width: 70%;
 }

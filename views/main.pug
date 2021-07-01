@@ -90,7 +90,7 @@ main
         section(class='col-md-12 subscription my-5')
             form(class='subscription-form  d-flex flex-column justify-content-center align-items-center')
                 h2(class='small-title') Подпишитесь на новостную рассылку
-                input(type='email' class='subscription-form__field' placeholder='e-mail')
+                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='yourE-mail@gmail.com')
                 button(class='btn-black rounded-0 subscription-form__btn') ПОДПИСАТЬСЯ
 include footer.pug
 include scripts.pug

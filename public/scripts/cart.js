@@ -1,3 +1,4 @@
+'use strict'
 let cartData = {}
 
 const addToCartBtn = document.getElementById('addToCartBtn');
@@ -22,7 +23,7 @@ async function addToCart(){
 async function  getProductInfo(){
     updateLocalStorage();
     let data = JSON.stringify({key: Object.keys((cartData))});
-    let response = await fetch('/order', {
+    let response = await fetch('/cart', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -57,7 +58,6 @@ function createSecondCartElem(serverAnswer){
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
     let cartContent2 = '';
-    let btns = `<div  class='row p-4 text-center'><div class='col-sm-12 col-md-6'><button class='btn-black mt-3 rounded-0'>ПРОДОЛЖИТЬ ПОКУПКИ</button></div><div class='col-sm-12 col-md-6'><button class='btn-black mt-3 rounded-0'>ОФОРМИТЬ ЗАКАЗ</button></div></div>`
     for(let i in serverAnswer){
         let cartElemImg = `<div class='col-3 pb-2'><img src=${serverAnswer[i]['image']} alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-3 text pb-2'><b>${serverAnswer[i]['name']}</b><br> Рама: ${serverAnswer[i]['frame']}</p>`;
@@ -66,7 +66,7 @@ function createSecondCartElem(serverAnswer){
         cartContent2 += `<div class='row d-flex justify-content-center align-items-center' data-product-id='${serverAnswer[i]['id']}'>${cartElemImg}${cartElemText}${btns}${cartElemPrice}<hr></div>`;
     }
 
-    chengeElemText(cart2, `${goodsCount}${cartContent2}${sum}${btns}`);
+    chengeElemText(cart2, `${goodsCount}${cartContent2}${sum}`);
     initializeCartListeners();
 }
 

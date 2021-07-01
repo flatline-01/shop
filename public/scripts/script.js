@@ -1,5 +1,4 @@
 'use strict'
-
 const cartIcon     = document.getElementById("cart-icon");
 const menuCartIcon = document.getElementById("menu-cart");
 const cart         = document.querySelector("#cart");

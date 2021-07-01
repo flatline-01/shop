@@ -45,12 +45,24 @@
 .bg-black {
   background-color: #000000;
 }
-input {
+input,
+select {
+  border-radius: 0;
+  border: 2px solid #000000;
   padding-left: 2%;
 }
-input:focus {
+input:focus,
+select:focus {
   outline: none;
   box-shadow: none;
+}
+input:not([disabled]):not([type='submit']):not([class='search-form__input']):valid,
+select:valid {
+  border: 2px solid #000000;
+}
+input:not([disabled]):not([type='submit']):not([class='search-form__input']):invalid,
+select:invalid {
+  border: 2px solid #ca1414;
 }
 ul,
 ol {
@@ -129,6 +141,9 @@ hr {
   margin-left: 5%;
   border: 4px double #ffffff;
   width: 10%;
+}
+#orderBtn {
+  width: 70%;
 }
 .menu-icon {
   width: 15%;
@@ -214,6 +229,11 @@ hr {
 }
 .sum-goods-prices {
   margin-left: 55%;
+}
+@media screen and (max-width: 770px) {
+  .sum-goods-prices {
+    margin: 0;
+  }
 }
 .search-form {
   position: relative;

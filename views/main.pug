@@ -11,19 +11,19 @@ main
             h1(class='title') Категории
             div(id='carouselExampleFade' class='carousel slide carousel-dark  carousel-fade' data-bs-ride='carousel')
                 div(class='carousel-inner')
-                    each value,index in goods
+                    each value,index in categories
                         if(index === 0)
                             div(class='carousel-item active d-flex flex-column justify-content-center align-items-center p-4')
                                 img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
                                 div(class='slideContent')
-                                    img(src=`${value['image']}` class='w-50')
-                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['categoryName']} #[br]
+                                    img(src=`${value.goods[0].image}` class='w-50')
+                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
                         else
                             div(class='carousel-item d-flex flex-column justify-content-center align-items-center p-4')
                                 img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
                                 div(class='slideContent')
-                                    img(src=`${value['image']}` class='w-50')
-                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['categoryName']} #[br]
+                                    img(src=`${value.goods[0].image}` class='w-50')
+                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
                 button(class='carousel-control-prev' data-bs-target='#carouselExampleFade' data-bs-slide='prev' type='button')
                     span(class='carousel-control-prev-icon' aria-hidden='true')
                     span(class='visually-hidden') Previous

@@ -7,3 +7,6 @@ module.exports.checkCategoryId = async (id) => {
 module.exports.checkCategoryGoods = async (id) => {
     return await goodRepository.getGoodsByCategory(id);
 }
+module.exports.checkCategories = async () => {
+    return await categoryRepository.getAllCategories();
+}

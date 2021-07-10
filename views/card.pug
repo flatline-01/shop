@@ -1,11 +1,12 @@
 include mixins.pug
-div(class='row category-product py-3 border-bottom border-2 border-dark g-0')
-    div(class='col-sm-12 col-md-4 product-info')
-        h2(class='small-title product-info__elem') #{category.goods[0]['name']}
-        h3(class='smaller-title price product-info__elem') #{category.goods[0]['cost']} ₴
-        p(class='small-text') #{category.goods[0]['description']}
-        h4(class="text product-info__elem") #[strong Доступно в цветах:]
-        a(class='btn product-info__elem text rounded-0 border border-dark border-3' href=`/product/${category.goods[0]['id']}`) ПОДРОБНЕЕ
-    div(class='col-sm-12 col-md-8 product-img p-3')
-        img(class='d-block product-img__bike w-100' src=`/public/images/bikes/bike${category.goods[0]['id']}.png`)
-    hr
+each value in category.goods
+    div(class='row category-product py-3 g-0')
+        div(class='col-sm-12 col-md-4 product-info')
+            h2(class='small-title product-info__elem') #{value['name']}
+            h3(class='smaller-title price product-info__elem') #{value['cost']} ₴
+            p(class='small-text') #{value['description']}
+            h4(class="text product-info__elem") #[strong Доступно в цветах:]
+            a(class='btn product-info__elem text rounded-0 border border-dark border-3' href=`/product/${value['id']}`) ПОДРОБНЕЕ
+        div(class='col-sm-12 col-md-8 product-img p-3')
+            img(class='d-block product-img__bike w-100' src=`/public/images/bikes/bike${value['id']}.png`)
+        hr

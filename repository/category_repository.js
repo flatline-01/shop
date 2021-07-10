@@ -16,3 +16,14 @@ module.exports.getCategoryById = async (categoryId) => {
         throw new Error('Unable to fetch category');
     }
 }
+module.exports.getAllCategories = async () => {
+    try {
+        const connection = database.getConnection();
+        let rows = await connection.query(`SELECT * FROM ${categoriesTableName}`);
+        return !rows ? []
+            : rows.map((row) => { return new Category(row) });
+
+    } catch (e) {
+        throw new Error('Unable to fetch category');
+    }
+}

@@ -1,9 +1,12 @@
-const goodRepository = require("../repository/good_repository")
+const categoryService = require("../services/category_service");
 
 exports.homePage = async (req, resp) => {
-    // Вот тут надо обрабатывать ошибки и отдавать на клиент красивую страницу с описанием типа "Упс.. мы сломались"
-    const goods = await goodRepository.getAllGoods()
-    resp.render('main.pug', {
-        goods: goods
-    });
+    let categories = await categoryService.checkCategories();
+
+    for(let i = 0; i < categories.length; i++){
+        let category = categories[i];
+
+        category.goods = await categoryService.checkCategoryGoods(i+1);
+    }
+    resp.render('main.pug', { categories});
 };

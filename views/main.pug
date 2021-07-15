@@ -68,19 +68,22 @@ main
                 +featuresCard('/public/images/features-img/feat1.png', 'Надежная конструкция', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
                 +featuresCard('/public/images/features-img/feat2.png', 'Качественные детали', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
         section(id='news' class='news text-center')
-            h1(class='title') Новости
+            a(class='title' href='/news') Новости
             div(id='carouselExampleControls2' class='carousel carousel-dark slide' data-bs-ride='carousel')
                 div(class='carousel-inner px-5')
                     div(class='carousel-item active')
                         div(class='row')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
-                    div(class='carousel-item')
-                        div(class='row')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
-                            +news('/public/images/news/news-elem1.jfif', 'Лучшие аксессуары для стрит байков', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...')
+                            - for(let i = 0; i < 3; i += 3)
+                                +news(news[news.length - 1].image, news[news.length - 1].title, news[news.length - 1].text, news[news.length - 1].id)
+                                +news(news[news.length - 2].image, news[news.length - 2].title, news[news.length - 2].text, news[news.length - 2].id)
+                                +news(news[news.length - 3].image, news[news.length - 3].title, news[news.length - 3].text, news[news.length - 3].id)
+                        - news.pop()
+                        - news.pop()
+                        - news.pop()
+                    if news.length > 0
+                        div(class='carousel-item')
+                            - for(let i = 0; i <= news.length; i += 3)
+                                +news(news[news.length - 1].image, news[news.length - 1].title, news[news.length - 1].text, news[news.length - 1].id)
                 a(class='carousel-control-prev' href='#carouselExampleControls2' role='button' data-bs-slide='prev')
                     span(class='carousel-control-prev-icon' aria-hidden='true')
                     span(class='visually-hidden') Previous
@@ -88,9 +91,9 @@ main
                     span(class='carousel-control-next-icon' aria-hidden='true')
                     span(class='visually-hidden') Next
         section(class='col-md-12 subscription my-5')
-            form(class='subscription-form  d-flex flex-column justify-content-center align-items-center')
+            form(class='subscription-form  d-flex flex-column justify-content-center align-items-center' name='subscription-form' action='/subscribe')
                 h2(class='small-title') Подпишитесь на новостную рассылку
-                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='yourE-mail@gmail.com')
-                button(class='btn-black rounded-0 subscription-form__btn') ПОДПИСАТЬСЯ
+                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='your e-mail@gmail.com' name='subscription-form__email')
+                input(class='btn-black rounded-0 subscription-form__btn' type='submit' value='ПОДПИСАТЬСЯ' name='subscription-form__submit')
 include footer.pug
 include scripts.pug

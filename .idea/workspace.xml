@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="">
+    <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
+      <change afterPath="$PROJECT_DIR$/controllers/news_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/News.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/newsSub.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/news.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/news_repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/news_service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/news-article.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/home_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/home_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/category_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/category_repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/category_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/category_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/card.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/card.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/general.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/mixins.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/mixins.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Pug File" />
         <option value="Less File" />
+        <option value="Pug File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -348,6 +361,36 @@
       <workItem from="1625849928316" duration="23000" />
       <workItem from="1625897754046" duration="808000" />
       <workItem from="1625898584813" duration="352000" />
+      <workItem from="1625902263839" duration="554000" />
+      <workItem from="1626095820364" duration="610000" />
+      <workItem from="1626102073419" duration="1953000" />
+      <workItem from="1626104121427" duration="1783000" />
+      <workItem from="1626105931552" duration="1775000" />
+      <workItem from="1626107740112" duration="1777000" />
+      <workItem from="1626109546844" duration="790000" />
+      <workItem from="1626188361949" duration="1780000" />
+      <workItem from="1626190179259" duration="1780000" />
+      <workItem from="1626191996125" duration="1828000" />
+      <workItem from="1626193857967" duration="1774000" />
+      <workItem from="1626195665730" duration="1943000" />
+      <workItem from="1626197664633" duration="1782000" />
+      <workItem from="1626199477892" duration="973000" />
+      <workItem from="1626216791643" duration="12000" />
+      <workItem from="1626270778104" duration="1742000" />
+      <workItem from="1626272597144" duration="1778000" />
+      <workItem from="1626274406943" duration="1776000" />
+      <workItem from="1626276215436" duration="1307000" />
+      <workItem from="1626278038811" duration="1810000" />
+      <workItem from="1626279889519" duration="2001000" />
+      <workItem from="1626281924439" duration="2205000" />
+      <workItem from="1626284162435" duration="1163000" />
+      <workItem from="1626286159470" duration="1314000" />
+      <workItem from="1626287898461" duration="728000" />
+      <workItem from="1626289789552" duration="585000" />
+      <workItem from="1626323746207" duration="1814000" />
+      <workItem from="1626325808640" duration="1774000" />
+      <workItem from="1626327619275" duration="1500000" />
+      <workItem from="1626329428183" duration="715000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>
@@ -356,7 +399,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623756574689</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ref(categories): change getting category slider items">
+      <created>1625902650035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1625902650035</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +414,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions" />
+    <MESSAGE value="ref(categories): change getting category slider items" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref(categories): change getting category slider items" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618588632622">
@@ -379,18 +430,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1620010775017" />
-    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1623756571998">
+    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1626194088035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1623756571998" />
+    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1626194088035" />
     <state x="352" y="142" key="EditFileWatcherDialog" timestamp="1618588242473">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588242473" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1625849948983">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1626216801291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1625849948983" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1626216801291" />
     <state width="1345" height="429" key="GridCell.Tab.0.bottom" timestamp="1618749372835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -415,18 +466,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1620739096736" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1624900167511">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1625902657648">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1624900167511" />
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1622022477205">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1625902657648" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1626329415338">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1622022477205" />
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620625537439">
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1626329415338" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626196893478">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1620625537439" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1626196893478" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1625119465900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

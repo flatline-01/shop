@@ -1,4 +1,5 @@
 const categoryService = require("../services/category_service");
+const newsService = require('../services/news_service');
 
 exports.homePage = async (req, resp) => {
     let categories = await categoryService.checkCategories();
@@ -8,5 +9,6 @@ exports.homePage = async (req, resp) => {
 
         category.goods = await categoryService.checkCategoryGoods(i+1);
     }
-    resp.render('main.pug', { categories});
+    let news = await newsService.checkNews();
+    resp.render('main.pug', { categories, news });
 };

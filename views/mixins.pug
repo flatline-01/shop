@@ -21,10 +21,10 @@ mixin featuresCard(link, title, text)
         img(src=link alt='service icon' class='features-img')
         h3(class='smaller-title')=title
         p(class='text')=text
-mixin news(link, title, text)
+mixin news(link, title, text, id)
     article(class='col-md-4 news-elem')
         img(src=link class='news-elem__content news-elem__img' alt='img')
         h3(class='smaller-title news__elem-content')=title
-        p(class='small-text news__elem-content')=text
-        button(class='btn-white rounded-0 news-elem__content news-elem__btn') ЧИТАТЬ
+        p(class='small-text news__elem-content news-card__text')=text
+        a(class='btn-white rounded-0 news-elem__content news-elem__btn' href=`/news/${id}`) ЧИТАТЬ
 

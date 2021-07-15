@@ -145,6 +145,16 @@ hr {
 #orderBtn {
   width: 70%;
 }
+.bg-img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+a {
+  color: #000000;
+}
 .menu-icon {
   width: 15%;
   margin-left: 15%;
@@ -162,9 +172,6 @@ hr {
     width: 5%;
     margin-left: 5%;
   }
-}
-.menu a {
-  color: #000000;
 }
 .menu__btn {
   position: absolute;
@@ -477,5 +484,33 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.news {
+  margin-top: 10%;
+}
+.article-block {
+  position: relative;
+  display: inline-block;
+}
+.article-block__title {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+.article-block__img {
+  background-size: 50%;
+  height: 45vh;
+  object-fit: cover;
+  display: block;
+}
+.article-block::after {
+  content: '';
+  position: absolute;
+  left: 1%;
+  top: 0;
+  width: 98%;
+  height: 100%;
+  display: inline-block;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);
 }
 /*# sourceMappingURL=style.css.map */

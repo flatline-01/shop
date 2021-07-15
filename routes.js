@@ -10,6 +10,7 @@ const ProductController = require('./controllers/product_controller');
 const CategoryController = require('./controllers/category_controller');
 const CartController = require('./controllers/cart_controller');
 const OrderController = require('./controllers/order_controller');
+const NewsController = require('./controllers/news_controller.js');
 
 /** Main routes */
 router.get('/', HomeController.homePage);
@@ -28,5 +29,14 @@ router.get('/cart', CartController.orderPageRender);
 router.get('/order', OrderController.orderPageRender);
 
 router.post('/order', (req, resp) => OrderController.getData(req, resp));
+
+/** News routes **/
+router.get('/news', (req, resp) => NewsController.getAllNews(req, resp));
+
+router.get('/news/:id', (req, resp) => NewsController.getSingleNews(req, resp));
+
+router.get('/subscribe', (req, resp) => HomeController.homePage(req, resp));
+
+router.post('/subscribe', (req, resp) => NewsController.createSubscribe(req, resp));
 
 module.exports = router;

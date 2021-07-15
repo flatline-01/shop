@@ -1,0 +1,26 @@
+.news{
+  margin-top: 10%;
+}
+.article-block{
+  position: relative;
+  display:inline-block;
+  &__title{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+  }
+  &__img{
+    background-size: 50%;
+    height: 45vh;
+    object-fit: cover;
+    display: block;
+  }
+}
+.article-block::after{
+  content:'';
+  position:absolute;
+  left:1%; top:0;
+  width:98%; height:100%;
+  display:inline-block;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);
+}

@@ -10,4 +10,6 @@ main
             p(class='text') #{category.description}
     include card.pug
 include footer.pug
+script.
+    let categoryGoods = !{JSON.stringify(category.goods)};
 include scripts.pug

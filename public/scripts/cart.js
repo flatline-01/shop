@@ -32,7 +32,7 @@ async function  getProductInfo(){
         body: data
     });
     let result = await response.json();
-    
+
     if(result.length !== 0){
         createSecondCartElem(result);
         createFirstCartElem(result);
@@ -44,10 +44,10 @@ async function  getProductInfo(){
 function createFirstCartElem(serverAnswer){
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
-    let btn = `<a class='rounded-0 menu__btn' href='/order'>ЗАКАЗАТЬ</a>`
+    let btn = `<a class='rounded-0 menu__btn' href='/cart'>ЗАКАЗАТЬ</a>`
     let cartContent = '';
     for(let i in serverAnswer){
-        let cartElemImg = `<div class='col-5'><img src=${serverAnswer[i]['image']} alt='bike' class='w-100'></div>`;
+        let cartElemImg = `<div class='col-5'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-4 text'>${serverAnswer[i]['name']}<sup class='goods-count'>${cartData[serverAnswer[i]['id']]}</sup><br>${serverAnswer[i]['cost']}₴</p><hr>`;
         cartContent += `<div class='row d-flex justify-content-center align-items-center px-3'>${cartElemImg}${cartElemText}</div></div>`;
     }
@@ -59,7 +59,7 @@ function createSecondCartElem(serverAnswer){
 
     let cartContent2 = '';
     for(let i in serverAnswer){
-        let cartElemImg = `<div class='col-3 pb-2'><img src=${serverAnswer[i]['image']} alt='bike' class='w-100'></div>`;
+        let cartElemImg = `<div class='col-3 pb-2'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-3 text pb-2'><b>${serverAnswer[i]['name']}</b><br> Рама: ${serverAnswer[i]['frame']}</p>`;
         let btns = `<div class='col-3 text pb-2'> <span class='minus-btn'>-</span> <span class='bg-black py-1 px-2 text-white'>${cartData[serverAnswer[i]['id']]}</span> <span class='plus-btn'>+</span></div>`
         let cartElemPrice = `<div class='col-3 pb-2'><p class="text">${serverAnswer[i]['cost']}₴</p></div>`

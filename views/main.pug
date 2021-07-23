@@ -16,13 +16,13 @@ main
                             div(class='carousel-item active d-flex flex-column justify-content-center align-items-center p-4')
                                 img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
                                 div(class='slideContent')
-                                    img(src=`${value.goods[0].image}` class='w-50')
+                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
                                     a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
                         else
                             div(class='carousel-item d-flex flex-column justify-content-center align-items-center p-4')
                                 img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
                                 div(class='slideContent')
-                                    img(src=`${value.goods[0].image}` class='w-50')
+                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
                                     a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
                 button(class='carousel-control-prev' data-bs-target='#carouselExampleFade' data-bs-slide='prev' type='button')
                     span(class='carousel-control-prev-icon' aria-hidden='true')

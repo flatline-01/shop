@@ -3,16 +3,21 @@ include header-dark.pug
 main(class='product-page')
     div(class='container')
         section(class='row')
-            div( class='col-md-8 px-4 py-2')
-                img( src=`${product.image}` class='d-block product-img__bike w-100' alt='bike')
+            div( class='col-md-8 px-4 py-2 carousel carousel-dark slide' id='product-images' data-bs-ride='carousel')
             div(class='col-md-4 product-info')
                 h2(class='small-title product-info__elem') #{product.name}
                 h3(class='smaller-title price product-info__elem') #{product.cost}$
-                p(class='large-text product-info__elem')
-                    |#[b Color:]  #[span(class="available-color rounded-circle" style="background-color: #{product.color};")] #[br]
-                    |#[b Frame:] #{product.frame} #[br]
-                    |#[b Growth:] #{product.growth} #[br]
-                    |#[b Wheel:] #{product.wheel} #[br]
+                ul(class='large-text product-info__elem')
+                    li
+                        p(id='product-color-name')
+                        ul(class='d-flex mb-4' id='colors-list')
+                            each item, index in product.images
+                                if(index === 0)
+                                    li(style={background: `${item.color}`} class='product-info__elem-color product-info__elem-color_selected')
+                                else
+                                    li(style={background: `${item.color}`} class='product-info__elem-color')
+                    li #[b Frame:] #{product.frame} (Growth #{product.growth}) #[br]
+                    li #[b Wheel:] #{product.wheel} #[br]
                 button(class='btn-black product-info__elem mt-4' id='addToCartBtn' data-product-id = product.id) Добавить в корзину
                 a(class='btn-black product-info__elem mt-2' href='/order' id='orderAProduct') ЗАКАЗАТЬ
         section(class='row')
@@ -20,4 +25,7 @@ main(class='product-page')
                 h3(class='smaller-title') Description
                 p(class='text') #{product.description}
 include footer.pug
+script.
+    let productData = !{JSON.stringify(product)};
+    let categoryGoods = null;
 include scripts.pug

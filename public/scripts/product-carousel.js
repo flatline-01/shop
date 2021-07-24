@@ -2,12 +2,12 @@ const productImages = document.getElementById('product-images');
 let productColorsList = document.getElementById('colors-list');
 const productColorName = document.getElementById('product-color-name');
 const productImagesInCategory = document.getElementsByClassName('product-images');
+let productCarouselIndicators = document.getElementsByClassName('carousel-indicators');
 
-let carouselItems = null;
+let carouselItems = [];
 
-let arr = [];
-
-if(productImagesInCategory &&  categoryGoods !== null){
+if(productImagesInCategory &&  categoryGoods !== null && productCarouselIndicators){
+    productCarouselIndicators = [...productCarouselIndicators];
     for(let i = 0; i < categoryGoods.length; i++){
         let carouselItem = '';
         for(let j = 0; j < categoryGoods[i].images.length; j++){
@@ -16,18 +16,20 @@ if(productImagesInCategory &&  categoryGoods !== null){
                         <div class='carousel-item active'>
                             <img src='/images/bikes/${categoryGoods[i].images[j].images.split(',')[0]}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
+                productCarouselIndicators[i].innerHTML += `<button type='button' data-bs-target='#product-images${categoryGoods[i].id}' data-bs-slide-to='${j}' class='active' aria-current='true' aria-label='Slide ${j}'></button>`;
             }
             else{
                 carouselItem += `
                         <div class='carousel-item'>
                             <img src='/images/bikes/${categoryGoods[i].images[j].images.split(',')[0]}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
+                productCarouselIndicators[i].innerHTML += `<button type='button' data-bs-target='#product-images${categoryGoods[i].id}' data-bs-slide-to='${j}' aria-label='Slide ${j}'></button>`;
             }
         }
-        arr.push(carouselItem);
+        carouselItems.push(carouselItem);
     }
     for(let i = 0; i < productImagesInCategory.length; i++){
-        productImagesInCategory[i].innerHTML = arr[i];
+        productImagesInCategory[i].innerHTML = carouselItems[i];
     }
 }
 
@@ -58,6 +60,7 @@ function changeActiveClass(e){
 
 function createCarousel(color){
     for(let item of productData.images){
+        let indicators = '';
         if(item.color === color){
             productColorName.innerHTML = `<b>Color:</b> ${color}<br>`;
             let images = item.images.split(',');
@@ -68,26 +71,29 @@ function createCarousel(color){
                 for(let i = 0; i < images.length; i++){
                     if(i === 0){
                         carouselItems = `
-                        <div class='carousel-item active'>
+                        <div class='carousel-item active px-3'>
                             <img src='/images/bikes/${images[i].trim()}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
+                        indicators += `<button type='button' data-bs-target='#product-images' data-bs-slide-to='${i}' class='active' aria-current='true' aria-label='Slide ${i}'></button>`;
                     }
                     else{
                         carouselItems += `
-                        <div class='carousel-item'>
+                        <div class='carousel-item px-3'>
                             <img src='/images/bikes/${images[i].trim()}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
+                        indicators += `<button type='button' data-bs-target='#product-images' data-bs-slide-to='${i}' aria-label='Slide ${i}'></button>`;
                     }
                 }
                 productImages.innerHTML = `
-                 <div class='carousel-inner' id='product-images-carousel' xmlns="http://www.w3.org/1999/html">${carouselItems}</div>
+                 <div class='carousel-indicators'>${indicators}</div>
+                 <div class='carousel-inner' id='product-images-carousel' xmlns='http://www.w3.org/1999/html'>${carouselItems}</div>
                   <button class='carousel-control-prev' type='button' data-bs-target='#product-images' data-bs-slide='prev'>
                         <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                        <span class="visually-hidden"> Previous </span>
+                        <span class='visually-hidden'> Previous </span>
                   </button>
-                   <button class="carousel-control-next" type="button" data-bs-target="#product-images" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                         <span class="visually-hidden">Next</span> 
+                   <button class='carousel-control-next' type='button' data-bs-target='#product-images' data-bs-slide='next'>
+                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                        <span class='visually-hidden'>Next</span> 
                    </button>`;
             }
         }

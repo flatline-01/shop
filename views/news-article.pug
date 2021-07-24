@@ -1,13 +1,12 @@
 include head.pug
 include header-dark.pug
 main(class='main mb-5 news')
-    img(class='bg-img' src='/public/images/backgrounds/Vector (2).png')
+    img(class='bg-img top-0' src='/public/images/backgrounds/Vector (2).png')
     article(class='container')
-        div(class='row m-0 article-block')
+        div(class='article-block' style=`background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%), center center no-repeat, url(${news.image}); background-size: cover;`)
             div(class='text-white  article-block__title')
                 h2(class='small-title')=news.title
                 h3(class='smaller-title date')=news.date
-            img(src=news.image class='article-block__img')
         div(class='row p-0 mt-5')
             p(class='col-md-7 col-sm-12 text')=news.text
             img(src=news.image class='col-md-5 col-sm-12')

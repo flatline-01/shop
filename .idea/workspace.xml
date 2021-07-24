@@ -5,24 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
-      <change afterPath="$PROJECT_DIR$/public/scripts/product-carousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/cart_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/cart_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CartElem.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/CartElem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Good.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Good.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bikes/bike5.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bikes/bike5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bikes/bike6.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bikes/bike6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bikes/bike8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bikes/bike9.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/bikes/bike9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logos/logo 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logos/logo 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/newsSub.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/product-carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/product-carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/general.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/main-page.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/main-page.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/news.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/news.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/product.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/product.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/cart_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/cart_repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/good_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/good_repository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/card.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/card.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/category.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/category.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-dark.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-dark.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-light.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-light.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/mixins.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/mixins.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/news-article.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/news-article.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/order.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/order.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
     </list>
@@ -439,7 +442,19 @@
       <workItem from="1627027675604" duration="1729000" />
       <workItem from="1627030220999" duration="1797000" />
       <workItem from="1627032055511" duration="115000" />
-      <workItem from="1627046202239" duration="616000" />
+      <workItem from="1627046202239" duration="1043000" />
+      <workItem from="1627058351406" duration="1859000" />
+      <workItem from="1627060243082" duration="758000" />
+      <workItem from="1627107863856" duration="1032000" />
+      <workItem from="1627110095930" duration="830000" />
+      <workItem from="1627114911649" duration="1610000" />
+      <workItem from="1627124696144" duration="1842000" />
+      <workItem from="1627126579037" duration="1624000" />
+      <workItem from="1627129663624" duration="1777000" />
+      <workItem from="1627131473110" duration="996000" />
+      <workItem from="1627133313350" duration="1777000" />
+      <workItem from="1627135127407" duration="1792000" />
+      <workItem from="1627136955876" duration="1454000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>
@@ -539,9 +554,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="475" y="223" key="scopes/0.0.1366.728@0.0.1366.728" timestamp="1620738291016" />
-    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1625152874028">
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1627110603361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625152874028" />
+    <state x="614" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1627110603361" />
   </component>
 </project>

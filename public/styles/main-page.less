@@ -1,3 +1,7 @@
+.main-bg-img{
+  top: 100%;
+}
+
 .main-page-block{
   padding: 10%;
   flex-direction: column;
@@ -7,7 +11,7 @@
   background-image: url("../images/backgrounds/main-bg.png");
   background-size: cover;
   &__btn{
-    width: 40%;
+    width: 25%;
   }
   @media screen and (max-width: 500px){
     &__btn{
@@ -40,6 +44,7 @@
   color: transparent;
   -webkit-text-stroke: 0.5px @white-color;
   font-size: @h1-font-size;
+  font-weight: bold;
   @media screen and (max-width: 800px){
     font-size: 1em;
   }
@@ -88,6 +93,7 @@
 //subscription
 .subscription{
   padding-bottom: 20%;
+  flex-direction: column;
   .centered-flex();
   &-form{
     text-align: center;

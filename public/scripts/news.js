@@ -4,7 +4,11 @@ const subEmailField = subForm.elements['subscription-form__email'];
 const subBtn        = subForm.elements['subscription-form__submit'];
 
 if(localStorage.getItem('subscription')){
-    subForm.parentElement.remove();
+    subForm.parentNode.innerHTML =  `
+        <h3 class='smaller-title'>You are our subscriber!</h3>
+        <p class='small-text'>We\`ll send you our news by e-mail.</p>
+        <a class='btn-black rounded-0 border border-2 border-dark'> unsubscribe ?</a>
+    `;
 }
 subBtn.onclick = sendSubscriptionData;
 

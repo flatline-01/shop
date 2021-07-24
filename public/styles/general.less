@@ -71,7 +71,7 @@ a{
 }
 section{
    margin-top: 10%;
-   margin-bottom: 10%;
+   margin-bottom: 5%;
 }
 
 hr:not([size]){
@@ -105,10 +105,10 @@ hr{
   text-align: center;
 }
 .btn-black{
-  .btn(@black-color, @white-color, @white-color, @black-color);
+  .btn(@black-color, @white-color, @white-color, @black-color, @white-color);
 }
 .btn-white{
-  .btn(@white-color, @black-color, @black-color, @white-color);
+  .btn(@white-color, @black-color, @black-color, @white-color, @black-color);
 }
 
 .btn-close:focus, .btn-close:active{
@@ -130,7 +130,6 @@ hr{
   z-index: -1;
   width: 100%;
   left: 0;
-  top: 0;
 }
 a {
   color: @black-color;

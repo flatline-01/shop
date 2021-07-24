@@ -6,16 +6,17 @@ each value in category.goods
             h3(class='smaller-title price product-info__elem') #{value['cost']} ₴
             p(class='small-text') #{value['description']}
             ul(class='large-text product-info__elem')
-                li
-                    ul(class='d-flex' class='colors-list') Available in colors:
+                li Available in colors: #[br]
+                    ul(class='d-flex' class='colors-list')
                         each item, index in value.images
                             if(index === 0)
                                 li(style={background: `${item.color}`} class='product-info__elem-color')
                             else
                                 li(style={background: `${item.color}`} class='product-info__elem-color')
-            a(class='btn product-info__elem text rounded-0 border border-dark border-3' href=`/product/${value['id']}`) ПОДРОБНЕЕ
-        div(class='col-sm-12 col-md-8 product-img p-3')
-            div( class='col-md-8 px-4 py-2 carousel carousel-dark slide' id=`product-images${value['id']}` data-bs-ride='carousel')
+            a(class='btn btn-white product-info__elem text rounded-0 border border-dark border-3 py-2' href=`/product/${value['id']}`) ПОДРОБНЕЕ
+        div(class='col-sm-12 col-md-8 product-img')
+            div( class='col-md-8 carousel carousel-dark slide product-images-carousel' id=`product-images${value['id']}` data-bs-ride='carousel')
+                div(class='carousel-indicators')
                 div( class='carousel-inner product-images' id='product-images-carousel' xmlns='http://www.w3.org/1999/html')
                 button(class='carousel-control-prev' type='button' data-bs-target=`#product-images${value['id']}` data-bs-slide='prev')
                     span( class='carousel-control-prev-icon' aria-hidden='true')

@@ -79,7 +79,7 @@ a:hover {
 }
 section {
   margin-top: 10%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 hr:not([size]) {
   height: 2px;
@@ -114,23 +114,33 @@ hr {
 }
 .btn-black {
   color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
   background-color: #000000;
-  border: 2px solid #000000;
   padding: 1% 4%;
 }
 .btn-black:hover {
   background-color: #ffffff;
   color: #000000;
 }
+.btn-black:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #ffffff;
+}
 .btn-white {
   color: #000000;
+  cursor: pointer;
+  font-weight: bold;
   background-color: #ffffff;
-  border: 2px solid #000000;
   padding: 1% 4%;
 }
 .btn-white:hover {
   background-color: #000000;
   color: #ffffff;
+}
+.btn-white:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #000000;
 }
 .btn-close:focus,
 .btn-close:active {
@@ -150,7 +160,6 @@ hr {
   z-index: -1;
   width: 100%;
   left: 0;
-  top: 0;
 }
 a {
   color: #000000;
@@ -172,6 +181,9 @@ a {
     width: 5%;
     margin-left: 5%;
   }
+}
+.menu {
+  padding: 2% 3%;
 }
 .menu__btn {
   position: absolute;
@@ -307,6 +319,9 @@ a {
   top: 0;
   width: 100%;
 }
+.main-bg-img {
+  top: 100%;
+}
 .main-page-block {
   padding: 10%;
   flex-direction: column;
@@ -317,7 +332,7 @@ a {
   background-size: cover;
 }
 .main-page-block__btn {
-  width: 40%;
+  width: 25%;
 }
 @media screen and (max-width: 500px) {
   .main-page-block__btn {
@@ -347,6 +362,7 @@ a {
   color: transparent;
   -webkit-text-stroke: 0.5px #ffffff;
   font-size: 3em;
+  font-weight: bold;
 }
 @media screen and (max-width: 800px) {
   .slide-elem-name {
@@ -388,6 +404,7 @@ a {
 }
 .subscription {
   padding-bottom: 20%;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -498,32 +515,28 @@ a {
   justify-content: center;
   align-items: center;
 }
+.product-images-carousel > .carousel-control-prev {
+  margin-left: -10%;
+}
+.product-images-carousel > .carousel-control-next {
+  margin-right: -10%;
+}
 .news {
-  margin-top: 10%;
+  margin-top: 35%;
+}
+@media screen and (min-width: 700px) {
+  .news {
+    margin-top: 10%;
+  }
 }
 .article-block {
+  width: 100%;
+  height: 40vh;
   position: relative;
-  display: inline-block;
 }
 .article-block__title {
   position: absolute;
   top: 2%;
   left: 2%;
-}
-.article-block__img {
-  background-size: 50%;
-  height: 45vh;
-  object-fit: cover;
-  display: block;
-}
-.article-block::after {
-  content: '';
-  position: absolute;
-  left: 1%;
-  top: 0;
-  width: 98%;
-  height: 100%;
-  display: inline-block;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+include head.pug
+include header-dark.pug
+main(class='reviews')
+    div(class='container')
+        h2(class='small-title') Reviews
+        ul(class='px-5 py-4')
+            - for (let i = 0; i < reviews.length; i++)
+                li(class='py-2')
+                    div(class='review-header d-flex text-center')
+                        h3(class='text fw-bold me-3') #{reviews[i].name}
+                        div(class='product-evaluation')
+                            - for (let j = 0; j < reviews[i].evaluation; j++)
+                                img(src='/images/icons/star.png' class='mx-1 mb-3')
+                    p(class='text') #{reviews[i].text}
+include footer.pug
+include scripts.pug

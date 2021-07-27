@@ -539,4 +539,14 @@ a {
   top: 2%;
   left: 2%;
 }
+.reviews {
+  margin-top: 10%;
+}
+.star,
+.star_active {
+  margin-right: 2%;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #FFDF6B;
+}
 /*# sourceMappingURL=style.css.map */

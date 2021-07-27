@@ -13,6 +13,7 @@ module.exports = class Good {
         /** @type {String}*/  this.frame = props['frame'] || null
         /** @type {String}*/  this.wheel = props['wheel'] || null
         /** @type {Array}*/   this.images = props['images'] || null
+        /** @type {Array}*/   this.reviews = props['reviews'] || null
     }
 }
 

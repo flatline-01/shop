@@ -3,6 +3,7 @@ const Good = require("../models/Good");
 
 const goodsTableName = 'goods';
 const goodsImagesTableName = 'good_images';
+const reviewsTableName = 'reviews';
 
 module.exports.getAllGoods = async () => {
     try {
@@ -11,7 +12,9 @@ module.exports.getAllGoods = async () => {
 
         for(let i = 0; i < rows.length; i++){
             let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `, rows[i].id);
+            let reviews = await connection.query(`SELECT * FROM ${reviewsTableName} where good_id = ? `, rows[i].id);
             rows[i].images = JSON.parse(JSON.stringify(images));
+            rows[i].reviews = JSON.parse(JSON.stringify(reviews));
         }
 
         return !rows ? []
@@ -30,8 +33,9 @@ module.exports.getGoodById = async (goodId) => {
             [goodId]);
 
         let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `,[goodId]);
+        let reviews = await connection.query(`SELECT * FROM ${reviewsTableName} where good_id = ? `, [goodId]);
         rows[0].images = JSON.parse(JSON.stringify(images));
-
+        rows[0].reviews = JSON.parse(JSON.stringify(reviews));
         return (rows && rows.length > 0) ? new Good(rows[0])
             : null;
 
@@ -48,7 +52,9 @@ module.exports.getGoodsByCategory = async (categoryId) => {
             [categoryId]);
         for(let i = 0; i < rows.length; i++){
             let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `, rows[i].id);
+            let reviews = await connection.query(`SELECT * FROM ${reviewsTableName} where good_id = ? `, rows[i].id);
             rows[i].images = JSON.parse(JSON.stringify(images));
+            rows[0].reviews = JSON.parse(JSON.stringify(reviews));
         }
 
         return !rows ? []

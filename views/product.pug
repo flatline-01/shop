@@ -23,7 +23,33 @@ main(class='product-page')
         section(class='row')
             div(class='col-md-6')
                 h3(class='smaller-title') Description
-                p(class='text') #{product.description}
+                p(class='text product-description') #{product.description}
+            div(class='col-md-6')
+                h3(class='smaller-title') Reviews
+                ul(id='reviews-list')
+                    each item in product.reviews
+                        li(class='product-review p-2')
+                            div(class='review-header d-flex text-center')
+                                h3(class='text fw-bold me-3') #{item.name}
+                                div
+                                    - for (let i = 0; i < item.evaluation; i++)
+                                        img(src='/images/icons/star.png' class='mx-1 mb-3')
+                            p(class='text') #{item.text}
+                div(class='reviews-btns d-flex justify-content-between')
+                    button(class='btn-black' id='leaveAReviewBtn') leave a review
+                form(name='review-form' class='d-flex flex-column d-none p-2')
+                    label(for='user-name') Name #[br]
+                    input(type='text' placeholder='your name' id='user-name' class='mb-3' name='user-name')
+                    label(for='product-evaluation') Evaluation #[br]
+                    div(class='product-evaluation mb-3' id='product-evaluation')
+                        i(class="star far fa-star")
+                        i(class="star far fa-star")
+                        i(class="star far fa-star")
+                        i(class="star far fa-star")
+                        i(class="star far fa-star")
+                    label(for='review-text') Review #[br]
+                    textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
+                    input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
 include footer.pug
 script.
     let productData = !{JSON.stringify(product)};

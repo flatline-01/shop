@@ -5,27 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
+      <change afterPath="$PROJECT_DIR$/controllers/reviews_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Review.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icons/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/product-reviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/reviews.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/reviews_repository.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/reviews_service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/reviews.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logos/logo 2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/logos/logo 2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/newsSub.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/product-carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/product-carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/general.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/main-page.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/main-page.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/menu.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/news.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/news.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/product.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/product.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/news_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/news_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Good.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Good.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icons/stars.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/card.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/card.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header-dark.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-dark.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/header-light.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-light.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/menu.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/mixins.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/mixins.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/news-article.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/news-article.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/order.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/order.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/vars.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/vars.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/good_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/good_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
     </list>
@@ -37,9 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Less File" />
         <option value="Pug File" />
         <option value="JavaScript File" />
+        <option value="Less File" />
       </list>
     </option>
   </component>
@@ -455,6 +452,38 @@
       <workItem from="1627133313350" duration="1777000" />
       <workItem from="1627135127407" duration="1792000" />
       <workItem from="1627136955876" duration="1454000" />
+      <workItem from="1627205766474" duration="8000" />
+      <workItem from="1627211897040" duration="1438000" />
+      <workItem from="1627213687120" duration="3058000" />
+      <workItem from="1627216889971" duration="1764000" />
+      <workItem from="1627218694207" duration="1809000" />
+      <workItem from="1627220536514" duration="498000" />
+      <workItem from="1627223243645" duration="1748000" />
+      <workItem from="1627225056979" duration="1746000" />
+      <workItem from="1627226864693" duration="1772000" />
+      <workItem from="1627228673752" duration="902000" />
+      <workItem from="1627230480190" duration="1534000" />
+      <workItem from="1627232959285" duration="1406000" />
+      <workItem from="1627275417322" duration="2489000" />
+      <workItem from="1627278482258" duration="1776000" />
+      <workItem from="1627280289406" duration="694000" />
+      <workItem from="1627282096654" duration="1815000" />
+      <workItem from="1627283960530" duration="1780000" />
+      <workItem from="1627285777113" duration="2048000" />
+      <workItem from="1627290119332" duration="1776000" />
+      <workItem from="1627291925461" duration="2045000" />
+      <workItem from="1627294019884" duration="557000" />
+      <workItem from="1627306921071" duration="1791000" />
+      <workItem from="1627308755192" duration="1772000" />
+      <workItem from="1627310557549" duration="757000" />
+      <workItem from="1627312997633" duration="3130000" />
+      <workItem from="1627316170805" duration="932000" />
+      <workItem from="1627318474573" duration="2026000" />
+      <workItem from="1627320656816" duration="1439000" />
+      <workItem from="1627352262122" duration="1772000" />
+      <workItem from="1627354066417" duration="1772000" />
+      <workItem from="1627355872359" duration="1979000" />
+      <workItem from="1627357887179" duration="329000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>
@@ -482,26 +511,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="ref(categories): change getting category slider items" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618588632622">
+    <state x="308" y="41" key="#Inspections" timestamp="1627284100456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588632622" />
-    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623254667874">
+    <state x="308" y="41" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1627284100456" />
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1627217218291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1623254667874" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620010775017">
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1627217218291" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1627228431301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1620010775017" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1627228431301" />
     <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1626194088035">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1626194088035" />
-    <state x="352" y="142" key="EditFileWatcherDialog" timestamp="1618588242473">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="352" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1618588242473" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1626542834230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -538,18 +563,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627026618741" />
-    <state x="92" y="92" width="1182" height="544" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1627027656570">
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1627357647178">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627027656570" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627357647178" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626196893478">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1626196893478" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1625119465900">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1627352357080">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625119465900" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1627352357080" />
     <state x="475" y="223" key="scopes" timestamp="1620738291016">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

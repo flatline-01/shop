@@ -3,6 +3,7 @@ const newsService = require('../services/news_service.js');
 
 module.exports.getAllNews = async (req, resp) => {
     const news = await newsService.checkNews();
+    console.log(news);
     resp.render('news.pug', { news });
 }
 

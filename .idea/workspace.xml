@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
-      <change afterPath="$PROJECT_DIR$/controllers/reviews_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Review.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/icons/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/product-reviews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/reviews.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repository/reviews_repository.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/reviews_service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/reviews.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/news_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/news_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Good.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Good.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/icons/stars.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/vars.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/vars.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/good_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/good_repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/news_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/news_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -484,6 +468,9 @@
       <workItem from="1627354066417" duration="1772000" />
       <workItem from="1627355872359" duration="1979000" />
       <workItem from="1627357887179" duration="329000" />
+      <workItem from="1627374756235" duration="8000" />
+      <workItem from="1627389752570" duration="1391000" />
+      <workItem from="1627391169557" duration="390000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>
@@ -527,10 +514,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1626194088035" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1626542834230">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627374762466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1626542834230" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627374762466" />
     <state width="1345" height="429" key="GridCell.Tab.0.bottom" timestamp="1618749372835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -38,15 +38,7 @@ module.exports.getNewsById = async (newsId) => {
 module.exports.createSubscriber = async (data) => {
     try {
         const connection = database.getConnection();
-        let rows = await connection.query(`SELECT * FROM ${subscribersCols}`);
-        for(let i = 0; i < rows.length; i++){
-            if(rows[i] === data.email){
-                return 'address already exist';
-            }
-            else{
-                connection.query(`INSERT INTO  ${subscribersTableName}(${subscribersCols}) VALUES('${data.email}')`);
-            }
-        }
+        await connection.query(`INSERT INTO  ${subscribersTableName}(${subscribersCols}) VALUES(?)`, [data.email]);
         return true;
     } catch (e) {
         throw new Error();

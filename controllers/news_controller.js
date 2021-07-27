@@ -15,5 +15,6 @@ module.exports.getSingleNews = async (req, resp) => {
 
 module.exports.createSubscribe = async (req, resp) => {
     const data = req.body;
-    resp.json('ok');
+    let answer = await newsService.checkNewsSubscriber(data);
+    resp.json(answer);
 }

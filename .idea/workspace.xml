@@ -7,8 +7,10 @@
     <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/news_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/news_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repository/news_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/news_repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/main.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/news_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/news_service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -470,7 +472,10 @@
       <workItem from="1627357887179" duration="329000" />
       <workItem from="1627374756235" duration="8000" />
       <workItem from="1627389752570" duration="1391000" />
-      <workItem from="1627391169557" duration="390000" />
+      <workItem from="1627391169557" duration="1082000" />
+      <workItem from="1627393538216" duration="1263000" />
+      <workItem from="1627396528841" duration="1069000" />
+      <workItem from="1627398332848" duration="1040000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>

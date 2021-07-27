@@ -13,8 +13,16 @@ module.exports.getSingleNews = async (req, resp) => {
     resp.render('news-article.pug', { news });
 }
 
-module.exports.createSubscribe = async (req, resp) => {
+module.exports.addSubscriber = async (req, resp) => {
     const data = req.body;
     let answer = await newsService.checkNewsSubscriber(data);
+    resp.json(answer);
+}
+
+module.exports.removeSubscriber = async (req, resp) => {
+    console.log(req.body)
+    const data = req.body;
+    let answer = await newsService.checkRemovingNewsSubscriber(data);
+    console.log(answer);
     resp.json(answer);
 }

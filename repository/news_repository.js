@@ -44,3 +44,13 @@ module.exports.createSubscriber = async (data) => {
         throw new Error();
     }
 }
+
+module.exports.removeSubscriber = async (data) => {
+    try {
+        const connection = database.getConnection();
+        await connection.query(`DELETE FROM ${subscribersTableName} WHERE email = ?`, [data.email]);
+        return true;
+    } catch (e) {
+        throw new Error();
+    }
+}

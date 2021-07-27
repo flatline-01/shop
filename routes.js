@@ -38,7 +38,12 @@ router.get('/news/:id', (req, resp) => NewsController.getSingleNews(req, resp));
 
 router.get('/subscribe', (req, resp) => HomeController.homePage(req, resp));
 
-router.post('/subscribe', (req, resp) => NewsController.createSubscribe(req, resp));
+router.post('/subscribe', (req, resp) => NewsController.addSubscriber(req, resp));
+
+router.get('/unsubscribe', (req, resp) => HomeController.homePage(req, resp));
+
+router.post('/unsubscribe', (req, resp) => NewsController.removeSubscriber(req, resp));
+
 
 /** Reviews routes **/
 router.get('/reviews/:id', (req, resp) => ReviewsController.getGoodReviews(req, resp));

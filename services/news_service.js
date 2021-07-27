@@ -13,3 +13,9 @@ module.exports.checkNewsSubscriber = async (data) => {
         throw new Error();
     }
 }
+module.exports.checkRemovingNewsSubscriber = async (data) => {
+    if(data) return await newsRepository.removeSubscriber(data);
+    else {
+        throw new Error();
+    }
+}

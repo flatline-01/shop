@@ -50,6 +50,37 @@ main(class='product-page')
                     label(for='review-text') Review #[br]
                     textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
                     input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
+        section( class='other-models mt-5')
+            h3(class='small-title other-models__title text-center') Другие модели #{product.categoryName}
+            div(class='row m-5')
+                if product.otherCategoryGoods.length === 1
+                    div(class="col-md-4 p-md-5 other-models__product") only one product
+                else if product.otherCategoryGoods.length === 2 || product.otherCategoryGoods.length === 3
+                     - for(let i = 0; i < product.otherCategoryGoods.length; i++)
+                        if product.otherCategoryGoods[i].id !== product.id
+                            a(class="col-md-4 p-md-5 other-models__product" href=`${product.otherCategoryGoods[i].id}`)
+                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class="bike other-models__product-elem w-100 my-2")
+                                div(class="row justify-content-between")
+                                    div(class="col-5 other-models__product-elem")
+                                        h3(class="subtitle")=product.otherCategoryGoods[i].name
+                                        p(class="text") #{product.otherCategoryGoods[i].cost} ₴
+                                    div(class="col-5 other-models__product-elem")
+                                        list(class="available-colors d-flex justify-content-center align-items-center pt-3")
+                                            each item in product.otherCategoryGoods[i].images
+                                                li(style={background: `${item.color}`} class='product-info__elem-color')
+                else
+                    - for(let i = 0; i < 4; i++)
+                        div(class="col-md-4 p-md-5 other-models__product")
+                            a(class="col-md-4 p-md-5 other-models__product" href=`${product.otherCategoryGoods[i].id}`)
+                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class="bike other-models__product-elem w-100 my-2")
+                                div(class="row justify-content-between")
+                                    div(class="col-5 other-models__product-elem")
+                                        h3(class="subtitle")=product.otherCategoryGoods[i].name
+                                        p(class="text") #{product.otherCategoryGoods[i].cost} ₴
+                                    div(class="col-5 other-models__product-elem")
+                                        list(class="available-colors d-flex justify-content-center align-items-center pt-3")
+                                            each item in product.otherCategoryGoods[i].images
+                                                li(style={background: `${item.color}`} class='product-info__elem-color')
 include footer.pug
 script.
     let productData = !{JSON.stringify(product)};

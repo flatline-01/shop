@@ -51,10 +51,10 @@ input, select{
     }
 }
 
-input:not([disabled]):not([type='submit']):not([class='search-form__input']):valid, select:valid{
+input:not([disabled]):not([type='submit']):not(.search-form__input):valid, select:valid{
   border: 2px solid @black-color;
 }
-input:not([disabled]):not([type='submit']):not([class='search-form__input']):invalid, select:invalid{
+input:not([disabled]):not([type='submit']):not(.search-form__input):invalid, select:invalid{
   border: 2px solid @red-color;
 }
 ul, ol{

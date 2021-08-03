@@ -4,10 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(categories): change getting category slider items">
+    <list default="true" id="c33515c8-7dfb-416b-b4ec-cf809fcddb03" name="Default Changelist" comment="ref(product): add a list of products with the same category">
+      <change afterPath="$PROJECT_DIR$/public/scripts/live_search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/product_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/product_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/product.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/product.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/home_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/home_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/news/news-elem-3.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/news/news-elem2.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/news/news-elem2.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/news/news-elem4.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/news/news-elem5.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/news/video.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/general.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/general.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/menu.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/menu.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/search.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/search.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/category_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/category_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/good_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/good_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/news_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repository/news_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/category_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/category_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/good_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/good_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/news_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/news_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-dark.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-dark.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/header-light.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/header-light.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/scripts.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/scripts.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Pug File" />
-        <option value="JavaScript File" />
         <option value="Less File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -480,6 +500,27 @@
       <workItem from="1627833285099" duration="1777000" />
       <workItem from="1627835096568" duration="2058000" />
       <workItem from="1627837193162" duration="1433000" />
+      <workItem from="1627839571787" duration="246000" />
+      <workItem from="1627840172713" duration="883000" />
+      <workItem from="1627892699900" duration="1799000" />
+      <workItem from="1627894534825" duration="1772000" />
+      <workItem from="1627896342963" duration="1182000" />
+      <workItem from="1627899666082" duration="1777000" />
+      <workItem from="1627901470397" duration="2229000" />
+      <workItem from="1627903734879" duration="1887000" />
+      <workItem from="1627906466801" duration="704000" />
+      <workItem from="1627909085901" duration="1783000" />
+      <workItem from="1627911119719" duration="353000" />
+      <workItem from="1627914563461" duration="2497000" />
+      <workItem from="1627917109450" duration="1564000" />
+      <workItem from="1627919141957" duration="1772000" />
+      <workItem from="1627920947052" duration="1609000" />
+      <workItem from="1627955602374" duration="1803000" />
+      <workItem from="1627957902256" duration="1873000" />
+      <workItem from="1627959822213" duration="1398000" />
+      <workItem from="1627962437661" duration="1865000" />
+      <workItem from="1627965916616" duration="1774000" />
+      <workItem from="1627967721824" duration="786000" />
     </task>
     <task id="LOCAL-00001" summary="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions">
       <created>1623756574689</created>
@@ -504,13 +545,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ref(cart):...&#10;- parameterize the sql-query into the goods table &#10;- add validation of the input parameters for the database&#10;- rename some functions" />
     <MESSAGE value="ref(categories): change getting category slider items" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref(categories): change getting category slider items" />
+    <MESSAGE value="ref(product): add a list of products with the same category" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref(product): add a list of products with the same category" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="41" key="#Inspections" timestamp="1627284100456">
+    <state x="308" y="41" key="#Inspections" timestamp="1627915025565">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="41" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1627284100456" />
+    <state x="308" y="41" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1627915025565" />
     <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1627217218291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -519,10 +561,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1627228431301" />
-    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1626194088035">
+    <state x="307" y="0" key="CommitChangelistDialog2" timestamp="1627839813467">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1626194088035" />
+    <state x="307" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1627839813467" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1627831297331">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -543,10 +585,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627026618741" />
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1627357647178">
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1627894699647">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627357647178" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1627894699647" />
     <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626196893478">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

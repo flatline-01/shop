@@ -1,44 +1,61 @@
-.search-form{
-    position: relative;
+.search{
+  position: relative;
+  &_results{
+    background-color: @white-color;
+    color: @black-color;
+    position: absolute;
+    z-index: 3;
+    margin-top: -1%;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     width: 100%;
+    padding-top: 3%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+    display: none;
+  }
+  &_results li:hover{
+    background-color: darken(@white-color, 10%);
+  }
+  &-form{
     &__input{
       border: none;
       border-radius: 30px;
-      width: 85%;
-      padding-left: 5%;
-      box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+      width: 100%;
+      padding-left: 7%;
       box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    &:before, &:after {
-      content:"";
-      position:absolute;
-      z-index:-1;
-      box-shadow:0 0 20px rgba(0,0,0,0.8);
-      top:10px;
-      bottom:10px;
-      left:0;
-      right:0;
-      border-radius:100px / 10px;
-    }
-    &:after {
-      right:10px;
-      left:auto;
-      transform:skew(8deg) rotate(3deg);
-    }
+      &:before, &:after {
+        content:'';
+        position:absolute;
+        z-index:-1;
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        top:10px;
+        bottom:10px;
+        left:0;
+        right:0;
+        border-radius:100px / 10px;
+      }
+      &:after {
+        right:10px;
+        left:auto;
+        transform:skew(8deg) rotate(3deg);
+      }
       &:focus{
-        box-shadow: 10px -10px 5px  rgba(0,0,0,0.6) ;
-        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:  0 0 8px rgba(0, 0, 0, 0.2);
         outline: none;
       }
     }
     &__icon{
       position: absolute;
       top: 15%;
-      left: 1%;
+      left: 2%;
+      z-index: 5;
     }
     @media screen and (max-width: 750px) {
-      & {
-        display: none;
+      &__icon{
+        left: 10%;
       }
     }
- }
+  }
+}
+
   

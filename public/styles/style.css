@@ -56,11 +56,11 @@ select:focus {
   outline: none;
   box-shadow: none;
 }
-input:not([disabled]):not([type='submit']):not([class='search-form__input']):valid,
+input:not([disabled]):not([type='submit']):not(.search-form__input):valid,
 select:valid {
   border: 2px solid #000000;
 }
-input:not([disabled]):not([type='submit']):not([class='search-form__input']):invalid,
+input:not([disabled]):not([type='submit']):not(.search-form__input):invalid,
 select:invalid {
   border: 2px solid #ca1414;
 }
@@ -165,8 +165,7 @@ a {
   color: #000000;
 }
 .menu-icon {
-  width: 15%;
-  margin-left: 15%;
+  width: 20%;
 }
 .menu-icon__line {
   margin: 23%;
@@ -254,21 +253,35 @@ a {
     margin: 0;
   }
 }
-.search-form {
+.search {
   position: relative;
+}
+.search_results {
+  background-color: #ffffff;
+  color: #000000;
+  position: absolute;
+  z-index: 3;
+  margin-top: -1%;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   width: 100%;
+  padding-top: 3%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 20px 30px;
+  display: none;
+}
+.search_results li:hover {
+  background-color: #e6e6e6;
 }
 .search-form__input {
   border: none;
   border-radius: 30px;
-  width: 85%;
-  padding-left: 5%;
-  box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding-left: 7%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .search-form__input:before,
 .search-form__input:after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -284,18 +297,18 @@ a {
   transform: skew(8deg) rotate(3deg);
 }
 .search-form__input:focus {
-  box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   outline: none;
 }
 .search-form__icon {
   position: absolute;
   top: 15%;
-  left: 1%;
+  left: 2%;
+  z-index: 5;
 }
 @media screen and (max-width: 750px) {
-  .search-form {
-    display: none;
+  .search-form__icon {
+    left: 10%;
   }
 }
 .footer {

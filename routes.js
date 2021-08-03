@@ -16,6 +16,8 @@ const ReviewsController = require('./controllers/reviews_controller.js');
 /** Main routes */
 router.get('/', HomeController.homePage);
 
+router.post('/', (req, resp) => HomeController.liveSearch(req, resp));
+
 /** Product routes */
 router.get('/product/:id', ProductController.singleProduct);
 

@@ -65,3 +65,21 @@ module.exports.getGoodsByCategory = async (categoryId) => {
         throw new Error('Unable to fetch goods');
     }
 }
+module.exports.getProductByName = async (name) => {
+    try {
+        const connection = database.getConnection();
+        let rows = await connection.query(`SELECT * FROM ${goodsTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);
+
+        for(let i = 0; i < rows.length; i++){
+            let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `, rows[i].id);
+            rows[i].images = JSON.parse(JSON.stringify(images));
+        }
+
+        return !rows ? []
+            : rows.map((row) => { return new Good(row) });
+
+    } catch (e) {
+        console.log(`Unable to fetch goods from database: ${e}`);
+        throw new Error('Unable to fetch category');
+    }
+}

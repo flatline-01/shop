@@ -27,3 +27,16 @@ module.exports.getAllCategories = async () => {
         throw new Error('Unable to fetch category');
     }
 }
+
+module.exports.getCategoryByName = async (name) => {
+    try {
+        const connection = database.getConnection();
+        let rows = await connection.query(`SELECT * FROM ${categoriesTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);
+        return !rows ? []
+            : rows.map((row) => { return new Category(row) });
+
+    } catch (e) {
+        console.log(e)
+        throw new Error('Unable to fetch category');
+    }
+}

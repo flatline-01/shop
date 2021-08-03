@@ -19,3 +19,6 @@ module.exports.checkRemovingNewsSubscriber = async (data) => {
         throw new Error();
     }
 }
+module.exports.checkNewsTitle = async (title) => {
+    return await  newsRepository.getNewsByName(title)
+}

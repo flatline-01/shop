@@ -54,3 +54,16 @@ module.exports.removeSubscriber = async (data) => {
         throw new Error();
     }
 }
+
+module.exports.getNewsByName = async (title) => {
+    try {
+        const connection = database.getConnection();
+        let rows = await connection.query(`SELECT * FROM ${newsTableName} WHERE title LIKE CONCAT('%', ?,  '%')`, [title]);
+        return !rows ? []
+            : rows.map((row) => { return new News(row) });
+
+    } catch (e) {
+        console.log(`Unable to fetch goods from database: ${e}`);
+        throw new Error('Unable to fetch news');
+    }
+}

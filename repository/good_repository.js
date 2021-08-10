@@ -70,11 +70,6 @@ module.exports.getProductByName = async (name) => {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${goodsTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);
 
-        for(let i = 0; i < rows.length; i++){
-            let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `, rows[i].id);
-            rows[i].images = JSON.parse(JSON.stringify(images));
-        }
-
         return !rows ? []
             : rows.map((row) => { return new Good(row) });
 

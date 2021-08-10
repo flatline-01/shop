@@ -1,5 +1,5 @@
-const goodService = require("../services/good_service");
-const categoryService = require("../services/category_service");
+const goodService = require('../services/good_service');
+const categoryService = require('../services/category_service');
 
 
 module.exports.singleProduct = async (req, resp) => {
@@ -15,5 +15,5 @@ module.exports.singleProduct = async (req, resp) => {
 
     product.otherCategoryGoods =  category.goods
 
-    resp.render("product.pug", { product });
+    resp.render('product.pug', { product });
 };

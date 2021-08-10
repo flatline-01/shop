@@ -5,26 +5,26 @@ main
     img(class='main-bg-img bg-img' src='/public/images/backgrounds/Vector (3).png')
     section(class='row main-page-block text-white g-0' id='main-page')
         h4 STREETSTER NATHAN #[br]
-        h1(class='title') Удобный и быстрый #[br] Твой идеал для покорения города
-        a(class='btn-black rounded-0 mt-4 main-page-block__btn' href='#about') УЗНАТЬ БОЛЬШЕ
+        h1(class='title') Comfortable and fast #[br] Your ideal for conquering the city
+        a(class='btn-black rounded-0 mt-4 main-page-block__btn' href='#about') LEARN MORE
     div(class='container')
         section(id='categories' class='row categories py-5')
-            h1(class='title') Категории
+            a(class='title' href='/categories') Categories
             div(id='carouselExampleFade' class='carousel slide carousel-dark  carousel-fade' data-bs-ride='carousel')
                 div(class='carousel-inner')
                     each value,index in categories
                         if(index === 0)
                             div(class='carousel-item active d-flex flex-column justify-content-center align-items-center p-4')
-                                img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
+                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg')
                                 div(class='slideContent')
                                     img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
-                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
+                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name'].toUpperCase()} #[br]
                         else
                             div(class='carousel-item d-flex flex-column justify-content-center align-items-center p-4')
-                                img(src=`/public/images/category-images/category-img${value['id']}.png` class='categorySliderElemBg')
+                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg')
                                 div(class='slideContent')
                                     img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
-                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name']} #[br]
+                                    a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name'].toUpperCase()} #[br]
                 button(class='carousel-control-prev' data-bs-target='#carouselExampleFade' data-bs-slide='prev' type='button')
                     span(class='carousel-control-prev-icon' aria-hidden='true')
                     span(class='visually-hidden') Previous
@@ -32,29 +32,29 @@ main
                     span(class='carousel-control-next-icon' aria-hidden='true')
                     span(class='visually-hidden') Next
         section(id='favorites' class='favorites py-3 px-4')
-            h1(class='title') Избранные товары
+            h1(class='title') Selected products
             div(class='row mt-4')
-                div(class='col-sm-12 col-md-6 bg-black main-elem d-flex justify-content-between flex-column align-items-end p-5 mt-2 ms-3')
+                div(class='col-sm-12 col-md-6 bg-black main-elem d-flex justify-content-between flex-column align-items-end p-5 mt-2 favorites__item')
                     div(class='text-white favorites__text')
                         h3(class='smaller-title') Streetster Bakerstreet
-                        p(class='text') скорость соедененная с удобством
+                        p(class='text') speed coupled with convenience
                     img(src='/public/images/bikes/bike2.png' alt='a bike' class='favorites__img-bike')
                     img(src='/public/images/icons/Subtract.png' alt='arrow' class='arrow-right' onclick='window.location.href = \'../category/2\';')
                 div(class='col-sm-12 col-md-5 d-flex justify-content-between flex-wrap text-white')
                     div(class='row text')
-                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 ms-3')
+                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
                             img(src='/public/images/accessories/product2.png' alt='product' class='w-50 favorites__img-accessory')
-                            p Шлем Octane
-                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 ms-3')
+                            p Octane Helmet
+                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
                             img(src='/public/images/accessories/product1.png' alt='product' class='w-50 favorites__img-accessory')
-                            p Защита Canyon
+                            p Canyon Protection
                     div(class='row text')
-                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 ms-3')
+                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
                             img(src='/public/images/accessories/product1.png' alt='product' class='w-50 favorites__img-accessory')
-                            p Защита Canyon
-                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 ms-3')
+                            p Canyon Protection
+                        div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
                             img(src='/public/images/accessories/product2.png' alt='product' class='w-50 favorites__img-accessory')
-                            p Шлем Octane
+                            p Octane Helmet
         section(class='row about py-5' id='about')
             p(class='large-text') <b>STREETSTER</b> – Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 |sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -64,13 +64,13 @@ main
                 |Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollitanim id est laborum.
         section(id='features' class='features py-5')
             img(class='bg-img' src='/public/images/backgrounds/Vector (2).png')
-            h2(class='small-title') Велосипеды Streetster это...
+            h2(class='small-title') Streetster bicycles are...
             div(class='row pt-5')
-                +featuresCard('/public/images/features-img/feat3.png', 'Простота обсуживания', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-                +featuresCard('/public/images/features-img/feat1.png', 'Надежная конструкция', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-                +featuresCard('/public/images/features-img/feat2.png', 'Качественные детали', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
+                +featuresCard('/public/images/features-img/feat3.png', 'Ease of discussion', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
+                +featuresCard('/public/images/features-img/feat1.png', 'Rugged construction', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
+                +featuresCard('/public/images/features-img/feat2.png', 'High-quality parts', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
         section(id='news' class='news text-center')
-            a(class='title' href='/news') Новости
+            a(class='title' href='/news') News
             div(id='carouselExampleControls2' class='carousel carousel-dark slide' data-bs-ride='carousel')
                 div(class='carousel-inner px-5')
                     div(class='carousel-item active')
@@ -94,8 +94,10 @@ main
                     span(class='visually-hidden') Next
         section(class='col-md-12 subscription my-5')
             form(class='subscription-form  d-flex flex-column justify-content-center align-items-center' name='subscription-form')
-                h2(class='small-title') Подпишитесь на новостную рассылку
-                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='your e-mail@gmail.com' name='subscription-form__email')
-                input(class='btn-black rounded-0 subscription-form__btn' type='submit' value='ПОДПИСАТЬСЯ' name='subscription-form__submit')
+                h2(class='small-title') Subscribe to the newsletter
+                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Email' name='subscription-form__email')
+                input(class='btn-black rounded-0 subscription-form__btn' type='submit' value='SUBSCRIBE' name='subscription-form__submit')
 include footer.pug
+script.
+    let categories = !{JSON.stringify(categories)}
 include scripts.pug

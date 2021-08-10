@@ -1,3 +1,4 @@
+include mixins.pug
 div(class='menu text-dark bg-white')
     div(class='row py-3')
         div(class='col-5 d-flex')
@@ -10,19 +11,20 @@ div(class='menu text-dark bg-white')
             button(class='btn-close' aria-label='Close')
     div(class='row d-flex flex-column')
          nav
+            ul(class='categories-list')
+                li
+                    a( href='/category/1' class='smaller-title') #[b ROAD SERIES]
+                li
+                    a(href='/category/2' class='smaller-title') #[b STREET SERIES]
+                li
+                    a(href='/category/3' class='smaller-title') #[b MOUNTAIN SERIES]
             ul
                 li(class='my-2')
-                    a(href='#road-series' class='subtitle menu-elem_underline fw-bold') ROAD SERIES
+                    a(href='/news' class='menu-elem_underline') News
                 li(class='my-2')
-                    a(href='#street-series' class='subtitle menu-elem_underline fw-bold') STREET SERIES
+                    a(href='#about' class='menu-elem_underline') About us
                 li(class='my-2')
-                    a(href='#mountain-series' class='subtitle menu-elem_underline fw-bold') MOUNTAIN SERIES
-                li(class='my-2')
-                    a(href='#' class='menu-elem_underline') Новости
-                li(class='my-2')
-                    a(href='#about' class='menu-elem_underline') О нас
-                li(class='my-2')
-                    a(href='#' class='menu-elem_underline') Контакты
+                    a(href='#about' class='menu-elem_underline') Contacts
     a(href='https://www.instagram.com')
         img(src='/public/images/icons/insta-b.png' alt='instagram' class='pb-4 social-i')
     a(href='https://www.facebook.com/')

@@ -2,23 +2,25 @@ include head.pug
 include header-dark.pug
 main(class='container news')
     img(class='bg-img' src='/public/images/backgrounds/Vector (2).png')
-    h1(class='title') Новости
+    h1(class='title') News
     div(class='row text-white mb-5 news-card')
         div(class='col-md-6 p-0')
             img(src=news[0].image class='img-fluid')
         article(class='col-md-6 bg-black d-flex flex-column justify-content-md-around')
-            h3(class='small-title')=news[0].title
-            h4(class='smaller-title date')=news[0].date
+            div
+                h3(class='small-title')=news[0].title
+                h4(class='smaller-title date')=news[0].date
             p(class='text news-card__text')=news[0].text
-            a(class='btn btn-black w-100 p-2' href=`/news/${news[0].id}`) ЧИТАТЬ ДАЛЬШЕ
+            a(class='btn btn-black w-100 p-2 rounded-0' href=`/news/${news[0].id}`) READ MORE
     div(class='row text-white d-flex justify-content-md-between flex-wrap')
         - for (var i = 1; i < news.length; ++i)
-            div(class='col-md-3  bg-black p-0 news-article mb-5 news-card')
+            div(class='col-md-3 bg-black p-0 news-article mb-5 news-card')
                 img(src=news[i].image class='img-fluid')
                 article(class='p-3')
-                    h3(class='small-title')=news[i].title
-                    h4(class='smaller-title date')=news[i].date
+                    div
+                        h3(class='small-title')=news[i].title
+                        h4(class='smaller-title date')=news[i].date
                     p( class='text news-card__text')=news[i].text
-                a(class='btn btn-black w-100 p-2' href=`/news/${news[i].id}`) ЧИТАТЬ ДАЛЬШЕ
+                    a(class='btn btn-black w-100 py-2 px-0 mb-2 rounded-0' href=`/news/${news[i].id}`) READ MORE
 include footer.pug
 include scripts.pug

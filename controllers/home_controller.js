@@ -1,6 +1,6 @@
-const categoryService = require("../services/category_service");
+const categoryService = require('../services/category_service');
 const newsService = require('../services/news_service');
-const goodService = require("../services/good_service");
+const goodService = require('../services/good_service');
 
 exports.homePage = async (req, resp) => {
     let categories = await categoryService.checkCategories();

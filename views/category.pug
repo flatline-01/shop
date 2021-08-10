@@ -1,14 +1,14 @@
 include head.pug
 include header-light.pug
 main
-    section(class='row g-0 category-page-block p-3' style=`background-image: url(${category.image});`)
+    section(class='row g-0 category-page-block p-3' style=`background-image: url('/images/category-images/slider/${category.image}');`)
         div(class='col-sm-12 col-md-5 col-lg-5  category-page-block__image text-white')
             img(src=`/public/images/bikes/bike${category.goods[0]['id']}.png` class='bike-image')
-            img(src=`${category.image}` class="bg-image")
+            img(src=`/images/category-images/${category.image}` class="bg-image")
         div(class='col-sm-12 col-md-5 col-lg-5 offset-xl-1 text-white category-page-block__text')
-            h1(class='title') #{category.name}
+            h1(class='title') #{category.name.toUpperCase()}
             p(class='text') #{category.description}
-    include card.pug
+    include product_card.pug
 include footer.pug
 script.
     let categoryGoods = !{JSON.stringify(category.goods)};

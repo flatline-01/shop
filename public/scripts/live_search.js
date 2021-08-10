@@ -60,8 +60,8 @@ searchField.onkeyup = async () => {
                         searchResults.innerHTML += `
                     <li class='px-2'>
                         <a href='/product/${elem['id']}' class='row'>
-                            <img src='/images/bikes/${elem.images[0].images.split(', ')[0]}' class='col-4'>
-                            <p class='col-7 text'><b>${elem.name.toUpperCase()}</b><br> ${elem.cost}$ </p>
+                            <img src='/images/icons/bike.png' class='col-3'>
+                            <p class='col-8 text'><b>${elem.name.toUpperCase()}</b><br> ${elem.cost}$ </p>
                         </a>
                     </li>
                    `;

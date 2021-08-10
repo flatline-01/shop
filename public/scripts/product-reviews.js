@@ -5,10 +5,12 @@ const reviewForm = document.forms['review-form'];
 const leaveAReviewBtn = document.getElementById('leaveAReviewBtn');
 const sendReviewBtn = document.getElementById('send-review');
 
-leaveAReviewBtn.onclick = () => {
-    reviewForm.classList.toggle('d-none');
-    let productEvaluationItems = [...document.getElementById('product-evaluation').children];
-    addEvalution(productEvaluationItems);
+if(leaveAReviewBtn){
+    leaveAReviewBtn.onclick = () => {
+        reviewForm.classList.toggle('d-none');
+        let productEvaluationItems = [...document.getElementById('product-evaluation').children];
+        addEvalution(productEvaluationItems);
+    }
 }
 
 
@@ -49,11 +51,18 @@ function addEvalution(arr){
     });
 }
 
+if(sendReviewBtn){
+    sendReviewBtn.onclick = sendReview;
+}
 
-sendReviewBtn.onclick = sendReview;
+let reviewerName = null;
+let reviewText   = null;
 
-const reviewerName = reviewForm.elements['user-name'];
-const reviewText = reviewForm.elements['review-text'];
+if(reviewForm){
+    reviewerName = reviewForm.elements['user-name'];
+    reviewText   = reviewForm.elements['review-text'];
+}
+
 
 async function sendReview(){
     let evaluationStars = [];

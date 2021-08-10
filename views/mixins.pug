@@ -1,21 +1,10 @@
-mixin footerCategoriesList
-    div(class='col-sm-6 col-md-2')
-        ul
-            li Категории #[br]
-            li
-                a(href='#road-series') ROAD SERIES #[br]
-            li
-                a(href='#street-series') STREET SERIES #[br]
-            li
-                a(href='#mountain-series') MOUNTAIN SERIES
 mixin footerInfo
     div(class='col-sm-6 col-md-2')
-        ul
-            li #[strong Информация] #[br]
+        ul #[b Information] #[br]
             li
-                a(href='#about') О нас #[br]
+                a(href='#about' class='footer-link') About us #[br]
             li
-                a(href='#') Контакты
+                a(href='#' class='footer-link') Contacts
 mixin featuresCard(link, title, text)
     div(class='col-md-4 features-card px-5')
         img(src=link alt='service icon' class='features-img')
@@ -26,5 +15,4 @@ mixin news(link, title, text, id)
         img(src=link class='news-elem__content news-elem__img' alt='img')
         h3(class='smaller-title news__elem-content')=title
         p(class='small-text news__elem-content news-card__text')=text
-        a(class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href=`/news/${id}`) ЧИТАТЬ
-
+        a(class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href=`/news/${id}`) READ

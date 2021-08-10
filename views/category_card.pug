@@ -1,0 +1,6 @@
+each item in categories
+    div(class='col-sm-10 col-md-3 p-4 category_card')
+        a(href=`/category/${item.id}` class='position-relative')
+            img(src=`/images/bikes/${item.goods[0].images[0].images.split(', ')[0]}` class='category_card-bike w-100')
+            img(src=`/public/images/category-images/category-img${item.id}.png` class='w-100 categorySliderElemBg')
+            h3(class='smaller-title') #{item.name.toUpperCase()}

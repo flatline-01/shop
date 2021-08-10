@@ -5,13 +5,27 @@ footer(class='footer bg-black text text-white')
             div(class='col-sm-12 col-md-3')
                 a(href='/#main-page')
                     img(src='/public/images/logos/logo%201.png')
-            +footerCategoriesList
+            div(class='col-sm-6 col-md-2')
+                ul(class='categories-list') #[b Categories]
+                    li
+                        a( href='/category/1' class='smaller-title footer-link') ROAD SERIES
+                    li
+                        a(href='/category/2' class='smaller-title footer-link') STREET SERIES
+                    li
+                        a(href='/category/3' class='smaller-title footer-link') MOUNTAIN SERIES
             +footerInfo
-            +footerCategoriesList
+            div(class='col-sm-6 col-md-2')
+                ul(class='categories-list') #[b Categories]
+                    li
+                        a( href='/category/1' class='smaller-title footer-link') ROAD SERIES
+                    li
+                        a(href='/category/2' class='smaller-title footer-link') STREET SERIES
+                    li
+                        a(href='/category/3' class='smaller-title footer-link') MOUNTAIN SERIES
             +footerInfo
             div(class='col-sm-12 col-md-1')
                 a(href='https://www.instagram.com')
                     img(src='/public/images/icons/insta-w.png' alt='instagram' class='mt-2 social-i')
                 a(href='https://www.facebook.com')
                     img(src='/public/images/icons/f-w.png' alt='facebook' class='mt-2 social-i')
-            p(class='text text-center text-white-50 mt-4') #[sup ©] STREETSTER — Все права защищены
+            p(class='text text-center text-white-50 mt-4') #[sup ©] STREETSTER — All rights reserved

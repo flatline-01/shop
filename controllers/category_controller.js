@@ -9,3 +9,13 @@ exports.singleCategory = async (req, resp) => {
     resp.render("category.pug", { category });
 
 };
+
+exports.getAllCategories = async (req, resp) =>  {
+    let categories = await categoryService.checkCategories();
+
+    for(let i = 0; i < categories.length; i++){
+        categories[i].goods = await categoryService.checkCategoryGoods(i+1);
+    }
+
+    resp.render('categories.pug',{ categories });
+}

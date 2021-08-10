@@ -4,12 +4,11 @@ const express = require("express");
 const path    = require("path");
 const bodyParser = require('body-parser');
 
-// подключаем переменные из файла
 const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const pagesRouter = require('./routes'); // подключаем наши роуты
+const pagesRouter = require('./routes');
 
 app.listen(3000);
 

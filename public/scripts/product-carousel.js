@@ -6,7 +6,7 @@ let productCarouselIndicators = document.getElementsByClassName('carousel-indica
 
 let carouselItems = [];
 
-if(productImagesInCategory &&  categoryGoods !== null && productCarouselIndicators){
+if(productImagesInCategory && typeof categoryGoods !== 'undefined' && categoryGoods !== null && productCarouselIndicators){
     productCarouselIndicators = [...productCarouselIndicators];
     for(let i = 0; i < categoryGoods.length; i++){
         let carouselItem = '';

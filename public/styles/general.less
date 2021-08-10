@@ -37,6 +37,9 @@
 .large-text{
   font-size: @p-large-font-size;
 }
+.small-text{
+  font-size: 0.8em;
+}
 
 .bg-black{
   background-color: @black-color;
@@ -63,11 +66,15 @@ ul, ol{
 li {
   list-style-type: none;
 }
-a{
+a {
+  color: @black-color;
   text-decoration: none;
    &:hover{
      color: @black-color;
    }
+}
+a.title{
+  .underline;
 }
 section{
    margin-top: 10%;
@@ -96,9 +103,6 @@ hr{
   -webkit-box-shadow: 21px 26px 12px -8px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 21px 26px 12px -8px rgba(34, 60, 80, 0.2);
   box-shadow: 21px 26px 12px -8px rgba(34, 60, 80, 0.2);
-  &-elem_underline:hover{
-    text-decoration: underline;
-  }
 }
 
 .btn-black, .btn-white{
@@ -131,6 +135,12 @@ hr{
   width: 100%;
   left: 0;
 }
-a {
-  color: @black-color;
+.underline{
+  text-decoration: underline;
+}
+.pointer{
+  cursor: pointer;
+}
+.mt-6{
+  margin-top: 6em;
 }

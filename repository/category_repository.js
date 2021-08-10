@@ -1,5 +1,5 @@
 const database = require('../database');
-const Category = require("../models/Category");
+const Category = require('../models/Category');
 
 const categoriesTableName = 'categories';
 

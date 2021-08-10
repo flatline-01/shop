@@ -1,3 +1,11 @@
+.categories-page{
+  @media screen and (min-width: 900px){
+    height: 100vh;
+  }
+  @media screen and (max-width: 600px){
+    margin-top: 45%;
+  }
+}
 .category-page-block{
   .centered-flex();
   z-index: -1;
@@ -24,13 +32,31 @@
     }
   }
 }
-.bg-image{
-  width: 100%;
-  filter: brightness(150%);
-  clip-path: polygon(45% 0, 85% 0, 70% 100%, 30% 100%);
-}
-.bike-image{
+.bike-image {
   position: absolute;
-  width: 70%;
+  width: 75%;
   z-index: 2;
+  left: 20%;
+}
+
+.slide-elem-name:hover{
+  color: @white-color;
+}
+.categories_cards{
+  margin-top: 10%;
+}
+.category_card{
+  transition: all .3s ease-in;
+  &-bike{
+    position: absolute;
+    margin-top: 20%;
+    z-index: 2;
+    left: 7%;
+    @media screen and(max-width: 800px){
+      left: 0;
+    }
+  }
+  &:hover{
+    transform: scale(1.2);
+  }
 }

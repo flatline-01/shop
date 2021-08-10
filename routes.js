@@ -1,7 +1,3 @@
-/**
- * Это у нас общий файл, который хранит список всех адресов, которые есть в приложении
- */
-
 const express = require('express');
 const router = express.Router();
 
@@ -22,6 +18,8 @@ router.post('/', (req, resp) => HomeController.liveSearch(req, resp));
 router.get('/product/:id', ProductController.singleProduct);
 
 /** Category routes */
+router.get('/categories',(req, resp) =>  CategoryController.getAllCategories(req, resp));
+
 router.get('/category/:id', CategoryController.singleCategory);
 
 /** Cart routes */

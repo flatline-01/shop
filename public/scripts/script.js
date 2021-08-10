@@ -1,10 +1,10 @@
 'use strict'
-const cartIcon     = document.getElementById("cart-icon");
-const menuCartIcon = document.getElementById("menu-cart");
-const cart         = document.querySelector("#cart");
-const menuIcon     = document.querySelector(".menu-icon");
-const btnClose     = document.querySelector(".btn-close");
-const menu         = document.querySelector(".menu");
+const cartIcon     = document.getElementById('cart-icon');
+const menuCartIcon = document.getElementById('menu-cart');
+const cart         = document.querySelector('#cart');
+const menuIcon     = document.querySelector('.menu-icon');
+const btnClose     = document.querySelector('.btn-close');
+const menu         = document.querySelector('.menu');
 const dates        = document.getElementsByClassName('date');
 const newsCardText = document.getElementsByClassName('news-card__text')
 
@@ -30,25 +30,25 @@ function checkUndefined(elem, calback){
 }
 
 
-cartIcon.addEventListener("mousemove",showCart);
-menuIcon.addEventListener("click", showMenu);
+cartIcon.addEventListener('mousemove',showCart);
+menuIcon.addEventListener('click', showMenu);
 
 function hide(elem){
-   elem.style.display = "none";
+   elem.style.display = 'none';
 }
 function show(elem){
-    elem.style.display = "block";
+    elem.style.display = 'block';
  }
  function showCart(){
     show(cart);
-    cart.classList.add("showAnim");
+    cart.classList.add('showAnim');
     cart.onmouseover = () => show(cart);
     cart.onmouseout = () => hide(cart);
 }
 function showMenu(){
     show(menu);
-    menu.classList.add("showAnim");
-    menuCartIcon.addEventListener("mousemove",showCart);
+    menu.classList.add('showAnim');
+    menuCartIcon.addEventListener('mousemove',showCart);
     btnClose.onclick = () => hide(menu);
 }
 

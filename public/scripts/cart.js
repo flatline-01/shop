@@ -2,7 +2,10 @@
 let cartData = {}
 
 const addToCartBtn = document.getElementById('addToCartBtn');
-const cart2 = document.getElementById('cart2');
+
+const orderProductBtn = document.getElementById('orderProduct');
+
+const cartOnOrderPage = document.getElementById('cartOnOrderPage');
 
 if(localStorage.getItem('cart')){
     cartData = JSON.parse(localStorage.getItem('cart'));
@@ -11,6 +14,9 @@ if(localStorage.getItem('cart')){
 
 if(addToCartBtn !== null){
     addToCartBtn.onclick = addToCart;
+}
+if(orderProductBtn !== null){
+    orderProductBtn.onclick = addToCart;
 }
 
 async function addToCart(){
@@ -38,17 +44,17 @@ async function  getProductInfo(){
         createFirstCartElem(result);
 
     }
-    else output('Cart is empty');
+    else output('The cart is empty');
 }
 
 function createFirstCartElem(serverAnswer){
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
-    let btn = `<a class='rounded-0 menu__btn' href='/cart'>ЗАКАЗАТЬ</a>`
+    let btn = `<a class='rounded-0 menu__btn' href='/cart'>ORDER</a>`
     let cartContent = '';
     for(let i in serverAnswer){
-        let cartElemImg = `<div class='col-5'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
-        let cartElemText = `<p class='col-4 text'>${serverAnswer[i]['name']}<sup class='goods-count'>${cartData[serverAnswer[i]['id']]}</sup><br>${serverAnswer[i]['cost']}₴</p><hr>`;
+        let cartElemImg = `<div class='col-4 p-2'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
+        let cartElemText = `<p class='col-5 small-text'>${serverAnswer[i]['name'].toUpperCase()}<br>${serverAnswer[i]['cost']}₴</p><span class='col-2'>Count: <b class='goods-count'>${cartData[serverAnswer[i]['id']]}</b></span><hr>`;
         cartContent += `<div class='row d-flex justify-content-center align-items-center px-3'>${cartElemImg}${cartElemText}</div></div>`;
     }
     chengeElemText(cart, `${goodsCount}${cartContent}${sum}${btn}`);
@@ -57,16 +63,16 @@ function createSecondCartElem(serverAnswer){
 
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
 
-    let cartContent2 = '';
+    let cartContentOnOrderPage = '';
     for(let i in serverAnswer){
         let cartElemImg = `<div class='col-3 pb-2'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
-        let cartElemText = `<p class='col-3 text pb-2'><b>${serverAnswer[i]['name']}</b><br> Рама: ${serverAnswer[i]['frame']}</p>`;
-        let btns = `<div class='col-3 text pb-2'> <span class='minus-btn'>-</span> <span class='bg-black py-1 px-2 text-white'>${cartData[serverAnswer[i]['id']]}</span> <span class='plus-btn'>+</span></div>`
-        let cartElemPrice = `<div class='col-3 pb-2'><p class="text">${serverAnswer[i]['cost']}₴</p></div>`
-        cartContent2 += `<div class='row d-flex justify-content-center align-items-center' data-product-id='${serverAnswer[i]['id']}'>${cartElemImg}${cartElemText}${btns}${cartElemPrice}<hr></div>`;
+        let cartElemText = `<p class='col-3 pb-2'><b class='small-text'>${serverAnswer[i]['name'].toUpperCase()}</b><br> The frame: ${serverAnswer[i]['frame']}</p>`;
+        let btns = `<div class='col-3 text pb-2'> <span class='minus-btn pointer'>-</span> <span class='bg-black py-1 px-2 text-white'>${cartData[serverAnswer[i]['id']]}</span> <span class='plus-btn pointer'>+</span></div>`
+        let cartElemPrice = `<div class='col-3 pb-2'><p class='text'>${serverAnswer[i]['cost']}₴</p></div>`
+        cartContentOnOrderPage += `<div class='row d-flex justify-content-center align-items-center' data-product-id='${serverAnswer[i]['id']}'>${cartElemImg}${cartElemText}${btns}${cartElemPrice}<hr></div>`;
     }
 
-    chengeElemText(cart2, `${goodsCount}${cartContent2}${sum}`);
+    chengeElemText(cartOnOrderPage, `${goodsCount}${cartContentOnOrderPage}${sum}`);
     initializeCartListeners();
 }
 
@@ -105,7 +111,7 @@ function initializeCartListeners(){
     initializeOnProductDeleteListener();
 }
 function output(str){
-    chengeElemText(cart2, str);
+    chengeElemText(cartOnOrderPage, str);
     cartIcon.setAttribute('title', str);
     menuCartIcon.setAttribute('title', str);
 }
@@ -114,14 +120,20 @@ function chengeElemText(elem, data){
 }
 
 function createCartElem(serverAnswer){
-    let goodsCount = `<h3 class='smaller-title mb-3 sum-goods-count'><b>В корзине ${getCount(cartData)} товаров</b></h3>`;
+    let goodsCount;
+    if(getCount(cartData) === 1){
+        goodsCount = `<h3 class='smaller-title mx-2 mt-2 mb-4 sum-goods-count'><b>There is  ${getCount(cartData)} product in the cart</b></h3>`;
+    }
+    else {
+        goodsCount = `<h3 class='smaller-title mb-3 sum-goods-count'><b>There are ${getCount(cartData)} products in the cart</b></h3>`;
+    }
     let sum = `<p class='sum-goods-prices'>`;
     let prices = [];
     for(let i = 0; i < serverAnswer.length; i++){
         prices.push(serverAnswer[i].cost * cartData[serverAnswer[i].id]);
     }
     let sumOfPrices = prices.reduce((sum, cur) => sum + cur);
-    sum+=`Доставка: бесплатно <br> <b>Итого:</b> ${sumOfPrices} ₴</p>`;
+    sum+=`Delivery: free <br> <b>Total:</b> ${sumOfPrices} ₴</p>`;
 
     return [goodsCount, sum, sumOfPrices];
 }

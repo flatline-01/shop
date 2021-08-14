@@ -56,3 +56,16 @@ function dateParse(gmtFormat){
     const gmtElems = gmtFormat.split(' ');
     return `${gmtElems[1]} ${gmtElems[2]} ${gmtElems[3]}`;
 }
+
+function sendData(data, url, callback){
+    fetch(`${url}`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(resp => resp.json())
+        .then(result => callback(result));
+}

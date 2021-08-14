@@ -8,6 +8,7 @@ const CartController = require('./controllers/cart_controller');
 const OrderController = require('./controllers/order_controller');
 const NewsController = require('./controllers/news_controller.js');
 const ReviewsController = require('./controllers/reviews_controller.js');
+const UserController = require('./controllers/user_controller');
 
 /** Main routes */
 router.get('/', HomeController.homePage);
@@ -49,5 +50,12 @@ router.post('/unsubscribe', (req, resp) => NewsController.removeSubscriber(req, 
 router.get('/reviews/:id', (req, resp) => ReviewsController.getGoodReviews(req, resp));
 
 router.post('/reviews/:id', (req, resp) => ReviewsController.addGoodReview(req, resp));
+
+/** Register routes**/
+router.get('/sign_up', (req, resp) => UserController.getSignUpPage(req, resp));
+router.post('/sign_up', (req, resp) => UserController.createUser(req, resp));
+
+router.get('/log_in', (req, resp) => UserController.getLogInPage(req, resp));
+router.post('/log_in', (req, resp) => UserController.getUser(req, resp));
 
 module.exports = router;

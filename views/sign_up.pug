@@ -1,0 +1,20 @@
+include head.pug
+main
+    section(class='row p-3 g-0 registr-page-block')
+        div(class='signup-form')
+            form(name='signup')
+                h2 Sign up
+                p(class='hint-text') Create your account. It's free and only takes a minute.
+                div(class='form-group')
+                    input(type='text' class="form-control" name='first_name' placeholder='First Name' required='required')
+                div(class='form-group')
+                    input(type='text' class='form-control' name='last_name' placeholder='Last Name' required='required')
+                div(class='form-group')
+                    input( type='email' class='form-control' name='email' placeholder='Email' required='required')
+                div(class='form-group')
+                    input(type='password' class='form-control' name='password' placeholder='Password' required='required')
+                div(class='form-group')
+                    button(type='submit' class='btn btn-black rounded-0 border border-2 border-dark' id='signupFormBtn') Sign up
+                div(class='text-center') Already have an account?
+                    a(href='/log_in') Log in
+include scripts.pug

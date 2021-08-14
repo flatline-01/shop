@@ -23,37 +23,28 @@ if(form){
 const orderBtn = document.getElementById('orderBtn');
 
 if(orderBtn){
-    orderBtn.onclick = sendData;
-}
-
-function checkFields(){
-    if(firstNameField.value !== '' && lastNameField.value !== '' && phoneField.value !== '' && emailField.value !== '' && phoneField.value !== '' && cityField.value !== '' && deliveryField.value !== '' && addressField.value !== ''){
-        return true;
-    }
-}
-
-async  function sendData(){
-    if(checkFields()){
-        let data = JSON.stringify({
-            firstName: firstNameField.value,
-            lastName: lastNameField.value,
-            phone: phoneField.value,
-            email: emailField.value,
-            city: cityField.value,
-            address: addressField.value,
-            payment: paymentField.value,
-            delivery: deliveryField.value,
-            cart: JSON.stringify(cartData)
-        });
-        let response = await  fetch('/order', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
+    orderBtn.onclick = (e) => {
+        e.preventDefault();
+        sendData(
+            {
+                firstName: firstNameField.value,
+                lastName: lastNameField.value,
+                phone: phoneField.value,
+                email: emailField.value,
+                city: cityField.value,
+                address: addressField.value,
+                payment: paymentField.value,
+                delivery: deliveryField.value,
+                cart: JSON.stringify(cartData)
             },
-            body: data
-        });
-        let result = await response.json();
-        localStorage.setItem('cart', JSON.stringify({}));
-    }
+            '/order',
+            (result) => {
+                if(result){
+                    localStorage.setItem('cart', JSON.stringify({}));
+                    window.location.reload();
+                }
+            }
+        )
+    };
 }
+

@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "dotenv": "^9.0.1",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "mysql": "^2.18.1",
     "nodemailer": "^6.6.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
     "http": "0.0.1-security",

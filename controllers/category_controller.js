@@ -4,9 +4,16 @@ exports.singleCategory = async (req, resp) => {
     let categoryId = req.params.id;
 
     let category = await categoryService.checkCategoryId(categoryId);
-    category.goods = await categoryService.checkCategoryGoods(categoryId);
 
-    resp.render("category.pug", { category });
+    if(category !== null){
+        category.goods = await categoryService.checkCategoryGoods(categoryId);
+        resp.render("category.pug", { category });
+    } else {
+        let errorCode = 404;
+        let errorMessage = 'Page not found.';
+        resp.render('error.pug',  {errorCode, errorMessage});
+    }
+
 
 };
 

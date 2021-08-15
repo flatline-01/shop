@@ -9,7 +9,13 @@ module.exports.getAllNews = async (req, resp) => {
 module.exports.getSingleNews = async (req, resp) => {
     const  newsId = req.params.id;
     const news = await newsService.checkNewsId(newsId);
-    resp.render('news-article.pug', { news });
+    if(news){
+        resp.render('news-article.pug', { news });
+    } else {
+        let errorCode = 404;
+        let errorMessage = 'Page not found.';
+        resp.render('error.pug',  {errorCode, errorMessage});
+    }
 }
 
 module.exports.addSubscriber = async (req, resp) => {

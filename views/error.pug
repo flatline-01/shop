@@ -1,0 +1,7 @@
+include head.pug
+    main
+        section(class='error_page text-white d-flex flex-column justify-content-center align-items-center')
+            h1(class='title')=errorCode
+            p(class='text')=errorMessage
+            a(class='btn btn-white' href='/') Back to the main page
+include scripts.pug

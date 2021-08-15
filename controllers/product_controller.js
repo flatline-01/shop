@@ -5,15 +5,21 @@ const categoryService = require('../services/category_service');
 module.exports.singleProduct = async (req, resp) => {
     let productId = req.params.id;
     let product =  await goodService.checkProductId(productId);
+    if(product !== null){
+        const categoryId = product.categoryId;
 
-    const categoryId = product.categoryId;
+        let category = await categoryService.checkCategoryId(categoryId);
+        category.goods = await categoryService.checkCategoryGoods(categoryId);
 
-    let category = await categoryService.checkCategoryId(categoryId);
-    category.goods = await categoryService.checkCategoryGoods(categoryId);
+        product.categoryName = category.name;
 
-    product.categoryName = category.name;
+        product.otherCategoryGoods =  category.goods
 
-    product.otherCategoryGoods =  category.goods
+        resp.render('product.pug', { product });
+    } else {
+        let errorCode = 404;
+        let errorMessage = 'Page not found.';
+        resp.render('error.pug',  {errorCode, errorMessage});
+    }
 
-    resp.render('product.pug', { product });
 };

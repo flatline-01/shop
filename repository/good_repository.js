@@ -29,15 +29,16 @@ module.exports.getAllGoods = async () => {
 module.exports.getGoodById = async (goodId) => {
     try {
         const connection = database.getConnection();
-        let rows = await connection.query(`SELECT * FROM ${goodsTableName} where id = ? `,
-            [goodId]);
+        let rows = await connection.query(`SELECT * FROM ${goodsTableName} where id = ? `,[goodId]);
 
-        let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `,[goodId]);
-        let reviews = await connection.query(`SELECT * FROM ${reviewsTableName} where good_id = ? `, [goodId]);
-        rows[0].images = JSON.parse(JSON.stringify(images));
-        rows[0].reviews = JSON.parse(JSON.stringify(reviews));
-        return (rows && rows.length > 0) ? new Good(rows[0])
-            : null;
+        if(rows.length > 0){
+            let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `,[goodId]);
+            let reviews = await connection.query(`SELECT * FROM ${reviewsTableName} where good_id = ? `, [goodId]);
+            rows[0].images = JSON.parse(JSON.stringify(images));
+            rows[0].reviews = JSON.parse(JSON.stringify(reviews));
+        }
+
+        return (rows && rows.length > 0) ? new Good(rows[0]) : null;
 
     } catch (e) {
         console.log(`Unable to fetch goods for goodId=${goodId} from database: ${e}`)

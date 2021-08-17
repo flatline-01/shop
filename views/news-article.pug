@@ -3,7 +3,7 @@ include header-dark.pug
 main(class='main mb-5 news')
     img(class='bg-img top-0' src='/public/images/backgrounds/Vector (2).png')
     article(class='container')
-        div(class='article-block' style=`background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%), center center no-repeat, url(${news.image}); background-size: cover;`)
+        div(class='article-block' style=`background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%), center center no-repeat, url(${news.image}); background-size: cover;` alt=`image for the news article: ${news.title}`)
             div(class='text-white  article-block__title')
                 h2(class='small-title')=news.title
                 h3(class='smaller-title date')=news.date

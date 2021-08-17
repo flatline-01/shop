@@ -12,7 +12,7 @@ mixin featuresCard(link, title, text)
         p(class='text')=text
 mixin news(link, title, text, id)
     article(class='col-md-4 news-elem')
-        img(src=link class='news-elem__content news-elem__img' alt='img')
+        img(src=link class='news-elem__content news-elem__img' alt=`image for the news article: ${title}`)
         h3(class='smaller-title news__elem-content')=title
         p(class='small-text news__elem-content news-card__text')=text
         a(class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href=`/news/${id}`) READ

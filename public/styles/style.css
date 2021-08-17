@@ -597,7 +597,12 @@ hr {
   left: 2%;
 }
 .reviews {
-  margin-top: 10%;
+  margin-top: 35%;
+}
+@media screen and (min-width: 700px){
+  .reviews{
+    margin-top: 10%;
+  }
 }
 .star,
 .star_active {

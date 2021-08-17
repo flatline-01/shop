@@ -15,15 +15,15 @@ main
                     each value,index in categories
                         if(index === 0)
                             div(class='carousel-item active d-flex flex-column justify-content-center align-items-center p-4')
-                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg')
+                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg' alt=`${value.name} image`)
                                 div(class='slideContent')
-                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
+                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50' alt=`image of the new bike in the category ${value.name}`)
                                     a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name'].toUpperCase()} #[br]
                         else
                             div(class='carousel-item d-flex flex-column justify-content-center align-items-center p-4')
-                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg')
+                                img(src=`/images/category-images/slider/${value['image']}` class='categorySliderElemBg' alt=`${value.name} image`)
                                 div(class='slideContent')
-                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50')
+                                    img(src=`/images/bikes/${value.goods[0].images[0].images.split(', ')[0]}` class='w-50' alt=`image of the new bike in the category ${value.name}`)
                                     a(href=`/category/${value['id']}` class='slide-elem-name') #{value['name'].toUpperCase()} #[br]
                 button(class='carousel-control-prev' data-bs-target='#carouselExampleFade' data-bs-slide='prev' type='button')
                     span(class='carousel-control-prev-icon' aria-hidden='true')
@@ -38,22 +38,22 @@ main
                     div(class='text-white favorites__text')
                         h3(class='smaller-title') Streetster Bakerstreet
                         p(class='text') speed coupled with convenience
-                    img(src='/public/images/bikes/bike2.png' alt='a bike' class='favorites__img-bike')
-                    img(src='/public/images/icons/Subtract.png' alt='arrow' class='arrow-right' onclick='window.location.href = \'../category/2\';')
+                    img(src='/public/images/bikes/bike2.png' alt='favorite bike' class='favorites__img-bike' title='bike')
+                    img(src='/public/images/icons/Subtract.png' alt='arrow right' class='arrow-right' onclick='window.location.href = \'../category/2\';')
                 div(class='col-sm-12 col-md-5 d-flex justify-content-between flex-wrap text-white')
                     div(class='row text')
                         div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
-                            img(src='/public/images/accessories/product2.png' alt='product' class='w-50 favorites__img-accessory')
+                            img(src='/public/images/accessories/product2.png' alt='favorite product Octane Helmet' title='Octane Helmet' class='w-50 favorites__img-accessory')
                             p Octane Helmet
                         div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
-                            img(src='/public/images/accessories/product1.png' alt='product' class='w-50 favorites__img-accessory')
+                            img(src='/public/images/accessories/product1.png' alt='favorite product Canyon Protection' title='Canyon Protection' class='w-50 favorites__img-accessory')
                             p Canyon Protection
                     div(class='row text')
                         div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
-                            img(src='/public/images/accessories/product1.png' alt='product' class='w-50 favorites__img-accessory')
+                            img(src='/public/images/accessories/product1.png' alt='favorite product Canyon Protection' title='Canyon Protection' class='w-50 favorites__img-accessory')
                             p Canyon Protection
                         div(class='col-sm-12 col-md-5 bg-black p-4 d-flex flex-column justify-content-center align-items-center mt-2 favorites__item')
-                            img(src='/public/images/accessories/product2.png' alt='product' class='w-50 favorites__img-accessory')
+                            img(src='/public/images/accessories/product2.png' alt='favorite product Octane Helmet' title='Octane Helmet' class='w-50 favorites__img-accessory')
                             p Octane Helmet
         section(class='row about py-5' id='about')
             p(class='large-text') <b>STREETSTER</b> – Lorem ipsum dolor sit amet, consectetur adipiscing elit,

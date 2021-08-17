@@ -10,9 +10,9 @@ each value in category.goods
                     ul(class='d-flex' class='colors-list')
                         each item, index in value.images
                             if(index === 0)
-                                li(style={background: `${item.color}`} class='product-info__elem-color')
+                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
                             else
-                                li(style={background: `${item.color}`} class='product-info__elem-color')
+                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
             a(class='btn btn-white product-info__elem text rounded-0 border border-dark border-3 py-2' href=`/product/${value['id']}`) MORE DETAILS
         div(class='col-sm-12 col-md-8 product-img')
             div( class='col-md-8 carousel carousel-dark slide product-images-carousel' id=`product-images${value['id']}` data-bs-ride='carousel')

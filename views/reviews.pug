@@ -10,7 +10,7 @@ main(class='reviews')
                         h3(class='text fw-bold me-3') #{reviews[i].name}
                         div(class='product-evaluation')
                             - for (let j = 0; j < reviews[i].evaluation; j++)
-                                img(src='/images/icons/star.png' class='mx-1 mb-3')
+                                img(src='/images/icons/star.png' class='mx-1 mb-3' alt='star')
                     p(class='text') #{reviews[i].text}
 include footer.pug
 include scripts.pug

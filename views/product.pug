@@ -13,9 +13,9 @@ main(class='product-page')
                         ul(class='d-flex mb-4' id='colors-list')
                             each item, index in product.images
                                 if(index === 0)
-                                    li(style={background: `${item.color}`} class='product-info__elem-color product-info__elem-color_selected')
+                                    li(style={background: `${item.color}`} class='product-info__elem-color product-info__elem-color_selected'  alt=`${item.color} color` title=`${item.color} color`)
                                 else
-                                    li(style={background: `${item.color}`} class='product-info__elem-color')
+                                    li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
                     li #[b Frame:] #{product.frame} (Growth #{product.growth}) #[br]
                     li #[b Wheel:] #{product.wheel} #[br]
                 button(class='btn-black product-info__elem mt-4' id='addToCartBtn' data-product-id = product.id) Add to cart
@@ -33,7 +33,7 @@ main(class='product-page')
                                 h3(class='text fw-bold me-3') #{item.name}
                                 div
                                     - for (let i = 0; i < item.evaluation; i++)
-                                        img(src='/images/icons/star.png' class='mx-1 mb-3')
+                                        img(src='/images/icons/star.png' class='mx-1 mb-3' alt='star')
                             p(class='text') #{item.text}
                 div(class='reviews-btns d-flex justify-content-between')
                     button(class='btn-black' id='leaveAReviewBtn') leave a review
@@ -41,12 +41,12 @@ main(class='product-page')
                     label(for='user-name') Name #[br]
                     input(type='text' placeholder='your name' id='user-name' class='mb-3' name='user-name')
                     label(for='product-evaluation') Evaluation #[br]
-                    div(class='product-evaluation mb-3' id='product-evaluation')
-                        i(class="star far fa-star")
-                        i(class="star far fa-star")
-                        i(class="star far fa-star")
-                        i(class="star far fa-star")
-                        i(class="star far fa-star")
+                    div(class='product-evaluation mb-3' id='product-evaluation' alt='product-evaluation' title='product-evaluation')
+                        i(class='star far fa-star')
+                        i(class='star far fa-star')
+                        i(class='star far fa-star')
+                        i(class='star far fa-star')
+                        i(class='star far fa-star')
                     label(for='review-text') Review #[br]
                     textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
                     input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
@@ -59,7 +59,7 @@ main(class='product-page')
                      - for(let i = 0; i < product.otherCategoryGoods.length; i++)
                         if product.otherCategoryGoods[i].id !== product.id
                             a(class='col-md-4 other-models__product' href=`${product.otherCategoryGoods[i].id}`)
-                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2')
+                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
                                 div(class='row justify-content-between')
                                     div(class='col-5 other-models__product-elem')
                                         h3(class='smaller-title')=product.otherCategoryGoods[i].name.toUpperCase()
@@ -67,12 +67,12 @@ main(class='product-page')
                                     div(class='col-5 other-models__product-elem')
                                         list(class='available-colors d-flex justify-content-center align-items-center pt-3')
                                             each item in product.otherCategoryGoods[i].images
-                                                li(style={background: `${item.color}`} class='product-info__elem-color')
+                                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
                 else
                     - for(let i = 0; i < 4; i++)
                         div(class='col-md-4 other-models__product')
                             a(class='ol-md-4 other-models__product' href=`${product.otherCategoryGoods[i].id}`)
-                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2')
+                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
                                 div(class='row justify-content-between')
                                     div(class='col-5 other-models__product-elem')
                                         h3(class='smaller-title')=product.otherCategoryGoods[i].name.toUpperCase()
@@ -80,7 +80,7 @@ main(class='product-page')
                                     div(class='col-5 other-models__product-elem')
                                         list(class='available-colors d-flex justify-content-center align-items-center pt-3')
                                             each item in product.otherCategoryGoods[i].images
-                                                li(style={background: `${item.color}`} class='product-info__elem-color')
+                                                li(style={background: `${item.color}`} class='product-info__elem-color' alt=`${item.color} color` title=`${item.color} color`)
 include footer.pug
 script.
     let productData = !{JSON.stringify(product)};

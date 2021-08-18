@@ -599,8 +599,8 @@ hr {
 .reviews {
   margin-top: 35%;
 }
-@media screen and (min-width: 700px){
-  .reviews{
+@media screen and (min-width: 800px) {
+  .reviews {
     margin-top: 10%;
   }
 }

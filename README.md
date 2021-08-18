@@ -10,9 +10,9 @@ Fullstack project  -  online bicycle shop.The project includes functions such as
 - MySQL
 
 ### Preview
-[Desctop version](desctop_preview.md)
+[Desctop version](preview/desctop_preview.md)
 
-[Mobile version](mobile_preview.md)
+[Mobile version](preview/mobile_preview.md)
 
 ### Contributors
 [Tangorn3x3](https://github.com/Tangorn3x3)

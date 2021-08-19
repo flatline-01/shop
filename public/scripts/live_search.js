@@ -4,7 +4,6 @@ const searchResults = document.querySelector('.search_results');
 function changeSearchStyles(x) {
     if (x.matches) {
         searchField.parentNode.onclick = () => {
-            console.log('focus');
             searchField.parentNode.parentNode.nextSibling.classList.remove('col-7');
             searchField.parentNode.parentNode.nextSibling.classList.add('col-10');
             searchField.parentNode.parentNode.classList.remove('col-2');

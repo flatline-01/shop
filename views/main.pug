@@ -72,20 +72,7 @@ main
         section(id='news' class='news text-center')
             a(class='title' href='/news') News
             div(id='carouselExampleControls2' class='carousel carousel-dark slide' data-bs-ride='carousel')
-                div(class='carousel-inner px-5')
-                    div(class='carousel-item active')
-                        div(class='row')
-                            - for(let i = 0; i < 3; i += 3)
-                                +news(news[news.length - 1].image, news[news.length - 1].title, news[news.length - 1].text, news[news.length - 1].id)
-                                +news(news[news.length - 2].image, news[news.length - 2].title, news[news.length - 2].text, news[news.length - 2].id)
-                                +news(news[news.length - 3].image, news[news.length - 3].title, news[news.length - 3].text, news[news.length - 3].id)
-                        - news.pop()
-                        - news.pop()
-                        - news.pop()
-                    if news.length > 0
-                        div(class='carousel-item')
-                            - for(let i = 0; i <= news.length; i += 3)
-                                +news(news[news.length - 1].image, news[news.length - 1].title, news[news.length - 1].text, news[news.length - 1].id)
+                div(class='carousel-inner px-5' id='news-carousel')
                 a(class='carousel-control-prev' href='#carouselExampleControls2' role='button' data-bs-slide='prev')
                     span(class='carousel-control-prev-icon' aria-hidden='true')
                     span(class='visually-hidden') Previous
@@ -100,4 +87,5 @@ main
 include footer.pug
 script.
     let categories = !{JSON.stringify(categories)}
+    let news = !{JSON.stringify(news)}
 include scripts.pug

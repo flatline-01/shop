@@ -69,3 +69,15 @@ function sendData(data, url, callback){
         .then(resp => resp.json())
         .then(result => callback(result));
 }
+
+function createGroups(arr, numGroups) {
+    let perGroup;
+    if(numGroups === 3){
+        perGroup = Math.ceil(arr.length / numGroups) + 1;
+    } else {
+        perGroup = Math.ceil(arr.length / numGroups);
+    }
+    return new Array(numGroups)
+        .fill('')
+        .map((_, i) => arr.slice(i * perGroup, (i + 1) * perGroup));
+}

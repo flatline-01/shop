@@ -8,21 +8,21 @@ main(class='mt-6')
                 div(class='row' id='cartOnOrderPage')
                 div(  class='row text-center justify-content-center')
                     button( class='btn-black w-75 mt-2 rounded-0' onclick='window.location.href = \'/categories\';') CONTINUE SHOPPING
-            form(class='col-sm-12 col-md-6' name='form')
-                div(class='row  justify-content-center align-items-center')
+            form(class='col-sm-12 col-md-6 d-flex flex-column align-items-center' name='form')
+                div(class='row')
                     h3(class='smaller-title mt-4') Contact info
                     div(class='row mb-2')
                         div(class='col-md-6 mt-3')
                             label(for='firstname' class='w-100') Name
                                 input(id='firstname'  name='firstname' type='text' class='w-100' pattern='[A-Za-zА-Яа-яЁё]{1,}' placeholder='John' required='required')
                             label(for='phone' class='w-100') Phone
-                                input(id='phone' name='phone' type='tel' class='w-100' pattern='[0-9]{3}-[0-9]{3}-[0-9]{3}' placeholder='123-456-789' required='required')
+                                input(id='phone' name='phone' type='tel' class='w-100' pattern='[+][0-9]{2,3}-[0-9]{3}-[0-9]{3}-[0-9]{3}' placeholder='+996-123-456-789' required='required')
                         div(class='col-md-6 mt-3')
                             label(for='lastname' class='w-100') Lastname
                                 input(id='lastname' name='lastname' type='text' class='w-100' pattern='[A-Za-zА-Яа-яЁё]{1,}' placeholder='Doe' required='required')
                             label(for='email' class='w-100') Email
                                 input(id='email' name='email' type='email' class='w-100' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Email' required='required')
-                    div(class='row  mt-1')
+                div(class='row  mt-1')
                     h3(class='smaller-title') Payment and delivery
                     div(class='row')
                         div(class='col-md-6 mt-3')
@@ -40,5 +40,5 @@ main(class='mt-6')
                                     option(value='courier delivery') Courier delivery
                             label(for='address' class='w-100') Delivery address
                                 input( id='address' name='address' type='text' class='w-100' pattern='[A-Za-zА-Яа-яЁё]{10,}' placeholder='Street, house number' required='required')
-                    input(type='submit' value='PLACE AN ORDER' class='btn-black rounded-0 mt-4 mb-1 p-1' id='orderBtn')
+                input(type='submit' value='PLACE AN ORDER' class='btn-black rounded-0 mt-4 mb-1 p-1' id='orderBtn')
 include scripts.pug

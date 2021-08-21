@@ -18,7 +18,7 @@ module.exports.checkUserEmailAndPass = async (data) => {
             return false;
         }
         else {
-            return true;
+            return acc;
         }
     }
 }

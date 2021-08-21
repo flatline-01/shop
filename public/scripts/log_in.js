@@ -1,6 +1,6 @@
 const loginForm = document.forms['login'];
-let logInEmail;
-let logInPassword;
+let logInEmail    = null;
+let logInPassword = null;
 const loginFormBtn = document.getElementById('loginFormBtn');
 if(loginForm){
     logInEmail = loginForm.elements['email'];
@@ -17,9 +17,15 @@ if(loginFormBtn){
             },
             '/log_in',
             (result) => {
-                if(result === 200) {
-                    loginForm.parentNode.innerHTML = `<p class='title text-center' style='color: #198754'>Welcome</p>`;
+                if(typeof  result === 'object') {
+                    window.location.href = '/categories';
                     sessionStorage.setItem('logged_in', 'true');
+                    sessionStorage.setItem('data',  JSON.stringify({
+                        firstName: result.firstName,
+                        lastName: result.lastName,
+                        email: result.email,
+                        phone: result.phone
+                    }));
                 }
                 if (result === 404){
                     let err = document.createElement('p');

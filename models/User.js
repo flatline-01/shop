@@ -4,9 +4,10 @@ module.exports = class User{
     }
 
     initialize (props) {
-        /** @type {String} */ this.firstName = props['firstName']
-        /** @type {String} */ this.lastName = props['lastName']
+        /** @type {String} */ this.firstName = props['first_name']
+        /** @type {String} */ this.lastName = props['last_name']
         /** @type {String} */ this.email = props['email']
         /** @type {String} */ this.password = props['password']
+        /** @type {String} */ this.phone = props['phone']
     }
 }

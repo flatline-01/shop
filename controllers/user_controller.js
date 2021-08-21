@@ -8,15 +8,13 @@ module.exports.getLogInPage = async (req, resp) => {
 }
 module.exports.createUser = async (req, resp) => {
     let result = await userService.checkUserData(req.body);
-    if(typeof result !== 'string'){
-        resp.json(200);
-    }
-    resp.json(result);
+    let user = await userService.checkUserEmailAndPass(req.body);
+    resp.json(user);
 }
 module.exports.getUser = async (req, resp) => {
     let result = await userService.checkUserEmailAndPass(req.body);
     if(result !== null){
-        resp.json(200);
+        resp.json(result);
     } else {
         resp.json(404);
     }

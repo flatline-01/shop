@@ -1,6 +1,6 @@
 'use strict'
 const form         = document.forms['form'];
-let firstNameField = form;
+let firstNameField = null;
 let lastNameField  = null;
 let phoneField     = null;
 let emailField     = null;
@@ -9,11 +9,15 @@ let cityField      = null;
 let deliveryField  = null;
 let addressField   = null;
 
+if(sessionStorage.getItem('logged_in')){
+    form.firstChild.remove();
+}
+
 if(form){
-    firstNameField = form.elements['firstname'];
-    lastNameField  = form.elements['lastname'];
-    phoneField     = form.elements['phone'];
-    emailField     = form.elements['email'];
+    firstNameField = form.elements['firstname'] || null;
+    lastNameField  = form.elements['lastname'] || null;
+    phoneField     = form.elements['phone'] || null;
+    emailField     = form.elements['email'] || null;
     paymentField   = form.elements['payment'];
     cityField      = form.elements['city'];
     deliveryField  = form.elements['delivery'];
@@ -27,10 +31,10 @@ if(orderBtn){
         e.preventDefault();
         sendData(
             {
-                firstName: firstNameField.value,
-                lastName: lastNameField.value,
-                phone: phoneField.value,
-                email: emailField.value,
+                firstName: firstNameField ? firstNameField.value : JSON.parse(sessionStorage.getItem('data')).firstName,
+                lastName:  lastNameField ? lastNameField.value : JSON.parse(sessionStorage.getItem('data')).lastName,
+                phone: phoneField ? phoneField.value : JSON.parse(sessionStorage.getItem('data')).phone,
+                email: emailField ? emailField.value :  JSON.parse(sessionStorage.getItem('data')).email,
                 city: cityField.value,
                 address: addressField.value,
                 payment: paymentField.value,
@@ -48,3 +52,4 @@ if(orderBtn){
     };
 }
 
+let a = JSON.parse(sessionStorage.getItem('data'));

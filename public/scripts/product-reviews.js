@@ -6,10 +6,21 @@ const leaveAReviewBtn = document.getElementById('leaveAReviewBtn');
 const sendReviewBtn = document.getElementById('send-review');
 
 if(leaveAReviewBtn){
-    leaveAReviewBtn.onclick = () => {
-        reviewForm.classList.toggle('d-none');
-        let productEvaluationItems = [...document.getElementById('product-evaluation').children];
-        addEvalution(productEvaluationItems);
+    if(sessionStorage.getItem('logged_in')){
+        leaveAReviewBtn.onclick = () => {
+            reviewForm.classList.toggle('d-none');
+            let productEvaluationItems = [...document.getElementById('product-evaluation').children];
+            addEvalution(productEvaluationItems);
+        }
+    } else {
+        leaveAReviewBtn.onclick = () => {
+            let warning = document.getElementById('warning');
+            warning.innerHTML = `
+            <div class="alert alert-danger alert-dismissible fade show fixed-bottom w-75" role="alert" style='margin-left: 10%;'>
+                <strong>Error!</strong> You need to register to leave a review.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>`;
+        }
     }
 }
 
@@ -74,7 +85,7 @@ async function sendReview(){
     }
 
     let data = JSON.stringify({
-        name: reviewerName.value.trim(),
+        name: `${JSON.parse(sessionStorage.getItem('data')).firstName}`,
         text: reviewText.value.trim(),
         evalution: evaluationStars.length,
         good_id: productData.id

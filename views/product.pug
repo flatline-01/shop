@@ -38,8 +38,6 @@ main(class='product-page')
                 div(class='reviews-btns d-flex justify-content-between')
                     button(class='btn-black' id='leaveAReviewBtn') leave a review
                 form(name='review-form' class='d-flex flex-column d-none p-2')
-                    label(for='user-name') Name #[br]
-                    input(type='text' placeholder='your name' id='user-name' class='mb-3' name='user-name')
                     label(for='product-evaluation') Evaluation #[br]
                     div(class='product-evaluation mb-3' id='product-evaluation' alt='product-evaluation' title='product-evaluation')
                         i(class='star far fa-star')
@@ -50,6 +48,7 @@ main(class='product-page')
                     label(for='review-text') Review #[br]
                     textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
                     input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
+                div(id='warning')
         section( class='other-models mt-5')
             h3(class='small-title other-models__title text-center') Other models of  #{product.categoryName.toUpperCase()}
             div(class='row m-5 flex-wrap')

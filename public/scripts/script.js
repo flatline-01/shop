@@ -75,6 +75,7 @@ function dateParse(gmtFormat){
 }
 
 function sendData(data, url, callback){
+  console.log(data);
     fetch(`${url}`, {
         method: 'POST',
         headers: {

@@ -3,13 +3,13 @@ const helpers = require('../helpers.js');
 const Shopper = require('../models/Shopper.js');
 const cartRepository = require('../repository/cart_repository');
 
-exports.getUserData = async (data) => {
+exports.getUserData = async (data, lang) => {
     const shopper = new Shopper(data);
     let cart = JSON.parse(shopper.cart);
     let goodsData = await getGoodsData(cart);
     let rows =  goodsData[0];
     let total = goodsData[1];
-    const message = helpers.createHtmlMessage(shopper.firstName, shopper.email, shopper.delivery, shopper.phone, shopper.payment, shopper.address, rows, total);
+    const message = helpers.createHtmlMessage(lang, shopper.firstName, shopper.email, shopper.delivery, shopper.phone, shopper.payment, shopper.address, rows, total);
     sendMessage(process.env.MAIL_HOST, process.env.MAIL_USER, shopper.email, message);
 }
 

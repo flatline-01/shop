@@ -29,15 +29,15 @@ main(class='mt-6')
                             label(for='payment' class='w-100') #{__('payment')}
                                 select( id='payment' name='payment' class='w-100' required='required' )
                                     option(selected)
-                                    option(value='cash payment') #{__('cash payment')}
-                                    option(value='Electronic payment systems') #{__('electronic payment systems')} 
+                                    option(value=`${__('cash payment')}`) #{__('cash payment')}
+                                    option(value=`${__('electronic payment systems')}`) #{__('electronic payment systems')} 
                             label(for='city' class='w-100') #{__('city')}
                                 input( id='city' name='city' type='text' class='w-100' pattern='[A-Za-zА-Яа-яЁё]{1,}' placeholder='Tucson' required='required')
                         div(class='col-md-6 mt-3')
                             label(for='delivery' class='w-100') #{__('delivery')} #[br]
                                 select(id='delivery' name='delivery' class='w-100' required='required')
                                     option(selected)
-                                    option(value='courier delivery') #{__('courier delivery')} 
+                                    option(value=`${__('courier delivery')}`) #{__('courier delivery')} 
                             label(for='address' class='w-100') #{__('delivery address')}
                                 input( id='address' name='address' type='text' class='w-100' pattern='[A-Za-zА-Яа-яЁё]{10,}' placeholder=`${__('address')}` required='required')
                 input(type='submit' value=`${__('place an order')}` class='btn-black rounded-0 mt-4 mb-1 p-1' id='orderBtn')

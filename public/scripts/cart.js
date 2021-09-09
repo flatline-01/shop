@@ -43,7 +43,7 @@ async function  getProductInfo(){
         createSecondCartElem(result);
         createFirstCartElem(result);
     }
-    else output('The cart is empty');
+    else output((getCookie('lang') === 'ru') ?'Корзина пуста.' : 'The cart is empty.');
 }
 
 function createFirstCartElem(serverAnswer){

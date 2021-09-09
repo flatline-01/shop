@@ -9,7 +9,7 @@ let cityField      = null;
 let deliveryField  = null;
 let addressField   = null;
 
-if(sessionStorage.getItem('logged_in')){
+if(getCookie('logged_in')){
     form.firstChild.remove();
 }
 

@@ -19,13 +19,11 @@ if(loginFormBtn){
             (result) => {
                 if(typeof  result === 'object') {
                     window.location.href = '/categories';
-                    sessionStorage.setItem('logged_in', 'true');
-                    sessionStorage.setItem('data',  JSON.stringify({
-                        firstName: result.firstName,
-                        lastName: result.lastName,
-                        email: result.email,
-                        phone: result.phone
-                    }));
+                    setCookie('logged_in', 'true');
+                    setCookie('firstName', result.firstName);
+                    setCookie('lastName', result.lastName);
+                    setCookie('email', result.email);
+                    setCookie('phone', result.phone);
                 }
                 if (result === 404){
                     let err = document.createElement('p');

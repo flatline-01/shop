@@ -1,10 +1,16 @@
 const database = require('../database');
 const CartElem = require('../models/CartElem');
 
-const goodsTableName = 'goods';
+let goodsTableName;
 const goodsImagesTableName = 'good_images';
 
-module.exports.getGoods = async function(goodsIDs) {
+module.exports.getGoods = async function(goodsIDs, lang) {
+    if(lang === 'en'){
+        goodsTableName = 'goods';
+    }
+    else{
+         goodsTableName = 'goods_ru';
+    }
     if (goodsIDs !== undefined && goodsIDs.length !== 0) {
         try {
             const connection = database.getConnection();

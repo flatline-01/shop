@@ -5,11 +5,11 @@ main
     img(class='main-bg-img bg-img' src='/public/images/backgrounds/Vector (3).png')
     section(class='row main-page-block text-white g-0' id='main-page')
         h4 STREETSTER NATHAN #[br]
-        h1(class='title') Comfortable and fast #[br] Your ideal for conquering the city
-        a(class='btn-black rounded-0 mt-4 main-page-block__btn' href='#about') LEARN MORE
+        h1(class='title') #{__('main title f')} #[br] #{__('main title s')} 
+        a(class='btn-black rounded-0 mt-4 main-page-block__btn' href='#about') #{__('learn more')} 
     div(class='container')
         section(id='categories' class='row categories py-5')
-            a(class='title' href='/categories') Categories
+            a(class='title' href='/categories') #{__('categories')} 
             div(id='carouselExampleFade' class='carousel slide carousel-dark  carousel-fade' data-bs-ride='carousel')
                 div(class='carousel-inner')
                     each value,index in categories
@@ -32,7 +32,7 @@ main
                     span(class='carousel-control-next-icon' aria-hidden='true')
                     span(class='visually-hidden') Next
         section(id='favorites' class='favorites py-3 px-4')
-            h1(class='title') Selected products
+            h1(class='title') #{__('selected products')}  
             div(class='row mt-4')
                 div(class='col-sm-12 col-md-6 bg-black main-elem d-flex justify-content-between flex-column align-items-end p-5 mt-2 favorites__item')
                     div(class='text-white favorites__text')
@@ -56,21 +56,16 @@ main
                             img(src='/public/images/accessories/product2.png' alt='favorite product Octane Helmet' title='Octane Helmet' class='w-50 favorites__img-accessory')
                             p Octane Helmet
         section(class='row about py-5' id='about')
-            p(class='large-text') <b>STREETSTER</b> – Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                |sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                |Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. #[br]
-            p(class='large-text')
-                |Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                |Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollitanim id est laborum.
+            p(class='large-text' data-i18n="About") #[b STREETSTER] - #{__('about f')} #[br] #[br] #{__('about s')} #[br]
         section(id='features' class='features py-5')
             img(class='bg-img' src='/public/images/backgrounds/Vector (2).png')
-            h2(class='small-title') Streetster bicycles are...
+            h2(class='small-title') #{__('features title')} 
             div(class='row pt-5')
-                +featuresCard('/public/images/features-img/feat3.png', 'Ease of discussion', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-                +featuresCard('/public/images/features-img/feat1.png', 'Rugged construction', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-                +featuresCard('/public/images/features-img/feat2.png', 'High-quality parts', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
+                +featuresCard('/public/images/features-img/feat3.png', `${__('feature_1 title')}`, `${__('feature_1 text')}`)
+                +featuresCard('/public/images/features-img/feat1.png', `${__('feature_2 title')}`, `${__('feature_2 text')}`)
+                +featuresCard('/public/images/features-img/feat2.png', `${__('feature_3 title')}`, `${__('feature_3 text')}`)
         section(id='news' class='news text-center')
-            a(class='title' href='/news') News
+            a(class='title' href='/news') #{__('news')}
             div(id='carouselExampleControls2' class='carousel carousel-dark slide' data-bs-ride='carousel')
                 div(class='carousel-inner px-5' id='news-carousel')
                 a(class='carousel-control-prev' href='#carouselExampleControls2' role='button' data-bs-slide='prev')
@@ -81,9 +76,9 @@ main
                     span(class='visually-hidden') Next
         section(class='col-md-12 subscription my-5')
             form(class='subscription-form  d-flex flex-column justify-content-center align-items-center' name='subscription-form')
-                h2(class='small-title') Subscribe to the newsletter
+                h2(class='small-title') #{__('subscribe title')}
                 input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Email' name='subscription-form__email')
-                input(class='btn-black rounded-0 subscription-form__btn' type='submit' value='SUBSCRIBE' name='subscription-form__submit')
+                input(class='btn-black rounded-0 subscription-form__btn' type='submit' value=`${__('subscribe btn')}` name='subscription-form__submit')
 include footer.pug
 script.
     let categories = !{JSON.stringify(categories)}

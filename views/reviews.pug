@@ -2,7 +2,7 @@ include head.pug
 include header-dark.pug
 main(class='reviews')
     div(class='container')
-        h2(class='small-title') Reviews
+        h2(class='small-title') #{__('reviews')}
         ul(class='px-5 py-4')
             - for (let i = 0; i < reviews.length; i++)
                 li(class='py-2')

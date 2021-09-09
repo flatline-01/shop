@@ -1,14 +1,12 @@
 const newsService = require('../services/news_service.js');
 
-
 module.exports.getAllNews = async (req, resp) => {
-    const news = await newsService.checkNews();
+    const news = await newsService.checkNews(req.cookies.lang || 'en');
     resp.render('news.pug', { news });
 }
 
 module.exports.getSingleNews = async (req, resp) => {
-    const  newsId = req.params.id;
-    const news = await newsService.checkNewsId(newsId);
+    const news = await newsService.checkNewsId( req.params.id, req.cookies.lang || 'en');
     if(news){
         resp.render('news-article.pug', { news });
     } else {

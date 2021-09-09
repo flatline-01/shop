@@ -62,7 +62,7 @@ function createCarousel(color){
     for(let item of productData.images){
         let indicators = '';
         if(item.color === color){
-            productColorName.innerHTML = `<b>Color:</b> ${color}<br>`;
+            productColorName.innerHTML = `<b>${(getCookie('lang') === 'ru') ? 'Цвет' : 'Color'}:</b> ${color}<br>`;
             let images = item.images.split(',');
             if(images.length < 2){
                 productImages.innerHTML = `<img src='/images/bikes/${images[0]}' class='d-block product-img__bike w-100' alt='bike'>`;

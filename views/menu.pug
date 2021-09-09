@@ -2,9 +2,9 @@ include mixins.pug
 div(class='menu text-dark bg-white')
     div(class='row py-3')
         div(class='col-5 d-flex')
-            a(href='#') RU
+            button(class='border-0' id='ru') RU
             span /
-            a(href='#') EN
+            button(class='border-0' id='en') EN
         div(class='col-3')
             img(src='/public/images/icons/cart2.png' id='menu-cart' alt='cart icon' title='cart')
         div(class='col-3')
@@ -20,11 +20,11 @@ div(class='menu text-dark bg-white')
                     a(href='/category/3' class='smaller-title') #[b MOUNTAIN SERIES]
             ul
                 li(class='my-2')
-                    a(href='/news' class='menu-elem_underline') News
+                    a(href='/news' class='menu-elem_underline') #{__('news')}
                 li(class='my-2')
-                    a(href='#about' class='menu-elem_underline') About us
+                    a(href='#about' class='menu-elem_underline') #{__('about us')}
                 li(class='my-2')
-                    a(href='#about' class='menu-elem_underline') Contacts
+                    a(href='#about' class='menu-elem_underline') #{__('contacts')}  
     a(href='https://www.instagram.com')
         img(src='/public/images/icons/insta-b.png' alt='instagram icon' title='instagram' class='pb-4 social-i')
     a(href='https://www.facebook.com/')

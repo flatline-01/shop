@@ -31,10 +31,10 @@ if(orderBtn){
         e.preventDefault();
         sendData(
             {
-                firstName: firstNameField ? firstNameField.value : JSON.parse(sessionStorage.getItem('data')).firstName,
-                lastName:  lastNameField ? lastNameField.value : JSON.parse(sessionStorage.getItem('data')).lastName,
-                phone: phoneField ? phoneField.value : JSON.parse(sessionStorage.getItem('data')).phone,
-                email: emailField ? emailField.value :  JSON.parse(sessionStorage.getItem('data')).email,
+                firstName: firstNameField ? firstNameField.value : getCookie('firstName'),
+                lastName:  lastNameField ? lastNameField.value : getCookie('lastName'),
+                phone: phoneField ? phoneField.value : getCookie('phone'),
+                email: emailField ? emailField.value : getCookie('email'),
                 city: cityField.value,
                 address: addressField.value,
                 payment: paymentField.value,
@@ -51,5 +51,3 @@ if(orderBtn){
         )
     };
 }
-
-let a = JSON.parse(sessionStorage.getItem('data'));

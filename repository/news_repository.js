@@ -2,11 +2,16 @@ const database = require('../database');
 const News = require('../models/News');
 
 const subscribersTableName = 'subscribers';
-const newsTableName = 'news';
+let newsTableName;
 
 const subscribersCols = ['email'];
 
-module.exports.getAllNews = async () => {
+module.exports.getAllNews = async (lang) => {
+    if(lang === 'en') {
+        newsTableName = 'news';
+    } else {
+        newsTableName = 'news_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${newsTableName}`);
@@ -20,7 +25,12 @@ module.exports.getAllNews = async () => {
     }
 }
 
-module.exports.getNewsById = async (newsId) => {
+module.exports.getNewsById = async (newsId, lang) => {
+    if(lang === 'en') {
+        newsTableName = 'news';
+    } else {
+        newsTableName = 'news_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${newsTableName} where id = ? `,
@@ -55,7 +65,12 @@ module.exports.removeSubscriber = async (data) => {
     }
 }
 
-module.exports.getNewsByName = async (title) => {
+module.exports.getNewsByName = async (title, lang) => {
+    if(lang === 'en') {
+        newsTableName = 'news';
+    } else {
+        newsTableName = 'news_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${newsTableName} WHERE title LIKE CONCAT('%', ?,  '%')`, [title]);

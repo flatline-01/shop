@@ -208,7 +208,7 @@ hr {
 .menu .categories-list {
   font-weight: bold;
 }
-.menu a:hover {
+.menu a:hover, .selected_language {
   text-decoration: underline;
 }
 #cart {

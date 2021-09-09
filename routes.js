@@ -51,7 +51,7 @@ router.get('/reviews/:id', (req, resp) => ReviewsController.getGoodReviews(req, 
 
 router.post('/reviews/:id', (req, resp) => ReviewsController.addGoodReview(req, resp));
 
-/** Register routes**/
+/** Register routes **/
 router.get('/sign_up', (req, resp) => UserController.getSignUpPage(req, resp));
 router.post('/sign_up', (req, resp) => UserController.createUser(req, resp));
 

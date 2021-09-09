@@ -39,7 +39,7 @@ searchField.onkeyup = async () => {
 
         if(result.categories.length === 0 && result.goods.length === 0 && result.news.length === 0){
             searchField.style.boxShadow = 'none';
-            searchResults.innerHTML = 'no results';
+            searchResults.innerHTML = (getCookie('lang') === 'ru') ? 'Нет результатов.' : 'No results.';
         }
 
         for(let item in result){
@@ -50,7 +50,7 @@ searchField.onkeyup = async () => {
                         searchResults.innerHTML += `
                     <li class='px-2'>
                         <a href='/category/${elem['id']}'>
-                            <p>category: <b>${elem.name.toUpperCase()}</b></p>
+                            <p>${ (getCookie('lang') === 'ru') ? 'Категория:' : 'Category:'}<b>${elem.name.toUpperCase()}</b></p>
                         </a>
                     </li>
                    `;
@@ -69,7 +69,7 @@ searchField.onkeyup = async () => {
                         searchResults.innerHTML += `
                     <li class='px-2'>
                         <a href='/news/${elem['id']}'>
-                            <p>news: <b>${elem.title}</b></p>
+                            <p>${ (getCookie('lang') === 'ru') ? 'Новости:' : 'News:'}<b>${elem.title}</b></p>
                         </a>
                     </li>
                    `;

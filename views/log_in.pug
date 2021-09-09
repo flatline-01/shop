@@ -3,13 +3,13 @@ main
     section(class='row registr-page-block p-3 g-0')
         div(class='login-form')
             form(name='login')
-                h2 Log in
+                h2 #{__('log in')}
                 div(class='form-group')
-                    input( type='email' class='form-control' name='email' placeholder='Email' required='required')
+                    input( type='email' class='form-control' name='email' placeholder=`${__('email')}` required='required')
                 div(class='form-group')
-                    input(type='password' class='form-control' name='password' placeholder='Password' required='required')
+                    input(type='password' class='form-control' name='password' placeholder=`${__('password')}` required='required')
                 div(class='form-group')
-                    button(type='submit' class='btn btn-black rounded-0 border border-2 border-dark' id='loginFormBtn') Log in
-                div(class='text-center') Not signed up yet?
-                    a(href='/sign_up') Sign up
+                    button(type='submit' class='btn btn-black rounded-0 border border-2 border-dark' id='loginFormBtn') #{__('log in')}
+                div(class='text-center') #{__('not signed up yet')}
+                    a(href='/sign_up') #{__('sign up')}
 include scripts.pug

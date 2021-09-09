@@ -1,12 +1,11 @@
 const newsRepository = require('../repository/news_repository.js');
 
-module.exports.checkNews = async () => {
-    return await newsRepository.getAllNews();
+module.exports.checkNews = async (lang) => {
+    return await newsRepository.getAllNews(lang);
 }
-module.exports.checkNewsId = async (id) => {
-    return await newsRepository.getNewsById(id);
+module.exports.checkNewsId = async (id, lang) => {
+    return await newsRepository.getNewsById(id, lang);
 }
-
 module.exports.checkNewsSubscriber = async (data) => {
     if(data) return await newsRepository.createSubscriber(data);
     else {
@@ -19,6 +18,6 @@ module.exports.checkRemovingNewsSubscriber = async (data) => {
         throw new Error();
     }
 }
-module.exports.checkNewsTitle = async (title) => {
-    return await  newsRepository.getNewsByName(title)
+module.exports.checkNewsTitle = async (title, lang) => {
+    return await  newsRepository.getNewsByName(title, lang);
 }

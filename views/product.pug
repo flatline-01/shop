@@ -16,16 +16,16 @@ main(class='product-page')
                                     li(style={background: `${item.color}`} class='product-info__elem-color product-info__elem-color_selected'  alt=`${item.color} color` title=`${item.color} color`)
                                 else
                                     li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
-                    li #[b Frame:] #{product.frame} (Growth #{product.growth}) #[br]
-                    li #[b Wheel:] #{product.wheel} #[br]
-                button(class='btn-black product-info__elem mt-4' id='addToCartBtn' data-product-id = product.id) Add to cart
-                a(class='btn-black product-info__elem mt-2 border border-2 border-dark' id='orderProduct' data-product-id = product.id href='/order') ORDER
+                    li #[b #{__('frame')}:] #{product.frame} (#{__('growth')} #{product.growth}) #[br]
+                    li #[b #{__('wheel')}:] #{product.wheel} #[br]
+                button(class='btn-black product-info__elem mt-4 rounded-pill' id='addToCartBtn' data-product-id = product.id) #{__('cart')}
+                a(class='btn-black product-info__elem mt-2 border border-2 border-dark rounded-pill' id='orderProduct' data-product-id = product.id href='/order') #{__('order')}
         section(class='row')
             div(class='col-md-6')
-                h3(class='smaller-title') Description
+                h3(class='smaller-title') #{__('description')}
                 p(class='text product-description') #{product.description}
             div(class='col-md-6')
-                h3(class='smaller-title') Reviews
+                h3(class='smaller-title') #{__('reviews')}
                 ul(id='reviews-list')
                     each item in product.reviews
                         li(class='product-review p-2')
@@ -36,24 +36,24 @@ main(class='product-page')
                                         img(src='/images/icons/star.png' class='mx-1 mb-3' alt='star')
                             p(class='text') #{item.text}
                 div(class='reviews-btns d-flex justify-content-between')
-                    button(class='btn-black' id='leaveAReviewBtn') leave a review
+                    button(class='btn-black' id='leaveAReviewBtn') #{__('leave a review')}
                 form(name='review-form' class='d-flex flex-column d-none p-2')
-                    label(for='product-evaluation') Evaluation #[br]
+                    label(for='product-evaluation') #{__('evaluation')} #[br]
                     div(class='product-evaluation mb-3' id='product-evaluation' alt='product-evaluation' title='product-evaluation')
                         i(class='star far fa-star')
                         i(class='star far fa-star')
                         i(class='star far fa-star')
                         i(class='star far fa-star')
                         i(class='star far fa-star')
-                    label(for='review-text') Review #[br]
+                    label(for='review-text') #{__('review')} #[br]
                     textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
                     input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
                 div(id='warning')
         section( class='other-models mt-5')
-            h3(class='small-title other-models__title text-center') Other models of  #{product.categoryName.toUpperCase()}
+            h3(class='small-title other-models__title text-center') #{__('other models')} #{product.categoryName.toUpperCase()}
             div(class='row m-5 flex-wrap')
                 if product.otherCategoryGoods.length === 1
-                    div(class='col-md-4 other-models__product') only one product
+                    div(class='col-md-4 other-models__product') #{__('one model')}
                 else if product.otherCategoryGoods.length === 2 || product.otherCategoryGoods.length === 3
                      - for(let i = 0; i < product.otherCategoryGoods.length; i++)
                         if product.otherCategoryGoods[i].id !== product.id

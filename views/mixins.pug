@@ -1,10 +1,10 @@
 mixin footerInfo
     div(class='col-sm-6 col-md-2')
-        ul #[b Information] #[br]
+        ul #[b #{__('information')}] #[br]
             li
-                a(href='#about' class='footer-link') About us #[br]
+                a(href='#about' class='footer-link') #[b #{__('about us')}] #[br]
             li
-                a(href='#' class='footer-link') Contacts
+                a(href='#' class='footer-link') #[b #{__('contacts')}] 
 mixin featuresCard(link, title, text)
     div(class='col-md-4 features-card px-5')
         img(src=link alt='service icon' class='features-img')

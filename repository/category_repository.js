@@ -1,9 +1,15 @@
 const database = require('../database');
 const Category = require('../models/Category');
 
-const categoriesTableName = 'categories';
+let categoriesTableName; 
 
-module.exports.getCategoryById = async (categoryId) => {
+module.exports.getCategoryById = async (categoryId, lang) => {
+    if(lang === 'en'){
+        categoriesTableName = 'categories';
+    }
+    else {
+        categoriesTableName = 'categories_ru';
+    }
     try {
         const connection = database.getConnection();
         let categories = await connection.query(`SELECT * FROM ${categoriesTableName} where id = ? `,
@@ -16,7 +22,13 @@ module.exports.getCategoryById = async (categoryId) => {
         throw new Error('Unable to fetch category');
     }
 }
-module.exports.getAllCategories = async () => {
+module.exports.getAllCategories = async (lang) => {
+    if(lang === 'en'){
+        categoriesTableName = 'categories';
+    }
+    else {
+        categoriesTableName = 'categories_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${categoriesTableName}`);
@@ -28,7 +40,13 @@ module.exports.getAllCategories = async () => {
     }
 }
 
-module.exports.getCategoryByName = async (name) => {
+module.exports.getCategoryByName = async (name, lang) => {
+    if(lang === 'en'){
+        categoriesTableName = 'categories';
+    }
+    else {
+        categoriesTableName = 'categories_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${categoriesTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);

@@ -1,11 +1,17 @@
 const database = require('../database')
 const Good = require("../models/Good");
 
-const goodsTableName = 'goods';
+let goodsTableName;
 const goodsImagesTableName = 'good_images';
 const reviewsTableName = 'reviews';
 
-module.exports.getAllGoods = async () => {
+module.exports.getAllGoods = async (lang) => {
+    if(lang === 'en'){
+        goodsTableName = 'goods';
+    }
+    else{ 
+        goodsTableName = 'goods_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${goodsTableName}`);
@@ -26,7 +32,13 @@ module.exports.getAllGoods = async () => {
     }
 }
 
-module.exports.getGoodById = async (goodId) => {
+module.exports.getGoodById = async (goodId, lang) => {
+    if(lang === 'en'){
+        goodsTableName = 'goods';
+    }
+    else{ 
+        goodsTableName = 'goods_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${goodsTableName} where id = ? `,[goodId]);
@@ -46,7 +58,13 @@ module.exports.getGoodById = async (goodId) => {
     }
 }
 
-module.exports.getGoodsByCategory = async (categoryId) => {
+module.exports.getGoodsByCategory = async (categoryId, lang) => {
+    if(lang === 'en'){
+        goodsTableName = 'goods';
+    }
+    else{ 
+        goodsTableName = 'goods_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${goodsTableName} where categoryId = ? `,
@@ -66,7 +84,13 @@ module.exports.getGoodsByCategory = async (categoryId) => {
         throw new Error('Unable to fetch goods');
     }
 }
-module.exports.getProductByName = async (name) => {
+module.exports.getProductByName = async (name, lang) => {
+    if(lang === 'en'){
+        goodsTableName = 'goods';
+    }
+    else{ 
+        goodsTableName = 'goods_ru';
+    }
     try {
         const connection = database.getConnection();
         let rows = await connection.query(`SELECT * FROM ${goodsTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);

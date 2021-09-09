@@ -33,14 +33,13 @@ if(productReviewsList && [...productReviewsList.children].length > 2){
     productReviewsList.innerHTML = str;
     let showMoreReviewsBtn = document.createElement('a');
     showMoreReviewsBtn.className = 'btn-black border border-2 border-dark';
-    showMoreReviewsBtn.innerHTML = 'Show more?';
+    showMoreReviewsBtn.innerHTML = (getCookie('lang') === 'ru') ? 'Показать все отзывы' : 'Show all reviews';
     showMoreReviewsBtn.setAttribute('href', `/reviews/${productData.id}`);
     reviewsBtnsBlock.appendChild(showMoreReviewsBtn);
 }
 else if(productReviewsList && [...productReviewsList.children].length === 0){
-    productReviewsList.innerHTML = 'no reviews yet';
+    productReviewsList.innerHTML = (getCookie('lang') === 'ru') ? 'Пока нет отзывов.' : 'No reviews yet.';
 }
-
 
 function addEvalution(arr){
     const starClassActive = "star_active fas fa-star";

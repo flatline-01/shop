@@ -9,7 +9,7 @@ if(subForm){
     subBtn        = subForm.elements['subscription-form__submit'];
 
     if(localStorage.getItem('subscription')){
-        subForm.innerHTML =  `
+        subForm.innerHTML =   `
         <h3 class='small-title'> ${(getCookie('lang') === 'ru') ? 'Вы наш подписчик!' : 'You are our subscriber!'}</h3>
         <p class='small-text'>${(getCookie('lang') === 'ru') ? 'Мы будем присылать вам наши новости по электронной почте.' : 'We\`ll send you our news by e-mail.'}</p>
         <input type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Email' name='subscription-form__email' id='subscription-form__email'>
@@ -29,8 +29,13 @@ if(subForm){
                 },
                 body: data
             });
-            let result = await response.json();
+            await response.json();
             localStorage.removeItem('subscription');
+            subForm.innerHTML = `
+                h2(class='small-title') ${(getCookie('lang') === 'ru') ? 'Подпишитесь на новостную рассылку' : 'Subscribe to the newsletter'}
+                input(type='email' class='subscription-form__field' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' placeholder='Email' name='subscription-form__email')
+                input(class='btn-black rounded-0 subscription-form__btn' type='button' value='${(getCookie('lang') === 'ru') ? 'ПОДПИСАТЬСЯ' : 'SUBSCRIBE'}' name='subscription-form__submit')`;
+            window.location.reload();
         }
     }
 
@@ -48,8 +53,9 @@ if(subForm){
             },
             body: data
         });
-        let result = await response.json();
+        await response.json();
         localStorage.setItem('subscription', true);
+        window.location.reload();
     }
 }
 

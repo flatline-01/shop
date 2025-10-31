@@ -1,30 +1,37 @@
 const database = require('../database');
 const CartElem = require('../models/CartElem');
 
-let goodsTableName;
+let goodsTableName = 'goods';
 const goodsImagesTableName = 'good_images';
 
 module.exports.getGoods = async function(goodsIDs, lang) {
-    if(lang === 'en'){
-        goodsTableName = 'goods';
+    let selectGoodQuery;
+    if(lang === 'en' || lang === undefined){
+        selectGoodQuery = `SELECT id, name_en as name, description_en as description, frame_en as frame, category_id, cost, growth, wheel FROM ${goodsTableName} WHERE id = ANY(\$1)`;
     }
-    else{
-         goodsTableName = 'goods_ru';
+    else{ 
+        selectGoodQuery = `SELECT id, name_ru as name, description_ru as description, frame_ru as frame, category_id, cost, growth, wheel FROM ${goodsTableName} WHERE id = ANY(\$1)`;
     }
+
     if (goodsIDs !== undefined && goodsIDs.length !== 0) {
         try {
-            const connection = database.getConnection();
-            let result = await connection.query(`SELECT * FROM ${goodsTableName} WHERE id IN(?)`, [goodsIDs]);
-
-            for(let i = 0; i < result.length; i++){
-                let images = await connection.query(`SELECT color, images FROM ${goodsImagesTableName} where good_id = ? `, result[i].id);
-                result[i].images = JSON.parse(JSON.stringify(images));
+            let rows = (await database.query(selectGoodQuery, [goodsIDs])).rows;
+            for(let i = 0; i < rows.length; i++){
+                let images = (await database.query(`SELECT color, image FROM ${goodsImagesTableName} WHERE good_id = $1 `, [rows[i].id])).rows;
+                rows[i].images = new Map(images.map(img => [img.color, convertToBase64(img.image)]));
             }
-
-            return result.map( i => new CartElem(i) );
+            return rows.map( i => new CartElem(i) );
         } catch (e) {
+            console.log(e);
             return [];
         }
     }
     else return [];
+}
+
+function convertToBase64(imageBuffer) {
+    if (!imageBuffer) {
+        return null; 
+    }
+    return imageBuffer.toString('base64');
 }

@@ -6,23 +6,22 @@ let productCarouselIndicators = document.getElementsByClassName('carousel-indica
 
 let carouselItems = [];
 
-if(productImagesInCategory && typeof categoryGoods !== 'undefined' && categoryGoods !== null && productCarouselIndicators){
+if((productImagesInCategory && typeof categoryGoods !== 'undefined' && categoryGoods !== null && productCarouselIndicators)){
     productCarouselIndicators = [...productCarouselIndicators];
     for(let i = 0; i < categoryGoods.length; i++){
         let carouselItem = '';
-        for(let j = 0; j < categoryGoods[i].images.length; j++){
+        const keys = Object.keys(categoryGoods[i].images);
+        for (let j = 0; j < keys.length; j++) {
             if(j === 0){
-                carouselItem += `
-                        <div class='carousel-item active'>
-                            <img src='/images/bikes/${categoryGoods[i].images[j].images.split(',')[0]}' class='d-block product-img__bike w-100' alt='bike'>
-                        </div>`;
+                carouselItem += `<div class='carousel-item active'>
+                                    <img src='data:image/jpeg;base64,${categoryGoods[i].images[keys[j]]}' class='d-block product-img__bike w-100' alt='bike'>
+                                </div>`;
                 productCarouselIndicators[i].innerHTML += `<button type='button' data-bs-target='#product-images${categoryGoods[i].id}' data-bs-slide-to='${j}' class='active' aria-current='true' aria-label='Slide ${j}'></button>`;
             }
             else{
-                carouselItem += `
-                        <div class='carousel-item'>
-                            <img src='/images/bikes/${categoryGoods[i].images[j].images.split(',')[0]}' class='d-block product-img__bike w-100' alt='bike'>
-                        </div>`;
+                carouselItem += `<div class='carousel-item'>
+                                    <img src='data:image/jpeg;base64,${categoryGoods[i].images[keys[j]]}' class='d-block product-img__bike w-100' alt='bike'>
+                                </div>`;
                 productCarouselIndicators[i].innerHTML += `<button type='button' data-bs-target='#product-images${categoryGoods[i].id}' data-bs-slide-to='${j}' aria-label='Slide ${j}'></button>`;
             }
         }
@@ -32,6 +31,31 @@ if(productImagesInCategory && typeof categoryGoods !== 'undefined' && categoryGo
         productImagesInCategory[i].innerHTML = carouselItems[i];
     }
 }
+else if (productData) {
+    let carouselItem = '<div class="carousel-inner product-images" id="product-images-carousel">';
+    const keys = Object.keys(productData.images);
+    for (let j = 0; j < keys.length; j++) {
+        if(j === 0){
+            carouselItem += `<div class='carousel-item active'>
+                                <img src='data:image/jpeg;base64,${productData.images[keys[j]]}' class='d-block product-img__bike w-100' alt='bike'>
+                            </div>`;
+            //carouselItem.innerHTML += `<button type='button' data-bs-target='#product-images${productData.id}' data-bs-slide-to='${j}' class='active' aria-current='true' aria-label='Slide ${j}'></button>`;
+        }
+        else{
+            carouselItem += `<div class='carousel-item'>
+                                <img src='data:image/jpeg;base64,${productData.images[keys[j]]}' class='d-block product-img__bike w-100' alt='bike'>
+                            </div>`;
+           // carouselItem.innerHTML += `<button type='button' data-bs-target='#product-images${productData.id}' data-bs-slide-to='${j}' aria-label='Slide ${j}'></button>`;
+        }
+    }
+    //carouselItems.push(carouselItem);
+    //for(let i = 0; i < Object.keys(productData.images); i++){
+        //console.log(i)
+        carouselItem += '</div>'
+        productImages.innerHTML += carouselItem;
+    //}
+}
+
 
 if(productColorsList){
     productColorsList = [...productColorsList.children];
@@ -59,43 +83,42 @@ function changeActiveClass(e){
 }
 
 function createCarousel(color){
-    for(let item of productData.images){
+    for(let c of Object.keys(productData.images)){
         let indicators = '';
-        if(item.color === color){
+        if(c === color){
             productColorName.innerHTML = `<b>${(getCookie('lang') === 'ru') ? 'Цвет' : 'Color'}:</b> ${color}<br>`;
-            let images = item.images.split(',');
-            if(images.length < 2){
-                productImages.innerHTML = `<img src='/images/bikes/${images[0]}' class='d-block product-img__bike w-100' alt='bike'>`;
+            if(productData.images[c].length < 2){
+                productImages.innerHTML = `<img src='data:image/png;base64,${productData.images[c]}' class='d-block product-img__bike w-100' alt='bike'>`;
             }
             else{
-                for(let i = 0; i < images.length; i++){
+                for(let i = 0; i < productData.images[c].length; i++){
                     if(i === 0){
                         carouselItems = `
                         <div class='carousel-item active px-3'>
-                            <img src='/images/bikes/${images[i].trim()}' class='d-block product-img__bike w-100' alt='bike'>
+                            <img src='data:image/png;base64,${productData.images[c][i]}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
                         indicators += `<button type='button' data-bs-target='#product-images' data-bs-slide-to='${i}' class='active' aria-current='true' aria-label='Slide ${i}'></button>`;
                     }
                     else{
                         carouselItems += `
                         <div class='carousel-item px-3'>
-                            <img src='/images/bikes/${images[i].trim()}' class='d-block product-img__bike w-100' alt='bike'>
+                            <img src='data:image/png;base64,${productData.images[c][i]}' class='d-block product-img__bike w-100' alt='bike'>
                         </div>`;
                         indicators += `<button type='button' data-bs-target='#product-images' data-bs-slide-to='${i}' aria-label='Slide ${i}'></button>`;
                     }
                 }
-                productImages.innerHTML = `
-                 <div class='carousel-indicators'>${indicators}</div>
-                 <div class='carousel-inner' id='product-images-carousel' xmlns='http://www.w3.org/1999/html'>${carouselItems}</div>
-                  <button class='carousel-control-prev' type='button' data-bs-target='#product-images' data-bs-slide='prev'>
-                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                        <span class='visually-hidden'> Previous </span>
-                  </button>
-                   <button class='carousel-control-next' type='button' data-bs-target='#product-images' data-bs-slide='next'>
-                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                        <span class='visually-hidden'>Next</span> 
-                   </button>`;
-            }
+            productImages.innerHTML = `
+                <div class='carousel-indicators'>${indicators}</div>
+                <div class='carousel-inner' id='product-images-carousel' xmlns='http://www.w3.org/1999/html'>${carouselItems}</div>
+                <button class='carousel-control-prev' type='button' data-bs-target='#product-images' data-bs-slide='prev'>
+                    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                    <span class='visually-hidden'> Previous </span>
+                </button>
+                <button class='carousel-control-next' type='button' data-bs-target='#product-images' data-bs-slide='next'>
+                    <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                    <span class='visually-hidden'>Next</span> 
+                </button>`;
         }
     }
+}
 }

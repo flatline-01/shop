@@ -2,9 +2,7 @@
 let cartData = {};
 
 const addToCartBtn = document.getElementById('addToCartBtn');
-
 const orderProductBtn = document.getElementById('orderProduct');
-
 const cartOnOrderPage = document.getElementById('cartOnOrderPage');
 
 if(localStorage.getItem('cart')){
@@ -15,6 +13,7 @@ if(localStorage.getItem('cart')){
 if(addToCartBtn !== null){
     addToCartBtn.onclick = addToCart;
 }
+
 if(orderProductBtn !== null){
     orderProductBtn.onclick = addToCart;
 }
@@ -38,12 +37,18 @@ async function  getProductInfo(){
         body: data
     });
     let result = await response.json();
-
     if(result.length !== 0){
         createSecondCartElem(result);
         createFirstCartElem(result);
     }
-    else output((getCookie('lang') === 'ru') ?'Корзина пуста.' : 'The cart is empty.');
+    else {
+        let startTag = '<h3 class="smaller-title" style="text-align: center;">'
+        let endTag = '</h3>'
+        let text = (getCookie('lang') === 'ru') ? 'Корзина пуста.' : `The cart is empty.`;
+        chengeElemText(cartOnOrderPage, `${startTag}${text}${endTag}`);
+        cartIcon.setAttribute('title', text);
+        menuCartIcon.setAttribute('title', text);
+    }
 }
 
 function createFirstCartElem(serverAnswer){
@@ -52,19 +57,18 @@ function createFirstCartElem(serverAnswer){
     let btn = `<a class='rounded-0 menu__btn' href='/cart'>${(getCookie('lang') === 'ru') ? 'ЗАКАЗАТЬ' : 'ORDER'}</a>`
     let cartContent = '';
     for(let i in serverAnswer){
-        let cartElemImg = `<div class='col-4 p-2'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
+        let cartElemImg = `<div class='col-4 p-2'><img src='data:image/png;base64,${serverAnswer[i]['images'][Object.keys(serverAnswer[i]['images'])[0]]}' alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-4 small-text'>${serverAnswer[i]['name'].toUpperCase()}<br>${serverAnswer[i]['cost']}₴</p><span class='col-3 small-text'>${(getCookie('lang') === 'ru') ? 'Количество:' : 'Count:'}<b class='goods-count'>${cartData[serverAnswer[i]['id']]}</b></span><hr>`;
         cartContent += `<div class='row d-flex justify-content-center align-items-center px-3'>${cartElemImg}${cartElemText}</div></div>`;
     }
     chengeElemText(cart, `${goodsCount}${cartContent}${sum}${btn}`);
 }
+
 function createSecondCartElem(serverAnswer){
-
     let [goodsCount, sum, sumOfPrices] = createCartElem(serverAnswer);
-
     let cartContentOnOrderPage = '';
     for(let i in serverAnswer){
-        let cartElemImg = `<div class='col-3 pb-2'><img src=/images/bikes/${serverAnswer[i]['images'][0].images.split(', ')[0]} alt='bike' class='w-100'></div>`;
+        let cartElemImg = `<div class='col-3 pb-2'><img src='data:image/png;base64,${serverAnswer[i]['images'][Object.keys(serverAnswer[i]['images'])[0]]}' alt='bike' class='w-100'></div>`;
         let cartElemText = `<p class='col-3 pb-2'><b class='small-text'>${serverAnswer[i]['name'].toUpperCase()}</b><br>${(getCookie('lang') === 'ru') ? `Рама: ${serverAnswer[i]['frame']}` : `The frame: ${serverAnswer[i]['frame']}`}</p>`;
         let btns = `<div class='col-3 text pb-2'> <span class='minus-btn pointer'>-</span> <span class='bg-black py-1 px-2 text-white'>${cartData[serverAnswer[i]['id']]}</span> <span class='plus-btn pointer'>+</span></div>`
         let cartElemPrice = `<div class='col-3 pb-2'><p class='text'>${serverAnswer[i]['cost']}₴</p></div>`
@@ -118,19 +122,22 @@ function chengeElemText(elem, data){
 
 function createCartElem(serverAnswer){
     let goodsCount;
+    let sumOfPrices;
+    let sum;
     if(getCount(cartData) === 1){
         goodsCount = `<h3 class='smaller-title mx-2 mt-2 mb-4 sum-goods-count'><b>${(getCookie('lang') === 'ru') ? 'В корзине 1 товар' : 'There is 1 product in the cart'}</b></h3>`;
+        sumOfPrices = ''
+        sum = sumOfPrices
     }
     else {
         goodsCount = `<h3 class='smaller-title mb-3 sum-goods-count'><b>${(getCookie('lang') === 'ru') ? `В корзине ${getCount(cartData)} товаров` : `There are ${getCount(cartData)} products in the cart`}</b></h3>`;
-        let sum = `<p class='sum-goods-prices'>`;
+        sum = `<p class='sum-goods-prices'>`;
         let prices = [];
         for(let i = 0; i < serverAnswer.length; i++){
             prices.push(serverAnswer[i].cost * cartData[serverAnswer[i].id]);
         }
-        let sumOfPrices = prices.reduce((sum, cur) => sum + cur);
+        sumOfPrices = prices.reduce((sum, cur) => sum + cur);
         sum += (getCookie('lang') === 'ru') ? `Доставка: бесплатно <br> <b>Итого:</b> ${sumOfPrices} ₴</p>` : `Delivery: free <br> <b>Total:</b> ${sumOfPrices} ₴</p>`;
-
-        return [goodsCount, sum, sumOfPrices];
     }
+    return [goodsCount, sum, sumOfPrices];
 }

@@ -7,10 +7,10 @@ exports.homePage = async (req, resp) => {
 
     for(let i = 0; i < categories.length; i++){
         let category = categories[i];
-
         category.goods = await categoryService.checkCategoryGoods(i+1, req.cookies.lang || 'en');
     }
-    let news = await newsService.checkNews();
+    
+    let news = await newsService.checkNews(req.cookies.lang || 'en');
     resp.render('main.pug', { categories, news });
 };
 

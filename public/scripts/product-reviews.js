@@ -6,7 +6,7 @@ const leaveAReviewBtn = document.getElementById('leaveAReviewBtn');
 const sendReviewBtn = document.getElementById('send-review');
 
 if(leaveAReviewBtn){
-    if(sessionStorage.getItem('logged_in')){
+    if(getCookie('logged_in')){
         leaveAReviewBtn.onclick = () => {
             reviewForm.classList.toggle('d-none');
             let productEvaluationItems = [...document.getElementById('product-evaluation').children];
@@ -79,16 +79,17 @@ async function sendReview(){
     let productEvaluationItems = [...document.getElementById('product-evaluation').children];
     for(let item of productEvaluationItems){
         if(item.className === 'star_active fas fa-star'){
-            evaluationStars.push(productEvaluationItems[item]);
+            evaluationStars.push(item);
         }
     }
 
     let data = JSON.stringify({
-        name: `${JSON.parse(sessionStorage.getItem('data')).firstName}`,
+        name: `${getCookie('firstName')}`,
         text: reviewText.value.trim(),
         evalution: evaluationStars.length,
         good_id: productData.id
     });
+
     let response = await  fetch('/reviews/:id', {
         method: 'POST',
         headers: {
@@ -98,4 +99,5 @@ async function sendReview(){
         body: data
     });
     await response.json();
+    window.location.reload();
 }

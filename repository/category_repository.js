@@ -1,60 +1,64 @@
 const database = require('../database');
 const Category = require('../models/Category');
 
-let categoriesTableName; 
 
 module.exports.getCategoryById = async (categoryId, lang) => {
-    if(lang === 'en'){
-        categoriesTableName = 'categories';
-    }
-    else {
-        categoriesTableName = 'categories_ru';
-    }
+    let categoriesTableName = getActualCategoriesTableName(lang);
     try {
-        const connection = database.getConnection();
-        let categories = await connection.query(`SELECT * FROM ${categoriesTableName} where id = ? `,
-            [categoryId]);
-        return (categories && categories.length > 0) ? new Category(categories[0])
-            : null;
-
+        let category = (await database.query(`SELECT * FROM ${categoriesTableName} WHERE id = $1 `, [categoryId])).rows[0];
+        if (category) {
+            category["image"] = convertToBase64(category["image"]);
+            category["slider_image"] = convertToBase64(category["slider_image"]);
+        }
+        return category ? new Category(category) : null;
     } catch (e) {
         console.log(`Unable to fetch category ID=${categoryId} from database: ${e}`);
         throw new Error('Unable to fetch category');
     }
 }
-module.exports.getAllCategories = async (lang) => {
-    if(lang === 'en'){
-        categoriesTableName = 'categories';
-    }
-    else {
-        categoriesTableName = 'categories_ru';
-    }
-    try {
-        const connection = database.getConnection();
-        let rows = await connection.query(`SELECT * FROM ${categoriesTableName}`);
-        return !rows ? []
-            : rows.map((row) => { return new Category(row) });
 
+module.exports.getAllCategories = async (lang) => {
+    let categoriesTableName = getActualCategoriesTableName(lang);
+    try {
+        let rows = (await database.query(`SELECT * FROM ${categoriesTableName}`)).rows;
+        if (rows) {
+            rows.forEach((row) => {
+                row["image"] = convertToBase64(row["image"]);
+                row["slider_image"] = convertToBase64(row["slider_image"]);
+            });
+        }
+        return !rows ? [] : rows.map((row) => { return new Category(row) });
     } catch (e) {
-        throw new Error('Unable to fetch category');
+        throw new Error('Unable to fetch category: ' + e);
     }
 }
 
 module.exports.getCategoryByName = async (name, lang) => {
-    if(lang === 'en'){
-        categoriesTableName = 'categories';
-    }
-    else {
-        categoriesTableName = 'categories_ru';
-    }
+    let categoriesTableName = getActualCategoriesTableName(lang);
     try {
-        const connection = database.getConnection();
-        let rows = await connection.query(`SELECT * FROM ${categoriesTableName} WHERE name LIKE CONCAT('%', ?,  '%')`, [name]);
-        return !rows ? []
-            : rows.map((row) => { return new Category(row) });
+        let rows = (await database.query(`SELECT * FROM ${categoriesTableName} WHERE LOWER(name) LIKE '%' || \$1 || '%'`, [name])).rows;
+        if (rows) {
+            rows.forEach((row) => {
+                row["image"] = convertToBase64(row["image"]);
+                row["slider_image"] = convertToBase64(row["slider_image"]);
+            });
+        }
+        return !rows ? [] : rows.map((row) => { return new Category(row) });
 
     } catch (e) {
         console.log(e)
         throw new Error('Unable to fetch category');
     }
+}
+
+function getActualCategoriesTableName(lang) {
+    return (lang === 'en' || lang === undefined) ? 'categories' : 'categories_ru';
+}
+
+
+function convertToBase64(imageBuffer) {
+    if (!imageBuffer) {
+        return null; 
+    }
+    return imageBuffer.toString('base64');
 }

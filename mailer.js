@@ -1,5 +1,8 @@
+const dotenv = require('dotenv');
 const nodemailer = require('nodemailer');
 const util = require('util');
+
+dotenv.config();
 
 const mailOptions = {
     host: process.env.MAIL_HOST,

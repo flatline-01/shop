@@ -3,7 +3,13 @@ include header-dark.pug
 main(class='product-page')
     div(class='container')
         section(class='row')
-            div( class='col-md-8 px-4 py-2 carousel carousel-dark slide product-images-carousel' id='product-images' data-bs-ride='carousel')
+            div( class='col-md-8 px-4 py-2 carousel carousel-dark slide product-images' data-bs-interval='false' id='product-images' data-bs-ride='carousel')
+                button(class='carousel-control-prev' type='button' data-bs-target=`#product-images` data-bs-slide='prev')
+                    span( class='carousel-control-prev-icon' aria-hidden='true')
+                    span( class='visually-hidden')  Previous
+                button(class='carousel-control-next' type='button' data-bs-target=`#product-images` data-bs-slide='next')
+                    span( class='carousel-control-next-icon' aria-hidden='true')
+                    span( class='visually-hidden') Next
             div(class='col-md-4 product-info')
                 h2(class='small-title product-info__elem') #{product.name.toUpperCase()}
                 h3(class='smaller-title price product-info__elem') #{product.cost}$
@@ -11,13 +17,14 @@ main(class='product-page')
                     li
                         p(id='product-color-name')
                         ul(class='d-flex mb-4' id='colors-list')
-                            each item, index in product.images
+                            each color, index in Object.keys(product.images)
                                 if(index === 0)
-                                    li(style={background: `${item.color}`} class='product-info__elem-color product-info__elem-color_selected'  alt=`${item.color} color` title=`${item.color} color`)
+                                    li(style={background: `${color}`} class='product-info__elem-color'  alt=`${color} color` title=`${color} color`)
                                 else
-                                    li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
-                    li #[b #{__('frame')}:] #{product.frame} (#{__('growth')} #{product.growth}) #[br]
-                    li #[b #{__('wheel')}:] #{product.wheel} #[br]
+                                    li(style={background: `${color}`} class='product-info__elem-color'  alt=`${color} color` title=`${color} color`)
+                    li #[b #{__('frame')}:] #{product.frame}  #[br]
+                    li #[b #{__('growth')}] #{product.growth} #[br]
+                    li #[b #{__('wheel')}:] #{product.wheel}" #[br]
                 button(class='btn-black product-info__elem mt-4 rounded-pill' id='addToCartBtn' data-product-id = product.id) #{__('cart')}
                 a(class='btn-black product-info__elem mt-2 border border-2 border-dark rounded-pill' id='orderProduct' data-product-id = product.id href='/order') #{__('order')}
         section(class='row')
@@ -47,7 +54,7 @@ main(class='product-page')
                         i(class='star far fa-star')
                     label(for='review-text') #{__('review')} #[br]
                     textarea(class='w-100 p-2 mb-3' placeholder='leave a review here' id='review-text' name='review-text')
-                    input(type='submit' value='send review' class='w-25 btn-black mb-3' id='send-review')
+                    input(type='button' value='SEND REVIEW' class='w-25 btn-black mb-3' id='send-review')
                 div(id='warning')
         section( class='other-models mt-5')
             h3(class='small-title other-models__title text-center') #{__('other models')} #{product.categoryName.toUpperCase()}
@@ -58,28 +65,30 @@ main(class='product-page')
                      - for(let i = 0; i < product.otherCategoryGoods.length; i++)
                         if product.otherCategoryGoods[i].id !== product.id
                             a(class='col-md-4 other-models__product' href=`${product.otherCategoryGoods[i].id}`)
-                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
+                                - let keys = Object.keys(product.otherCategoryGoods[i].images);
+                                img(src=`data:image/jpeg;base64,${product.otherCategoryGoods[i].images[keys[0]]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
                                 div(class='row justify-content-between')
                                     div(class='col-5 other-models__product-elem')
                                         h3(class='smaller-title')=product.otherCategoryGoods[i].name.toUpperCase()
                                         p(class='text') #{product.otherCategoryGoods[i].cost} ₴
                                     div(class='col-5 other-models__product-elem')
                                         list(class='available-colors d-flex justify-content-center align-items-center pt-3')
-                                            each item in product.otherCategoryGoods[i].images
-                                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
+                                            each color in keys
+                                                li(style={background: `${color}`} class='product-info__elem-color'  alt=`${color} color` title=`${color} color`)
                 else
                     - for(let i = 0; i < 4; i++)
                         div(class='col-md-4 other-models__product')
                             a(class='ol-md-4 other-models__product' href=`${product.otherCategoryGoods[i].id}`)
-                                img(src=`/images/bikes/${product.otherCategoryGoods[i].images[0].images.split(', ')[0]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
+                                - let keys = Object.keys(product.otherCategoryGoods[i].images);
+                                img(src=`data:image/jpeg;base64,${product.otherCategoryGoods[i].images[keys[0]]}` class='bike other-models__product-elem w-100 my-2' alt='bicycle')
                                 div(class='row justify-content-between')
                                     div(class='col-5 other-models__product-elem')
                                         h3(class='smaller-title')=product.otherCategoryGoods[i].name.toUpperCase()
                                         p(class='text') #{product.otherCategoryGoods[i].cost} ₴
                                     div(class='col-5 other-models__product-elem')
                                         list(class='available-colors d-flex justify-content-center align-items-center pt-3')
-                                            each item in product.otherCategoryGoods[i].images
-                                                li(style={background: `${item.color}`} class='product-info__elem-color' alt=`${item.color} color` title=`${item.color} color`)
+                                            each color in keys
+                                                li(style={background: `${color}`} class='product-info__elem-color' alt=`${color} color` title=`${color} color`)
 include footer.pug
 script.
     let productData = !{JSON.stringify(product)};

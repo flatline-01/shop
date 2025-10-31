@@ -5,7 +5,7 @@ main(class='container news')
     h1(class='title') #{__('news')}
     div(class='row text-white mb-5 news-card')
         div(class='col-md-6 p-0')
-            img(src=news[0].image class='img-fluid' alt=`image for the news article: ${news[0].title}`)
+            img(src=`data:image/jpeg;base64,${news[0].image}` class='img-fluid' alt=`image for the news article: ${news[0].title}`)
         article(class='col-md-6 bg-black d-flex flex-column justify-content-md-around')
             div
                 h3(class='small-title')=news[0].title
@@ -15,7 +15,7 @@ main(class='container news')
     div(class='row text-white d-flex justify-content-md-between flex-wrap')
         - for (var i = 1; i < news.length; ++i)
             div(class='col-md-3 bg-black p-0 news-article mb-5 news-card')
-                img(src=news[i].image class='img-fluid')
+                img(src=`data:image/jpeg;base64,${news[i].image}` class='img-fluid')
                 article(class='p-3')
                     div
                         h3(class='small-title')=news[i].title

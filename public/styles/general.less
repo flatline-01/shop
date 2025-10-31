@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
   }
+
 @font-face {
   font-family: 'Futura PT';
   src: url('../fonts/FuturaPT-Medium.eot');
@@ -13,6 +14,15 @@
   font-weight: 500;
   font-style: normal;
 }
+
+body{
+  -webkit-user-select: none; 
+  -moz-user-select: none;     
+  -ms-user-select: none;     
+  user-select: none;         
+  cursor: default;
+}
+
 .title{
   font-size: @h1-font-size;
   font-weight: 900;

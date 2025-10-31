@@ -1,14 +1,14 @@
 include head.pug
 main
     section(class='row registr-page-block p-3 g-0')
-        div(class='login-form')
+        div(class='login-form' id='login-form-container')
             form(name='login')
                 h2 #{__('log in')}
                 div(class='form-group')
                     input( type='email' class='form-control' name='email' placeholder=`${__('email')}` required='required')
                 div(class='form-group')
                     input(type='password' class='form-control' name='password' placeholder=`${__('password')}` required='required')
-                div(class='form-group')
+                div(class='form-group' style='display: flex; justify-content: center;')
                     button(type='submit' class='btn btn-black rounded-0 border border-2 border-dark' id='loginFormBtn') #{__('log in')}
                 div(class='text-center') #{__('not signed up yet')}
                     a(href='/sign_up') #{__('sign up')}

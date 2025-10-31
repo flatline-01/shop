@@ -7,8 +7,9 @@ module.exports = class Category {
         /** @type {Number} */ this.id = props['id']
         /** @type {String} */ this.name = props['name']
         /** @type {String} */ this.description = props['description']
+        /** @type {String} */ this.sliderImage = props["slider_image"]
+        /** @type {String} */ this.image = props["image"]
         /** @type {Array<Good>} */ this.goods = []
-        /** @type {String}*/   this.image = props["image"]
     }
 }
 

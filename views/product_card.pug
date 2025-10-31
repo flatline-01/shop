@@ -8,20 +8,18 @@ each value in category.goods
             ul(class='large-text product-info__elem')
                 li #{__('colors')} : #[br]
                     ul(class='d-flex' class='colors-list')
-                        each item, index in value.images
-                            if(index === 0)
-                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
-                            else
-                                li(style={background: `${item.color}`} class='product-info__elem-color'  alt=`${item.color} color` title=`${item.color} color`)
+                        each color in Object.keys(value.images)
+                                li(style={background: `${color}`} class='product-info__elem-color'  alt=`${color} color` title=`${color} color`)
             a(class='btn btn-white product-info__elem text rounded-0 border border-dark border-3 py-2' href=`/product/${value['id']}`) #{__('details')}
         div(class='col-sm-12 col-md-8 product-img')
-            div( class='col-md-8 carousel carousel-dark slide product-images-carousel' id=`product-images${value['id']}` data-bs-ride='carousel')
+            div( class='col-md-8 carousel carousel-dark slide product-images-carousel' data-bs-interval='false' id=`product-images${value['id']}` data-bs-ride='carousel')
                 div(class='carousel-indicators')
                 div( class='carousel-inner product-images' id='product-images-carousel')
-                button(class='carousel-control-prev' type='button' data-bs-target=`#product-images${value['id']}` data-bs-slide='prev')
-                    span( class='carousel-control-prev-icon' aria-hidden='true')
-                    span( class='visually-hidden')  Previous
-                button(class='carousel-control-next' type='button' data-bs-target=`#product-images${value['id']}` data-bs-slide='next')
-                    span( class='carousel-control-next-icon' aria-hidden='true')
-                    span( class='visually-hidden') Next
+                if Object.keys(value['images']).length > 1
+                    button(class='carousel-control-prev' type='button' data-bs-target=`#product-images${value['id']}` data-bs-slide='prev')
+                        span( class='carousel-control-prev-icon' aria-hidden='true')
+                        span( class='visually-hidden')  Previous
+                    button(class='carousel-control-next' type='button' data-bs-target=`#product-images${value['id']}` data-bs-slide='next')
+                        span( class='carousel-control-next-icon' aria-hidden='true')
+                        span( class='visually-hidden') Next
         hr

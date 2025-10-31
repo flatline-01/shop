@@ -4,7 +4,7 @@ if(news.length <= 3){
     for(let i = 0; i < news.length; i++){
         newsCarousel.parentNode.innerHTML += `
             <article class='col-md-4 news-elem'>
-                <img src=${news[i].image} class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
+                <img src='data:image/jpeg;base64,${news[i].image}' class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
                 <h3 class='smaller-title news__elem-content'>${news[i].title}</h3>
                 <p class='small-text news__elem-content news-card__text'>${news[i].text.slice(0, 200)}...</p>
                 <a class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href='/news/${news[i].id}'>${ (getCookie('lang') === 'ru') ? 'ЧИТАТЬ' : 'READ' }</a>
@@ -34,7 +34,7 @@ function createDesctopNewsSliderElements(){
                 for(let j = 0; j < arr[i].length; j++){
                     rowContent += `
                 <article class='col-md-4 news-elem'>
-                    <img src=${news[j].image} class='news-elem__content news-elem__img' alt='image for the news article: ${news[j].title}'>
+                    <img src='data:image/jpeg;base64,${news[i].image}' class='news-elem__content news-elem__img' alt='image for the news article: ${news[j].title}'>
                     <h3 class='smaller-title news__elem-content'>${news[j].title}</h3>
                     <p class='small-text news__elem-content news-card__text'>${news[j].text.slice(0, 200)}...</p>
                     <a class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href='/news/${news[j].id}'>${ (getCookie('lang') === 'ru') ? 'ЧИТАТЬ' : 'READ' }</a>
@@ -52,7 +52,7 @@ function createDesctopNewsSliderElements(){
                 for(let j = 0; j < arr[i].length; j++){
                     rowContent += `
                 <article class='col-md-4 news-elem'>
-                    <img src=${news[j].image} class='news-elem__content news-elem__img' alt='image for the news article: ${news[j].title}'>
+                    <img src='data:image/jpeg;base64,${news[i].image}' class='news-elem__content news-elem__img' alt='image for the news article: ${news[j].title}'>
                     <h3 class='smaller-title news__elem-content'>${news[j].title}</h3>
                     <p class='small-text news__elem-content news-card__text'>${news[j].text.slice(0, 200)}...</p>
                     <a class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href='/news/${news[j].id}'>${ (getCookie('lang') === 'ru') ? 'ЧИТАТЬ' : 'READ' }</a>
@@ -69,7 +69,7 @@ function createMobileNewsSliderElements(){
             newsCarousel.innerHTML += `
             <div class='carousel-item active p-2'>
                 <article>
-                   <img src=${news[i].image} class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
+                   <img src='data:image/jpeg;base64,${news[i].image}' class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
                    <h3 class='smaller-title news__elem-content'>${news[i].title}</h3>
                    <p class='small-text news__elem-content news-card__text'>${news[i].text.slice(0, 200)}</p>
                    <a class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href='/news/${news[i].id}'>${ (getCookie('lang') === 'ru') ? 'ЧИТАТЬ' : 'READ' }</a>
@@ -79,7 +79,7 @@ function createMobileNewsSliderElements(){
         newsCarousel.innerHTML += `
             <div class='carousel-item p-2'>
                 <article>
-                   <img src=${news[i].image} class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
+                   <img src='data:image/jpeg;base64,${news[i].image}' class='news-elem__content news-elem__img' alt='image for the news article: ${news[i].title}'>
                    <h3 class='smaller-title news__elem-content'>${news[i].title}</h3>
                    <p class='small-text news__elem-content news-card__text'>${news[i].text.slice(0, 200)}</p>
                    <a class='btn-white rounded-0 news-elem__content news-elem__btn d-inline-block w-100 border border-2 border-dark' href='/news/${news[i].id}'>${(getCookie('lang') === 'ru') ? 'ЧИТАТЬ' : 'READ'}</a>

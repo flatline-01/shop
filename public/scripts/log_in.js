@@ -2,6 +2,14 @@ const loginForm = document.forms['login'];
 let logInEmail    = null;
 let logInPassword = null;
 const loginFormBtn = document.getElementById('loginFormBtn');
+
+if(getCookie('logged_in')){
+    let container = document.getElementById('login-form-container');
+    let start_tag = '<h3 class="smaller-title" style="text-align: center; color: white;">'
+    container.innerHTML = (getCookie('lang') === 'ru') ? `${start_tag}Вы вошли аккаунт.</h3>` : 
+        `${start_tag}You have logged in to your account.</h3>`;
+}
+
 if(loginForm){
     logInEmail = loginForm.elements['email'];
     logInPassword = loginForm.elements['password'];
